@@ -1,8 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 
+import { connect } from 'react-redux';
+import { setSession } from '../../actions/sessionActions';
 
-export default class Callback extends PureComponent {
+class Callback extends PureComponent {
+  static propTypes = {
+    handleAuth: PropTypes.func.isRequired
+  }
+
+  componentDidMount() {
+    this.props.handleAuth();
+  }
 
   render() {
     return (
@@ -10,3 +18,19 @@ export default class Callback extends PureComponent {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch, props) => ({
+  handleAuth() {
+    const action = setSession();
+    dispatch(action);
+    action.payload.then(() => {
+      props.history.push('/dashboard');
+    });
+  }
+});
+
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Callback);
