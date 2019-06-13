@@ -10,6 +10,10 @@ const auth0 = new WebAuth({
 
 export const login = () => auth0.authorize();
 
+export const logout = () => auth0.logout({
+  returnTo: process.env.AUTH_LOGOUT_URL
+});
+
 export const handleAuth = () => {
   return new Promise((resolve, reject) => {
     auth0.parseHash((error, results) => {
@@ -19,7 +23,8 @@ export const handleAuth = () => {
           resolve({
             profile,
             results,
-            token: results.accessToken
+            token: results.accessToken,
+            nickname: results.nickname
           });
         });
       }
