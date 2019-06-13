@@ -19,7 +19,7 @@ class Dashboard extends PureComponent {
     const { nickname } = this.props;
     return (
       <>
-      <h1>Welcome to your Dashboard {nickname}</h1>
+      <h1>Welcome to your dashboard, {nickname}!</h1>
       <button onClick={logout}>Log Out</button>
       </>
     );

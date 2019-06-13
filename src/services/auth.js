@@ -24,7 +24,7 @@ export const handleAuth = () => {
             profile,
             results,
             token: results.accessToken,
-            nickname: results.nickname
+            nickname: profile.nickname
           });
         });
       }
