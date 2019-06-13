@@ -17,9 +17,9 @@ export const handleAuth = () => {
         auth0.client.userInfo(results.accessToken, (err, profile) => {
           if(err) return reject('Could not get user profile');
           resolve({
-            username: profile.name,
-            token: results.accessToken,
-            image: profile.picture
+            profile,
+            results,
+            token: results.accessToken
           });
         });
       }

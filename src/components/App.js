@@ -5,14 +5,16 @@ import {
   Switch
 } from 'react-router-dom';
 import Callback from '../containers/auth/Callback';
-// import { withSession } from '../containers/auth/withSession';
 import Home from '../components/Home';
+import { withSession } from '../containers/auth/withSession';
+import Dashboard from './Dashboard';
 
 export default function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/dashboard" component={withSession(Dashboard)} />
         <Route path="/callback" component={Callback} />
       </Switch>
     </Router>
