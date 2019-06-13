@@ -5,11 +5,11 @@ import { setSession } from '../../actions/sessionActions';
 
 class Callback extends PureComponent {
   static propTypes = {
-    handleAuth: PropTypes.func.isRequired
+    handleSessionAction: PropTypes.func.isRequired
   }
 
   componentDidMount() {
-    this.props.handleAuth();
+    this.props.handleSessionAction();
   }
 
   render() {
@@ -20,7 +20,7 @@ class Callback extends PureComponent {
 }
 
 const mapDispatchToProps = (dispatch, props) => ({
-  handleAuth() {
+  handleSessionAction() {
     const action = setSession();
     dispatch(action);
     action.payload.then(() => {
