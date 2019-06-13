@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { login } from '../../services/auth';
-import { getToken } from '../../selectors/sessionSelectors';
+import { selectToken } from '../../selectors/sessionSelectors';
 import { connect } from 'react-redux';
 
 export const withSession = Component => {
@@ -21,7 +21,7 @@ export const withSession = Component => {
   }
 
   const mapStateToProps = state => ({
-    token: getToken(state)
+    token: selectToken(state)
   });
 
   return connect(

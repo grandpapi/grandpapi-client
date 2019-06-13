@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { getNickname } from '../selectors/sessionSelectors';
+import { selectNickname } from '../selectors/sessionSelectors';
 import { connect } from 'react-redux';
 import { logout } from '../services/auth';
 
@@ -27,7 +27,7 @@ class Dashboard extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  nickname: getNickname(state)
+  nickname: selectNickname(state)
 });
 
 export default connect(
