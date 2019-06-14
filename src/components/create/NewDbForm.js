@@ -22,6 +22,8 @@ export default class NewDbForm extends PureComponent {
       });
     }
 
+    
+
     handleChange = ({ target }) => {
       const value = target.type === 'checkbox' ? target.checked : target.value;
         
