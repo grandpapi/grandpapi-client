@@ -1,10 +1,11 @@
 import React from 'react';
+import Nav from '../components/all/Nav';
 
 export default function PublicApis() {
   return (
-      <>
-      <h1>Public APIs</h1>
-      <p>Use these APIs!</p>
-      </>
+    <>
+      <Nav />
+      <h1>About App</h1>
+    </>
   );
 }

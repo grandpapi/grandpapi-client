@@ -1,7 +1,11 @@
 import React from 'react';
+import Nav from '../components/all/Nav';
 
 export default function Docs() {
   return (
-    <h1>Docs</h1>
+		<>
+      <Nav />
+      <h1>Docs</h1>
+    </>
   );
 }
