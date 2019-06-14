@@ -23,7 +23,7 @@ export const handleAuth = () => {
           resolve({
             profile,
             results,
-            token: results.accessToken,
+            token: results.idToken,
             nickname: profile.nickname
           });
         });
