@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { selectNickname } from '../selectors/sessionSelectors';
 import { connect } from 'react-redux';
 import { logout } from '../services/auth';
-import { postNickname } from '../actions/userDatabases/dbActions';
 import { Link } from 'react-router-dom';
 
 class Dashboard extends PureComponent {
@@ -27,13 +26,7 @@ const mapStateToProps = (state) => ({
   nickname: selectNickname(state)
 });
 
-const mapDispatchToProps = dispatch => ({
-  post(nickname) {
-    dispatch(postNickname(nickname));
-  }
-});
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Dashboard); 

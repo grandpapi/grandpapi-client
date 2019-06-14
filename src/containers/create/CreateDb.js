@@ -8,7 +8,9 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
+const mapStateToProps = () => ({ test: 'test' });
+
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(NewDbForm);

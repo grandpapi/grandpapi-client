@@ -1,16 +1,16 @@
-import { POST_NICKNAME, POST_NICKNAME_PENDING } from '../actions/userDatabases/dbActions';
+import { CREATE_DB, CREATE_DB_PENDING } from '../actions/userDatabases/dbActions';
 
 const initialState = {
   loading: false,
-  nickname: ''
+  dbName: ''
 };
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
-    case POST_NICKNAME_PENDING:
+    case CREATE_DB_PENDING:
       return { ...state, loading: true };
-    case POST_NICKNAME:
-      return { ...state, loading: false, nickname: action.payload };
+    case CREATE_DB:
+      return { ...state, loading: false, dbName: action.payload.dbName };
     default:
       return state;
   }
