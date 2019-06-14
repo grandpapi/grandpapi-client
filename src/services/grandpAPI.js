@@ -1,5 +1,5 @@
 import { post } from './request';
 
-const BASE_PATH = '/api/v1/test';
+const BASE_PATH = '/api/v1';
 
-export const testPost = nickname => post(BASE_PATH, { nickname });
+export const postDb = db => post(`${BASE_PATH}/databases`, db);

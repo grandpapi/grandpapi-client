@@ -1,8 +1,9 @@
 import { createAction } from 'promise-middleware-redux';
-import { testPost } from '../../services/grandpAPI';
+import { postDb } from '../../services/grandpAPI';
 
 export const [
-  postNickname,
-  POST_NICKNAME,
-  POST_NICKNAME_PENDING
-] = createAction('POST_NICKNAME', testPost);
+  createDb,
+  CREATE_DB,
+  CREATE_DB_PENDING
+] = createAction('CREATE_DB', postDb);
+

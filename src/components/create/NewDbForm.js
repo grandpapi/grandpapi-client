@@ -1,11 +1,24 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export default class CreateDb extends PureComponent {
-
+export default class NewDbForm extends PureComponent {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired
+  }
+  
     state = {
       dbName: '',
-      public: true
+      publicBool: true
+    }
+
+    handleSubmit = event => {
+      event.preventDefault();
+      this.props.onSubmit(this.state);
+      this.setState({
+        dbName: '',
+        publicBool: true
+      });
     }
 
     handleChange = ({ target }) => {
@@ -18,20 +31,17 @@ export default class CreateDb extends PureComponent {
 
     render() {
       return (
-        <form onSubmit={event => {
-          event.preventDefault();
-          console.log('poop');
-        }}>
+        <form onSubmit={this.handleSubmit}>
           <label>
                 Database Name
             <input name="dbName" onChange={this.handleChange} value={this.state.dbName} />
           </label>
           <label>
-                Public?
-            <input name="public" type="checkbox" onChange={this.handleChange} checked={this.state.public} />
+                public?
+            <input name="publicBool" type="checkbox" onChange={this.handleChange} checked={this.state.publicBool} />
           </label>
           {/* consider changing state to update text */}
-          <p>{this.state.public ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</p>
+          <p>{this.state.publicBool ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</p>
           <Link to="/dashboard">cancel</Link>
           <button>Confirm and Create Model</button>
         </form> 
