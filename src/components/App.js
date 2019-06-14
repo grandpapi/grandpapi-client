@@ -5,9 +5,9 @@ import {
   Switch
 } from 'react-router-dom';
 import Callback from '../containers/auth/Callback';
-import Home from '../components/Home';
+import Home from '../pages/Home';
 import { withSession } from '../containers/auth/withSession';
-import Dashboard from './Dashboard';
+import Dashboard from '../pages/Dashboard';
 
 export default function App() {
   return (
