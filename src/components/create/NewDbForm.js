@@ -17,7 +17,7 @@ export default class NewDbForm extends PureComponent {
   handleSubmit = event => {
     event.preventDefault();
     const { nickname, userId } = this.props;
-    this.props.onSubmit({ ...this.state, nickname, userId });
+    this.props.onSubmit({ ...this.state, ownerUsername: nickname, ownerId: userId });
     this.setState({
       dbName: '',
       publicBool: true
