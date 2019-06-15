@@ -23,6 +23,7 @@ export const handleAuth = () => {
           resolve({
             profile,
             results,
+            userId: profile.sub,
             token: results.idToken,
             nickname: profile.nickname
           });
