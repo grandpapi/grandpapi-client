@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 
 export default class DbForm extends PureComponent {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-    userId: PropTypes.string.isRequired,
-    nickname: PropTypes.string.isRequired
+    onSubmit: PropTypes.func.isRequired
   }
 
   state = {

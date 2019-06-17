@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import DbForm from '../../components/create/DbForm';
 import { createDb } from '../../actions/userDatabases/dbActions';
-import { selectUserId, selectNickname } from '../../selectors/sessionSelectors';
 
 const mapDispatchToProps = dispatch => ({
   onSubmit(db) {
@@ -9,12 +8,7 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-const mapStateToProps = state => ({
-  userId: selectUserId(state),
-  nickname: selectNickname(state)
-});
-
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(DbForm);
