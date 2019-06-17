@@ -7,7 +7,7 @@ export default class ModelNameForm extends PureComponent {
   }
 
   state = {
-    modelName: ''
+    mdlName: ''
   }
 
   handleChange = ({ target }) => this.setState({ [target.name]: target.value });
@@ -22,7 +22,7 @@ export default class ModelNameForm extends PureComponent {
       <form onSubmit={this.handleSubmit}>
         <label>
           Model Name:
-          <input name="modelName" onChange={this.handleChange} value={this.state.modelName} />
+          <input name="mdlName" onChange={this.handleChange} value={this.state.mdlName} />
         </label>
         <button>Save Model Name</button>
       </form>

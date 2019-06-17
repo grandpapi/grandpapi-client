@@ -12,8 +12,8 @@ jest.mock('../services/megaNapAPI.js', () => ({
 
 const initialState = {
   loading: false,
-  modelName: '',
-  schema: {},
+  mdlName: '',
+  mdlSchema: {},
   modelId: ''
 };
 
@@ -23,14 +23,14 @@ describe('model reducer tests', () => {
       type: CREATE_MODEL,
       payload: {
         _id: 'test id',
-        modelName: 'test modelName',
-        schema: {}
+        mdlName: 'test mdlName',
+        mdlSchema: {}
       }
     })).toEqual({
       loading: false,
       modelId: 'test id',
-      modelName: 'test modelName',
-      schema: {}
+      mdlName: 'test mdlName',
+      mdlSchema: {}
     });
   });
 });
