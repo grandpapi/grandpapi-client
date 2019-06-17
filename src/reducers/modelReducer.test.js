@@ -14,7 +14,7 @@ const initialState = {
   loading: false,
   modelName: '',
   schema: {},
-  id: ''
+  modelId: ''
 };
 
 describe('model reducer tests', () => {
@@ -28,7 +28,7 @@ describe('model reducer tests', () => {
       }
     })).toEqual({
       loading: false,
-      id: 'test id',
+      modelId: 'test id',
       modelName: 'test modelName',
       schema: {}
     });

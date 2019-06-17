@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
   modelName: '',
   schema: {},
-  id: ''
+  modelId: ''
 };
 
 export default function reducer(state = initialState, action) {
@@ -12,7 +12,7 @@ export default function reducer(state = initialState, action) {
     case CREATE_MODEL_PENDING:
       return { ...state, loading: true };
     case CREATE_MODEL:
-      return { ...state, loading: false, modelName: action.payload.modelName, id: action.payload._id };
+      return { ...state, loading: false, modelName: action.payload.modelName, modelId: action.payload._id };
     default:
       return state;
   }
