@@ -16,7 +16,7 @@ export default function reducer(state = initialState, action) {
     case ADD_ENTRY_PENDING:
       return { ...state, loading: true };
     case ADD_ENTRY:
-      return { ...state, loading: false, mdlSchema: { ...state.mdlSchema, [action.payload.fieldName]: action.payload.dataType } };
+      return { ...state, loading: false, mdlSchema: action.payload.mdlSchema };
     default:
       return state;
   }
