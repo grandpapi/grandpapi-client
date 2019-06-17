@@ -9,6 +9,46 @@ exports[`App component renders App 1`] = `
       path="/"
     />
     <Route
+      component={[Function]}
+      exact={true}
+      path="/about"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/docs"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/apis"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithSession)",
+          "type": [Function],
+        }
+      }
+      path="/dashboard"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithSession)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/create"
+    />
+    <Route
       component={
         Object {
           "$$typeof": Symbol(react.memo),
