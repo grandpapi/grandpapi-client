@@ -14,7 +14,7 @@ export default class ModelNameForm extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit();
+    this.props.onSubmit(this.state);
   }
 
   render() {
@@ -24,6 +24,7 @@ export default class ModelNameForm extends PureComponent {
           Model Name:
           <input name="modelName" onChange={this.handleChange} value={this.state.modelName} />
         </label>
+        <button>Save Model Name</button>
       </form>
     );
   }
