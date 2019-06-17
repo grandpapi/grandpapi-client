@@ -3,7 +3,7 @@ import { CREATE_MODEL, CREATE_MODEL_PENDING } from '../actions/modelActions';
 const initialState = {
   loading: false,
   modelName: '',
-  entries: {},
+  schema: {},
   id: ''
 };
 
