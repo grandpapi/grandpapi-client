@@ -3,7 +3,7 @@ import { CREATE_MODEL, CREATE_MODEL_PENDING, ADD_ENTRY_PENDING, ADD_ENTRY } from
 const initialState = {
   loading: false,
   mdlName: '',
-  mdlSchema: {},
+  mdlSchema: '{}',
   mdlId: ''
 };
 

@@ -5,14 +5,17 @@ import ModelNameForm from '../../components/create/ModelNameForm';
 import ModelEntryForm from '../../components/create/ModelEntryForm';
 import { createModel, addEntry } from '../../actions/modelActions';
 import { selectDbId } from '../../selectors/dbSelectors';
-import { selectMdlId } from '../../selectors/modelSelectors';
+import { selectMdlId, selectMdlSchema, selectMdlName } from '../../selectors/modelSelectors';
+import ModelPreview from '../../components/create/ModelPreview';
 
 class CreateModel extends PureComponent {
   static propTypes = {
     onNameSubmit: PropTypes.func.isRequired,
     onEntrySubmit: PropTypes.func.isRequired,
     dbId: PropTypes.string.isRequired,
-    mdlId: PropTypes.string.isRequired
+    mdlId: PropTypes.string.isRequired,
+    mdlSchema: PropTypes.string.isRequired,
+    mdlName: PropTypes.string.isRequired
   }
 
   handleNameSubmit = state => {
@@ -25,11 +28,15 @@ class CreateModel extends PureComponent {
     this.props.onEntrySubmit(state);
   }
 
+
   render() {
+    const { mdlSchema, mdlName } = this.props;
+    const modelPreviewProps = { mdlSchema, mdlName };
     return (
       <>
         <ModelNameForm onSubmit={this.handleNameSubmit} />
         <ModelEntryForm onSubmit={this.handleEntrySubmit} />
+        <ModelPreview {...modelPreviewProps} />
       </>
     );
   }
@@ -37,7 +44,9 @@ class CreateModel extends PureComponent {
 
 const mapStateToProps = state => ({
   dbId: selectDbId(state),
-  mdlId: selectMdlId(state)
+  mdlId: selectMdlId(state),
+  mdlSchema: selectMdlSchema(state),
+  mdlName: selectMdlName(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -45,7 +54,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(createModel(model));
   },
   onEntrySubmit(model) {
-    dispatch(addEntry(model)); 
+    dispatch(addEntry(model));
   }
 });
 
