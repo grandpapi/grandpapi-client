@@ -1,6 +1,6 @@
-import { createDb } from "./dbActions";
+import { createDb } from './dbActions';
 
-jest.mock('../../services/grandpAPI.js', () => ({
+jest.mock('../../services/megaNapAPI.js', () => ({
   postDb() {
     return Promise.resolve([]);
   }

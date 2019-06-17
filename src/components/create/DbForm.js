@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export default class NewDbForm extends PureComponent {
+export default class DbForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
     userId: PropTypes.string.isRequired,
@@ -11,16 +11,15 @@ export default class NewDbForm extends PureComponent {
 
   state = {
     dbName: '',
-    publicBool: true
+    publicAccess: true
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    const { nickname, userId } = this.props;
-    this.props.onSubmit({ ...this.state, ownerUsername: nickname, ownerId: userId });
+    this.props.onSubmit(this.state);
     this.setState({
       dbName: '',
-      publicBool: true
+      publicAccess: true
     });
   }
 
@@ -41,10 +40,10 @@ export default class NewDbForm extends PureComponent {
         </label>
         <label>
           public?
-          <input name="publicBool" type="checkbox" onChange={this.handleChange} checked={this.state.publicBool} />
+          <input name="publicAccess" type="checkbox" onChange={this.handleChange} checked={this.state.publicAccess} />
         </label>
         {/* consider changing state to update text */}
-        <p>{this.state.publicBool ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</p>
+        <p>{this.state.publicAccess ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</p>
         <Link to="/dashboard">cancel</Link>
         <button>Confirm and Create Model</button>
       </form>

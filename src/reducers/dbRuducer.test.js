@@ -1,7 +1,7 @@
 import dbReducer from './dbReducer';
 import { CREATE_DB_PENDING, CREATE_DB } from '../actions/userDatabases/dbActions';
 
-jest.mock('../services/grandpAPI.js', () => ({
+jest.mock('../services/megaNapAPI.js', () => ({
   postDb() {
     return Promise.resolve([]);
   }

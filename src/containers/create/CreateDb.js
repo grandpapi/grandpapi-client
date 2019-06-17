@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import NewDbForm from '../../components/create/NewDbForm';
+import DbForm from '../../components/create/DbForm';
 import { createDb } from '../../actions/userDatabases/dbActions';
 import { selectUserId, selectNickname } from '../../selectors/sessionSelectors';
 
@@ -17,4 +17,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewDbForm);
+)(DbForm);
