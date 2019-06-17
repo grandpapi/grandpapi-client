@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { postDb } from '../../services/megaNapAPI';
+import { postDb } from '../../services/dbMegaNapAPI';
 
 export const [
   createDb,

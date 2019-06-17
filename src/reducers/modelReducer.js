@@ -1,10 +1,10 @@
-import { CREATE_MODEL, CREATE_MODEL_PENDING } from '../actions/modelActions';
+import { CREATE_MODEL, CREATE_MODEL_PENDING, ADD_ENTRY_PENDING, ADD_ENTRY } from '../actions/modelActions';
 
 const initialState = {
   loading: false,
   mdlName: '',
   mdlSchema: {},
-  modelId: ''
+  mdlId: ''
 };
 
 export default function reducer(state = initialState, action) {
@@ -12,7 +12,11 @@ export default function reducer(state = initialState, action) {
     case CREATE_MODEL_PENDING:
       return { ...state, loading: true };
     case CREATE_MODEL:
-      return { ...state, loading: false, mdlName: action.payload.mdlName, modelId: action.payload._id };
+      return { ...state, loading: false, mdlName: action.payload.mdlName, mdlId: action.payload._id };
+    case ADD_ENTRY_PENDING:
+      return { ...state, loading: true };
+    case ADD_ENTRY:
+      return { ...state, loading: false, mdlSchema: { ...state.mdlSchema, [action.payload.fieldName]: action.payload.dataType } };
     default:
       return state;
   }

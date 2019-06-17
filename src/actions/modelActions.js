@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { postModel, patchModel } from '../services/megaNapAPI';
+import { postModel, patchModel } from '../services/modelMegaNapAPI';
 
 export const [
   createModel,
