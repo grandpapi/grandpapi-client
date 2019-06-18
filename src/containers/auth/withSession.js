@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { login } from '../../services/auth';
 import { selectToken } from '../../selectors/sessionSelectors';
 import { connect } from 'react-redux';
+import Login from '../../pages/Login';
 
 export const withSession = Component => {
   class WithSession extends PureComponent {
@@ -15,7 +16,7 @@ export const withSession = Component => {
         }
 
         render() {
-          if(!this.props.token) return <h1>Sorry you need to log in mate</h1>;
+          if(!this.props.token) return <Login />;
           return <Component />;
         }
   }

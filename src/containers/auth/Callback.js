@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setSession } from '../../actions/sessionActions';
-import Home from '../../pages/Home';
+import Login from '../../pages/Login';
 
 class Callback extends PureComponent {
   static propTypes = {
@@ -14,7 +14,7 @@ class Callback extends PureComponent {
   }
 
   render() {
-    return <Home />;
+    return <Login />;
   }
 }
 
