@@ -7,8 +7,7 @@ import store from '../../store';
 export default class DbForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    dbShow: PropTypes.bool.isRequired,
-    modelNameShow: PropTypes.bool.isRequired
+    dbShow: PropTypes.bool.isRequired
   }
 
   state = {
