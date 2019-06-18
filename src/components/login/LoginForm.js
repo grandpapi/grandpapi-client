@@ -1,6 +1,11 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 export default class LoginForm extends PureComponent {
+  static propTypes = {
+    onSignupSubmit: PropTypes.func.isRequired,
+    onLoginSubmit: PropTypes.func.isRequired
+  }
   state = {
     signup: {
       email: '',
@@ -17,13 +22,13 @@ export default class LoginForm extends PureComponent {
 
   handleSignupSubmit = event => {
     event.preventDefault();
-    console.log(this.state.signup);
+    this.props.onSignupSubmit(this.state.signup);
   }
   handleLoginChange = ({ target }) => this.setState({ login: { ...this.state.login, [target.name]: target.value } })
   
   handleLoginSubmit = event => {
     event.preventDefault();
-    console.log(this.state.login);
+    this.props.onLoginSubmit(this.state.login);
   }
   
   render() {
