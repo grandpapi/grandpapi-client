@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ModelNameForm from '../../components/create/ModelNameForm';
 import ModelEntryForm from '../../components/create/ModelEntryForm';
-import { createModel, addEntry } from '../../actions/modelActions';
+import { createModel, addEntry, fetchModels } from '../../actions/modelActions';
 import { selectDbId } from '../../selectors/dbSelectors';
-import { selectMdlId, selectMdlSchema, selectMdlName } from '../../selectors/modelSelectors';
+import { selectMdlId, selectMdlSchema, selectMdlName, selectUserMdlNames } from '../../selectors/modelSelectors';
 import ModelPreview from '../../components/create/ModelPreview';
+import { selectUserId } from '../../selectors/sessionSelectors';
 
 class CreateModel extends PureComponent {
   static propTypes = {
@@ -15,7 +16,10 @@ class CreateModel extends PureComponent {
     dbId: PropTypes.string.isRequired,
     mdlId: PropTypes.string.isRequired,
     mdlSchema: PropTypes.string.isRequired,
-    mdlName: PropTypes.string.isRequired
+    mdlName: PropTypes.string.isRequired,
+    userMdls: PropTypes.array.isRequired,
+    fetch: PropTypes.func.isRequired,
+    userId: PropTypes.string.isRequired
   }
 
   handleNameSubmit = state => {
@@ -28,14 +32,19 @@ class CreateModel extends PureComponent {
     this.props.onEntrySubmit(state);
   }
 
+  componentDidMount() {
+    this.props.fetch(this.props.userId);
+  }
+
 
   render() {
-    const { mdlSchema, mdlName } = this.props;
+    const { mdlSchema, mdlName, userMdls } = this.props;
     const modelPreviewProps = { mdlSchema, mdlName };
+    console.log(userMdls);
     return (
       <>
         <ModelNameForm onSubmit={this.handleNameSubmit} />
-        <ModelEntryForm onSubmit={this.handleEntrySubmit} />
+        <ModelEntryForm mdlSchema={mdlSchema || []} onSubmit={this.handleEntrySubmit} />
         <ModelPreview {...modelPreviewProps} />
       </>
     );
@@ -43,10 +52,12 @@ class CreateModel extends PureComponent {
 }
 
 const mapStateToProps = state => ({
+  userId: selectUserId(state),
   dbId: selectDbId(state),
   mdlId: selectMdlId(state),
   mdlSchema: selectMdlSchema(state),
-  mdlName: selectMdlName(state)
+  mdlName: selectMdlName(state),
+  userMdls: selectUserMdlNames(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -55,6 +66,9 @@ const mapDispatchToProps = dispatch => ({
   },
   onEntrySubmit(model) {
     dispatch(addEntry(model));
+  },
+  fetch(userId) {
+    dispatch(fetchModels(userId));
   }
 });
 

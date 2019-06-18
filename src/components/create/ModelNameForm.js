@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 export default class ModelNameForm extends PureComponent {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
+    mdlSchema: PropTypes.array
   }
 
   state = {
@@ -14,7 +15,11 @@ export default class ModelNameForm extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log(this.props.mdlSchema);
     this.props.onSubmit(this.state);
+    this.setState({
+      mdlName: ''
+    });
   }
 
   render() {
