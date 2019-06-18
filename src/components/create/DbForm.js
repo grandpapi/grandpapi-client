@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styles from '../../styles.css';
 
 export default class DbForm extends PureComponent {
   static propTypes = {
@@ -9,7 +10,8 @@ export default class DbForm extends PureComponent {
 
   state = {
     dbName: '',
-    publicAccess: true
+    publicAccess: true,
+    show: true
   }
 
   handleSubmit = event => {
@@ -17,21 +19,22 @@ export default class DbForm extends PureComponent {
     this.props.onSubmit(this.state);
     this.setState({
       dbName: '',
-      publicAccess: true
+      publicAccess: true,
+      show: false
     });
   }
 
   handleChange = ({ target }) => {
     const value = target.type === 'checkbox' ? target.checked : target.value;
-
     this.setState({
       [target.name]: value
     });
   }
-
+  
   render() {
+    const showHideClassName = this.state.show ? 'display-block' : 'display-none';
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={styles[showHideClassName]} onSubmit={this.handleSubmit}>
         <label>
           Database Name
           <input name="dbName" onChange={this.handleChange} value={this.state.dbName} />
