@@ -21,7 +21,7 @@ export default class DbForm extends PureComponent {
     event.preventDefault();
     if(rejectDuplicateDbs(this.props.userDbs, this.state.dbName)) {
       this.props.onSubmit(this.state);
-      store.getState().models.modelNameShow = true;
+      store.getState().models.mdlNameShow = true;
       this.setState({
         dbName: '',
         publicAccess: true
@@ -35,7 +35,7 @@ export default class DbForm extends PureComponent {
       [target.name]: value
     });
   }
-  
+
   render() {
     const showHideClassName = this.props.dbShow ? 'display-block' : 'display-none';
     return (

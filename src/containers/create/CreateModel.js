@@ -16,8 +16,8 @@ class CreateModel extends PureComponent {
     mdlId: PropTypes.string.isRequired,
     mdlSchema: PropTypes.string.isRequired,
     mdlName: PropTypes.string.isRequired,
-    modelNameShow: PropTypes.bool.isRequired,
-    modelEntryShow: PropTypes.bool.isRequired
+    mdlNameShow: PropTypes.bool.isRequired,
+    mdlEntryShow: PropTypes.bool.isRequired
   }
 
   state = {
@@ -37,12 +37,12 @@ class CreateModel extends PureComponent {
 
 
   render() {
-    const { mdlSchema, mdlName, modelNameShow, modelEntryShow } = this.props;
+    const { mdlSchema, mdlName, mdlNameShow, mdlEntryShow } = this.props;
     const modelPreviewProps = { mdlSchema, mdlName };
     return (
       <>
-        <ModelNameForm modelNameShow={modelNameShow} onSubmit={this.handleNameSubmit} />
-        <ModelEntryForm modelEntryShow={modelEntryShow} onSubmit={this.handleEntrySubmit} />
+        <ModelNameForm mdlNameShow={mdlNameShow} onSubmit={this.handleNameSubmit} />
+        <ModelEntryForm mdlEntryShow={mdlEntryShow} onSubmit={this.handleEntrySubmit} />
         <ModelPreview {...modelPreviewProps} />
       </>
     );
@@ -54,8 +54,8 @@ const mapStateToProps = state => ({
   mdlId: selectMdlId(state),
   mdlSchema: selectMdlSchema(state),
   mdlName: selectMdlName(state),
-  modelNameShow: selectMdlNameShow(state),
-  modelEntryShow: selectMdlEntryShow(state)
+  mdlNameShow: selectMdlNameShow(state),
+  mdlEntryShow: selectMdlEntryShow(state)
 });
 
 const mapDispatchToProps = dispatch => ({

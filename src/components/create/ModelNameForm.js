@@ -5,7 +5,7 @@ import styles from '../../styles.css';
 export default class ModelNameForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    modelNameShow: PropTypes.bool.isRequired
+    mdlNameShow: PropTypes.bool.isRequired
   }
 
   state = {
@@ -20,7 +20,7 @@ export default class ModelNameForm extends PureComponent {
   }
 
   render() {
-    const showHideClassName = this.props.modelNameShow ? 'display-block' : 'display-none';
+    const showHideClassName = this.props.mdlNameShow ? 'display-block' : 'display-none';
     return (
       <form className={styles[showHideClassName]} onSubmit={this.handleSubmit}>
         <label>

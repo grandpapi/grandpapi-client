@@ -13,6 +13,7 @@ import Docs from '../pages/Docs';
 import AboutApp from '../pages/AboutApp';
 import PublicApis from '../pages/PublicApis';
 import Login from '../pages/Login';
+import DatabaseDetail from '../pages/DatabaseDetail';
 
 export default function App() {
   return (
@@ -24,7 +25,8 @@ export default function App() {
         <Route exact path="/about" component={AboutApp} />
         <Route exact path="/docs" component={Docs} />
         <Route exact path="/apis" component={PublicApis} />
-        <Route path="/dashboard" component={withSession(Dashboard)} />
+        <Route path="/dashboard/:dbName" component={withSession(DatabaseDetail)}/>
+        <Route exact path="/dashboard" component={withSession(Dashboard)} />
         <Route exact path="/create" component={withSession(Create)} />
       </Switch>
     </Router>

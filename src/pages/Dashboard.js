@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { logout } from '../services/auth';
 import { Link } from 'react-router-dom';
 import DatabaseDisplay from '../containers/dashboard/DatabaseDisplay';
-import ModelDisplay from '../containers/dashboard/ModelDisplay';
 
 class Dashboard extends PureComponent {
   static propTypes = {
@@ -20,7 +19,6 @@ class Dashboard extends PureComponent {
         <button onClick={logout}>Log Out</button>
         <Link to="/create"><button>Create New API</button></Link>
         <DatabaseDisplay />
-        <ModelDisplay />
       </>
     );
   }
