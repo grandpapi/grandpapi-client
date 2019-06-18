@@ -1,10 +1,12 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import rejectDuplicateDbs from '../../utils/rejectDuplicates';
 
 export default class DbForm extends PureComponent {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
+    userDbs: PropTypes.array.isRequired
   }
 
   state = {
@@ -14,11 +16,13 @@ export default class DbForm extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit(this.state);
-    this.setState({
-      dbName: '',
-      publicAccess: true
-    });
+    if(rejectDuplicateDbs(this.props.userDbs, this.state.dbName)) {
+      this.props.onSubmit(this.state);
+      this.setState({
+        dbName: '',
+        publicAccess: true
+      });
+    }
   }
 
   handleChange = ({ target }) => {
