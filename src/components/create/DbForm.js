@@ -2,25 +2,27 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from '../../styles.css';
+import store from '../../store';
 
 export default class DbForm extends PureComponent {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
+    dbShow: PropTypes.bool.isRequired,
+    modelNameShow: PropTypes.bool.isRequired
   }
 
   state = {
     dbName: '',
-    publicAccess: true,
-    show: true
+    publicAccess: true
   }
 
   handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit(this.state);
+    store.getState().models.modelNameShow = true;
     this.setState({
       dbName: '',
-      publicAccess: true,
-      show: false
+      publicAccess: true
     });
   }
 
@@ -32,7 +34,7 @@ export default class DbForm extends PureComponent {
   }
   
   render() {
-    const showHideClassName = this.state.show ? 'display-block' : 'display-none';
+    const showHideClassName = this.props.dbShow ? 'display-block' : 'display-none';
     return (
       <form className={styles[showHideClassName]} onSubmit={this.handleSubmit}>
         <label>

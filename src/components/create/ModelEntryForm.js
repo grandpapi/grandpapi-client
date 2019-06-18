@@ -1,9 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../styles.css';
+
 
 export default class ModelEntryForm extends PureComponent {
     static propTypes = {
-      onSubmit: PropTypes.func.isRequired
+      onSubmit: PropTypes.func.isRequired,
+      modelEntryShow: PropTypes.bool.isRequired
     }
 
     state = {
@@ -19,8 +22,9 @@ export default class ModelEntryForm extends PureComponent {
     }
 
     render() {
+      const showHideClassName = this.props.modelEntryShow ? 'display-block' : 'display-none';
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form className={styles[showHideClassName]} onSubmit={this.handleSubmit}>
           <label>
                     Field Name:
             <input name="fieldName" onChange={this.handleChange} value={this.state.fieldName} />

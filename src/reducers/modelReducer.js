@@ -4,7 +4,9 @@ const initialState = {
   loading: false,
   mdlName: '',
   mdlSchema: '{}',
-  mdlId: ''
+  mdlId: '',
+  modelNameShow: false,
+  modelEntryShow: false
 };
 
 export default function reducer(state = initialState, action) {
