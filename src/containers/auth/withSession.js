@@ -6,14 +6,14 @@ import { connect } from 'react-redux';
 
 export const withSession = Component => {
   class WithSession extends PureComponent {
-        static propTypes = {
-          token: PropTypes.string.isRequired
-        }
+    static propTypes = {
+      token: PropTypes.string.isRequired
+    }
 
-        render() {
-          if(!this.props.token) return <Redirect to="/login" />;
-          return <Component />;
-        }
+    render() {
+      if(!this.props.token) return <Redirect to="/login" />;
+      return <Component />;
+    }
   }
 
   const mapStateToProps = state => ({
