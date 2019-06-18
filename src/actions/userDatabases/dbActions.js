@@ -1,8 +1,14 @@
 import { createAction } from 'promise-middleware-redux';
-import { postDb } from '../../services/dbMegaNapAPI';
+import { postDb, getDbs } from '../../services/dbMegaNapAPI';
 
 export const [
   createDb,
   CREATE_DB,
   CREATE_DB_PENDING
 ] = createAction('CREATE_DB', postDb);
+
+export const [
+  fetchDbs,
+  FETCH_DBS,
+  FETCH_DBS_PENDING
+] = createAction('FETCH_DBS', getDbs);

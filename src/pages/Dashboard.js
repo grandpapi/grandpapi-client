@@ -4,6 +4,7 @@ import { selectNickname } from '../selectors/sessionSelectors';
 import { connect } from 'react-redux';
 import { logout } from '../services/auth';
 import { Link } from 'react-router-dom';
+import DatabaseDisplay from '../containers/dashboard/DatabaseDisplay';
 
 class Dashboard extends PureComponent {
   static propTypes = {
@@ -14,9 +15,10 @@ class Dashboard extends PureComponent {
     const { nickname } = this.props;
     return (
       <>
-      <h1>Welcome to your dashboard, {nickname}!</h1>
-      <button onClick={logout}>Log Out</button>
-      <Link to="/create"><button>Create New API</button></Link>
+        <h1>Welcome to your dashboard, {nickname}!</h1>
+        <button onClick={logout}>Log Out</button>
+        <Link to="/create"><button>Create New API</button></Link>
+        <DatabaseDisplay />
       </>
     );
   }
