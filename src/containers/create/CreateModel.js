@@ -5,7 +5,7 @@ import ModelNameForm from '../../components/create/ModelNameForm';
 import ModelEntryForm from '../../components/create/ModelEntryForm';
 import { createModel, addEntry } from '../../actions/modelActions';
 import { selectDbId } from '../../selectors/dbSelectors';
-import { selectMdlId, selectMdlSchema, selectMdlName } from '../../selectors/modelSelectors';
+import { selectMdlId, selectMdlSchema, selectMdlName, selectMdlNameShow, selectMdlEntryShow } from '../../selectors/modelSelectors';
 import ModelPreview from '../../components/create/ModelPreview';
 
 class CreateModel extends PureComponent {
@@ -15,7 +15,14 @@ class CreateModel extends PureComponent {
     dbId: PropTypes.string.isRequired,
     mdlId: PropTypes.string.isRequired,
     mdlSchema: PropTypes.string.isRequired,
-    mdlName: PropTypes.string.isRequired
+    mdlName: PropTypes.string.isRequired,
+    modelNameShow: PropTypes.bool.isRequired,
+    modelEntryShow: PropTypes.bool.isRequired
+  }
+
+  state = {
+    nameFormShow: false,
+    entryFormShow: false
   }
 
   handleNameSubmit = state => {
@@ -30,12 +37,12 @@ class CreateModel extends PureComponent {
 
 
   render() {
-    const { mdlSchema, mdlName } = this.props;
+    const { mdlSchema, mdlName, modelNameShow, modelEntryShow } = this.props;
     const modelPreviewProps = { mdlSchema, mdlName };
     return (
       <>
-        <ModelNameForm onSubmit={this.handleNameSubmit} />
-        <ModelEntryForm onSubmit={this.handleEntrySubmit} />
+        <ModelNameForm modelNameShow={modelNameShow} onSubmit={this.handleNameSubmit} />
+        <ModelEntryForm modelEntryShow={modelEntryShow} onSubmit={this.handleEntrySubmit} />
         <ModelPreview {...modelPreviewProps} />
       </>
     );
@@ -46,7 +53,9 @@ const mapStateToProps = state => ({
   dbId: selectDbId(state),
   mdlId: selectMdlId(state),
   mdlSchema: selectMdlSchema(state),
-  mdlName: selectMdlName(state)
+  mdlName: selectMdlName(state),
+  modelNameShow: selectMdlNameShow(state),
+  modelEntryShow: selectMdlEntryShow(state)
 });
 
 const mapDispatchToProps = dispatch => ({

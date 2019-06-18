@@ -2,11 +2,14 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import rejectDuplicateDbs from '../../utils/rejectDuplicates';
+import styles from '../../styles.css';
+import store from '../../store';
 
 export default class DbForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    userDbs: PropTypes.array.isRequired
+    userDbs: PropTypes.array.isRequired,
+    dbShow: PropTypes.bool.isRequired
   }
 
   state = {
@@ -18,6 +21,7 @@ export default class DbForm extends PureComponent {
     event.preventDefault();
     if(rejectDuplicateDbs(this.props.userDbs, this.state.dbName)) {
       this.props.onSubmit(this.state);
+      store.getState().models.modelNameShow = true;
       this.setState({
         dbName: '',
         publicAccess: true
@@ -27,15 +31,15 @@ export default class DbForm extends PureComponent {
 
   handleChange = ({ target }) => {
     const value = target.type === 'checkbox' ? target.checked : target.value;
-
     this.setState({
       [target.name]: value
     });
   }
-
+  
   render() {
+    const showHideClassName = this.props.dbShow ? 'display-block' : 'display-none';
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={styles[showHideClassName]} onSubmit={this.handleSubmit}>
         <label>
           Database Name
           <input name="dbName" onChange={this.handleChange} value={this.state.dbName} />

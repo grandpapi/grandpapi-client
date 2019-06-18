@@ -1,23 +1,19 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { login } from '../../services/auth';
+import { Redirect } from 'react-router-dom';
 import { selectToken } from '../../selectors/sessionSelectors';
 import { connect } from 'react-redux';
 
 export const withSession = Component => {
   class WithSession extends PureComponent {
-        static propTypes = {
-          token: PropTypes.string.isRequired
-        }
+    static propTypes = {
+      token: PropTypes.string.isRequired
+    }
 
-        componentDidMount() {
-          if(!this.props.token) login();
-        }
-
-        render() {
-          if(!this.props.token) return <h1>Sorry you need to log in mate</h1>;
-          return <Component />;
-        }
+    render() {
+      if(!this.props.token) return <Redirect to="/login" />;
+      return <Component />;
+    }
   }
 
   const mapStateToProps = state => ({

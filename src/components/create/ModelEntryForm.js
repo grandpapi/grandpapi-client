@@ -1,32 +1,37 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../styles.css';
+
 
 export default class ModelEntryForm extends PureComponent {
-    static propTypes = {
-      onSubmit: PropTypes.func.isRequired
-    }
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    modelEntryShow: PropTypes.bool.isRequired
+  }
 
-    state = {
-      fieldName: '',
-      dataType: 'String'
-    }
+  state = {
+    fieldName: '',
+    dataType: 'String'
+  }
 
-    handleChange = ({ target }) => this.setState({ [target.name]: target.value });
+  handleChange = ({ target }) => this.setState({ [target.name]: target.value });
 
-    handleSubmit = event => {
-      event.preventDefault();
-      this.props.onSubmit(this.state);
-    }
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.onSubmit(this.state);
+  }
 
-    render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
+  render() {
+    const showHideClassName = this.props.modelEntryShow ? 'display-block' : 'display-none';
+    return (
+      <>
+        <form className={styles[showHideClassName]} onSubmit={this.handleSubmit}>
           <label>
-                    Field Name:
+            Field Name:
             <input name="fieldName" onChange={this.handleChange} value={this.state.fieldName} />
           </label>
           <label>
-                    Data Type:
+            Data Type:
             <select name="dataType" onChange={this.handleChange} value={this.state.dataType}>
               <option value="String">String</option>
               <option value="Number">Number</option>
@@ -37,6 +42,8 @@ export default class ModelEntryForm extends PureComponent {
           </label>
           <button>Save Entry</button>
         </form>
-      );
-    }
+        <button>Start New Model</button>
+      </>
+    );
+  }
 }
