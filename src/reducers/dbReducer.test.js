@@ -1,8 +1,11 @@
 import dbReducer from './dbReducer';
-import { CREATE_DB_PENDING, CREATE_DB } from '../actions/userDatabases/dbActions';
+import { CREATE_DB_PENDING, CREATE_DB, FETCH_DBS_PENDING, FETCH_DBS } from '../actions/userDatabases/dbActions';
 
-jest.mock('../services/megaNapAPI.js', () => ({
+jest.mock('../services/dbMegaNapAPI.js', () => ({
   postDb() {
+    return Promise.resolve([]);
+  },
+  getDbs() {
     return Promise.resolve([]);
   }
 }));
@@ -31,6 +34,43 @@ describe('db reducer reducer tests', () => {
     })).toEqual({
       loading: false,
       dbName: 'test name'
+    });
+  });
+
+  it('can handle a fetch dbs pending', () => {
+    const newInitialState = {
+      ...initialState,
+      dbId: '',
+      userDbs: []
+    };
+    expect(dbReducer(
+      newInitialState,
+      { type: FETCH_DBS_PENDING }
+    )).toEqual({
+      ...newInitialState,
+      loading: true
+    });
+  });
+  
+  it('can handle a fetch dbs action', () => {
+    const newInitialState = {
+      ...initialState,
+      dbId: '',
+      userDbs: []
+    };
+    expect(dbReducer(
+      newInitialState,
+      {
+        type: FETCH_DBS,
+        payload: [
+          { dbName: 'test', dbId: '123' }
+        ]
+      }
+    )).toEqual({
+      ...newInitialState,
+      userDbs: [
+        { dbName: 'test', dbId: '123' }
+      ]
     });
   });
 });
