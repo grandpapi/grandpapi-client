@@ -1,6 +1,6 @@
 import { selectToken, selectNickname, selectUserId } from './sessionSelectors';
 
-describe('note selectors tests', () => {
+describe('session selectors tests', () => {
   const state = {
     session: {
       nickname: 'test username',
