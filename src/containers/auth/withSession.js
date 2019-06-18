@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { login } from '../../services/auth';
+import { Redirect } from 'react-router-dom';
 import { selectToken } from '../../selectors/sessionSelectors';
 import { connect } from 'react-redux';
-import Login from '../../pages/Login';
 
 export const withSession = Component => {
   class WithSession extends PureComponent {
@@ -11,12 +10,8 @@ export const withSession = Component => {
           token: PropTypes.string.isRequired
         }
 
-        componentDidMount() {
-          if(!this.props.token) login();
-        }
-
         render() {
-          if(!this.props.token) return <Login />;
+          if(!this.props.token) return <Redirect to="/login" />;
           return <Component />;
         }
   }

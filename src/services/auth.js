@@ -5,10 +5,21 @@ const auth0 = new WebAuth({
   clientID: process.env.AUTH_CLIENT_ID,
   redirectUri: process.env.AUTH_REDIRECT_URI,
   responseType: 'token id_token',
-  scope: 'openid profile'
+  scope: 'openid profile',
 });
 
-export const login = () => auth0.authorize();
+export const signup = ({ email, username, password }) => auth0.redirect.signupAndLogin({
+  connection: 'Username-Password-Authentication',
+  email,
+  username,
+  password
+});
+
+export const login = ({ email, password }) => auth0.login({
+  realm: 'Username-Password-Authentication',
+  email,
+  password
+});
 
 export const logout = () => auth0.logout({
   returnTo: process.env.AUTH_LOGOUT_URL

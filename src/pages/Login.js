@@ -1,8 +1,8 @@
 import React from 'react';
-import LoginContainer from '../containers/login/LoginContainer';
+import LoginForm from '../components/login/LoginForm';
 
 export default function Login() {
   return (
-    <LoginContainer />
+    <LoginForm />
   );
 }
