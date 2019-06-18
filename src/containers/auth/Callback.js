@@ -28,7 +28,6 @@ const mapDispatchToProps = (dispatch, props) => ({
   }
 });
 
-
 export default connect(
   null,
   mapDispatchToProps
