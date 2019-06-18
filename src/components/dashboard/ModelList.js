@@ -4,7 +4,7 @@ import ModelLink from './ModelLink';
 
 export default function ModelList({ models }) {
   const modelList = models.map(({ _id, mdlName }) => {
-    <ModelLink key={_id} mdlName={mdlName}/>;
+    return <ModelLink key={_id} mdlName={mdlName}/>;
   });
 
   return (
