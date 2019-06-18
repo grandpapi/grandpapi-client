@@ -11,4 +11,4 @@ export default function ModelLink({ mdlName }) {
 
 ModelLink.propTypes = {
   mdlName: PropTypes.string.isRequired
-}
+};

@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ModelLink from './ModelLink';
 
-export default function ModelLink({ models }) {
+export default function ModelList({ models }) {
   const modelList = models.map(({ _id, mdlName }) => {
-    <ModelLink key={_id} mdlName={mdlName}/>
-  })
+    <ModelLink key={_id} mdlName={mdlName}/>;
+  });
+
   return (
     <ul>
       {modelList}
@@ -18,4 +19,4 @@ ModelList.propTypes = {
     _id: PropTypes.string.isRequired,
     mdlName: PropTypes.string.isRequired
   }))
-}
+};
