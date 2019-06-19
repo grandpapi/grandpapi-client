@@ -14,6 +14,7 @@ import AboutApp from '../pages/AboutApp';
 import PublicApis from '../pages/PublicApis';
 import Login from '../pages/Login';
 import DatabaseDetail from '../pages/DatabaseDetail';
+import ModelDetail from '../pages/ModelDetail';
 import { withoutSession } from '../containers/auth/withoutSession';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route exact path="/about" component={AboutApp} />
         <Route exact path="/docs" component={Docs} />
         <Route exact path="/apis" component={PublicApis} />
+        <Route path="/dashboard/:dbName/:mdlName" component={withSession(ModelDetail)}/>
         <Route path="/dashboard/:dbName" component={withSession(DatabaseDetail)}/>
         <Route exact path="/dashboard" component={withSession(Dashboard)} />
         <Route exact path="/create" component={withSession(Create)} />
