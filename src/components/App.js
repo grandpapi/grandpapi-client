@@ -20,7 +20,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={withoutSession(Home)} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/login" component={withoutSession(Login)} />
         <Route path="/callback" component={Callback} />
         <Route exact path="/about" component={AboutApp} />
