@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { checkSession } from '../../actions/sessionActions';
-import { auth0 } from '../../services/auth';
 import { selectToken } from '../../selectors/sessionSelectors';
 import { Redirect } from 'react-router-dom';
 
@@ -30,14 +29,7 @@ export const withoutSession = Component => {
 
   const mapDispatchToProps = dispatch => ({
     handleCheckSession() {
-      auth0.checkSession({}, (error, results) => {
-        if(error) return;
-        dispatch(checkSession({
-          userId: results.idTokenPayload.sub,
-          token: results.idToken,
-          nickname: results.idTokenPayload.nickname
-        }));
-      });
+      dispatch(checkSession());
     }
   });
 

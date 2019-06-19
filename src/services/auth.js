@@ -1,6 +1,6 @@
 import { WebAuth } from 'auth0-js';
 
-export const auth0 = new WebAuth({
+const auth0 = new WebAuth({
   domain: process.env.AUTH_DOMAIN,
   clientID: process.env.AUTH_CLIENT_ID,
   redirectUri: process.env.AUTH_REDIRECT_URI,
@@ -42,6 +42,22 @@ export const handleAuth = () => {
       }
       else {
         reject('Could not log in');
+      }
+    });
+  });
+};
+
+export const handleCheck = () => {
+  return new Promise((resolve, reject) => {
+    auth0.checkSession({}, (error, results) => {
+      if(results) {
+        return resolve({
+          userId: results.idTokenPayload.sub,
+          token: results.idToken,
+          nickname: results.idTokenPayload.nickname
+        });
+      } else {
+        reject(error);
       }
     });
   });
