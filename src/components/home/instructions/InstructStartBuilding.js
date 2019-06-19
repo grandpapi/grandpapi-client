@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BodyButton, StartBuildingSection } from '../../../styles';
 
 export default function InstructStartBuilding() {
   return (
-    <section>
-      <h2>Use your endpoints</h2>
-      <p>The final step is to use your endpoints in your frontend app!</p>
-      <Link to="/login">Start Building!</Link>
-    </section>
+    <StartBuildingSection>
+      <h2>Easy, right? So what are you waiting for? Sign up now and start making your dream fullstack app a reality! </h2>
+      <Link to="/login"><BodyButton>Start Building</BodyButton></Link>
+    </StartBuildingSection>
   );
 }
