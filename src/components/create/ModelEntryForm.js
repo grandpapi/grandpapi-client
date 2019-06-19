@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 export default class ModelEntryForm extends PureComponent {
   static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
+    addEntry: PropTypes.func.isRequired,
+    at: PropTypes.number.isRequired
   }
 
   state = {
@@ -13,15 +14,11 @@ export default class ModelEntryForm extends PureComponent {
 
   handleChange = ({ target }) => this.setState({ [target.name]: target.value });
 
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.onSubmit(this.state);
-  }
-
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <li>
+          {this.props.at}
           <label>
             Field Name:
             <input name="fieldName" onChange={this.handleChange} value={this.state.fieldName} />
@@ -36,9 +33,8 @@ export default class ModelEntryForm extends PureComponent {
               <option value="Image">Image</option>
             </select>
           </label>
-          <button>Save Entry</button>
-        </form>
-        <button>Start New Model</button>
+          <button type="button" onClick={this.props.addEntry}>Add Entry</button>
+        </li>
       </>
     );
   }
