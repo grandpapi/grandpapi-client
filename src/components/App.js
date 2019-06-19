@@ -18,6 +18,7 @@ import Login from '../pages/Login';
 import DatabaseDetail from '../pages/DatabaseDetail';
 import ModelDetail from '../pages/ModelDetail';
 import { withoutSession } from '../containers/auth/withoutSession';
+import DataCreation from '../pages/DataCreation';
 
 export default function App() {
   return (
@@ -34,7 +35,7 @@ export default function App() {
         <Route exact path="/dashboard" component={withSession(Dashboard)} />
         <Route exact path="/create/database" component={withSession(DatabaseCreation)} />
         <Route exact path="/create/model" component={withSession(ModelCreation)} />
-        {/* <Route exact path="/create/data" component={withSession(DataCreation)} /> */}
+        <Route exact path="/create/data" component={DataCreation} />
       </Switch>
     </Router>
   );
