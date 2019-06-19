@@ -1,11 +1,19 @@
 import modelReducer from './modelReducer';
-import { CREATE_MODEL, CREATE_MODEL_PENDING, ADD_ENTRY_PENDING, ADD_ENTRY } from '../actions/modelActions';
+import {
+  CREATE_MODEL,
+  CREATE_MODEL_PENDING,
+  ADD_ENTRY_PENDING,
+  ADD_ENTRY
+} from '../actions/modelActions';
 
 jest.mock('../services/modelMegaNapAPI.js', () => ({
   postModel() {
     return Promise.resolve([]);
   },
   patchModel() {
+    return Promise.resolve([]);
+  },
+  getModels() {
     return Promise.resolve([]);
   }
 }));

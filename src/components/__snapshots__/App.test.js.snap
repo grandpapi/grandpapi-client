@@ -11,6 +11,23 @@ exports[`App component renders App 1`] = `
     <Route
       component={[Function]}
       exact={true}
+      path="/login"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(Callback)",
+          "type": [Function],
+        }
+      }
+      path="/callback"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
       path="/about"
     />
     <Route
@@ -33,6 +50,19 @@ exports[`App component renders App 1`] = `
           "type": [Function],
         }
       }
+      path="/dashboard/:dbName"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithSession)",
+          "type": [Function],
+        }
+      }
+      exact={true}
       path="/dashboard"
     />
     <Route
@@ -47,18 +77,6 @@ exports[`App component renders App 1`] = `
       }
       exact={true}
       path="/create"
-    />
-    <Route
-      component={
-        Object {
-          "$$typeof": Symbol(react.memo),
-          "WrappedComponent": [Function],
-          "compare": null,
-          "displayName": "Connect(Callback)",
-          "type": [Function],
-        }
-      }
-      path="/callback"
     />
   </Switch>
 </BrowserRouter>
