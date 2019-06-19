@@ -31,15 +31,22 @@ class CreateModel extends PureComponent {
     confirmed: false
   }
 
-  handleEntrySubmit = state => {
-    state.mdlId = this.props.currentModel.mdlId;
-    this.setState({ entryCounter: this.state.entryCounter + 1 });
-    // this.props.onEntrySubmit(state);
-  }
-
   handleChange = ({ target }) => this.setState({ [target.name]: target.value });
 
-  addEntry = () => this.setState({ entryCounter: this.state.entryCounter + 1 });
+  handleEntryChange = (entry, at) => {
+    this.setState({
+      mdlSchema: {
+        ...this.state.mdlSchema,
+        [at]: { [entry.fieldName]: entry.dataType }
+      }
+    });
+  }
+
+  addEntry = () => {
+    this.setState({
+      entryCounter: this.state.entryCounter + 1
+    });
+  }
 
   handleSubmit = event => {
     event.preventDefault();
@@ -58,7 +65,12 @@ class CreateModel extends PureComponent {
     const { mdlSchema, currentModel, currentDatabase } = this.props;
     if(this.state.confirmed) return <Redirect to={`/dashboard/${currentDatabase.dbName}`} />;
     // const modelPreviewProps = { mdlSchema, currentModel };
-    const modelEntries = [...Array(this.state.entryCounter)].map((_, i) => <ModelEntryForm key={i} at={i} addEntry={this.addEntry} />);
+    const modelEntries = [...Array(this.state.entryCounter)]
+      .map((_, i) => <ModelEntryForm
+        key={i}
+        at={i}
+        handleEntryChange={this.handleEntryChange}
+      />);
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
@@ -68,6 +80,7 @@ class CreateModel extends PureComponent {
         <ul>
           {modelEntries}
         </ul>
+        <button type="button" onClick={this.addEntry}>Add Entry</button>
         {/* <ModelPreview {...modelPreviewProps} /> */}
         <button>Finish Model</button>
       </form>
