@@ -1,32 +1,28 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import rejectDuplicates from '../../utils/rejectDuplicates';
-import styles from '../../styles.css';
-import store from '../../store';
 
 export default class DbForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
     userDbs: PropTypes.array.isRequired,
-    dbShow: PropTypes.bool.isRequired
   }
 
   state = {
     dbName: '',
-    publicAccess: true
+    publicAccess: true,
+    confirmed: false
   }
 
   handleSubmit = event => {
     event.preventDefault();
     if(rejectDuplicates(this.props.userDbs, this.state.dbName)) {
       this.props.onSubmit(this.state);
-      //need to refactor to dispatch action!
-      store.getState().models.mdlNameShow = true;
-      store.getState().models.addNewMdlShow = true;
       this.setState({
         dbName: '',
-        publicAccess: true
+        publicAccess: true,
+        confirmed: true
       });
     }
   }
@@ -39,9 +35,9 @@ export default class DbForm extends PureComponent {
   }
 
   render() {
-    const showHideClassName = this.props.dbShow ? 'display-block' : 'display-none';
+    if(this.state.confirmed) return <Redirect to="/create/model" />;
     return (
-      <form className={styles[showHideClassName]} onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label>
           Database Name
           <input name="dbName" onChange={this.handleChange} value={this.state.dbName} />
@@ -53,6 +49,7 @@ export default class DbForm extends PureComponent {
         {/* consider changing state to update text */}
         <p>{this.state.publicAccess ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</p>
         <Link to="/dashboard">cancel</Link>
+        <Link to="/create/model">Create a Model Link</Link>
         <button>Confirm and Create Model</button>
       </form>
     );

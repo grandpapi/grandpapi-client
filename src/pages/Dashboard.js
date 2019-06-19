@@ -17,7 +17,7 @@ class Dashboard extends PureComponent {
       <>
         <h1>Welcome to your dashboard, {nickname}!</h1>
         <button onClick={logout}>Log Out</button>
-        <Link to="/create"><button>Create New API</button></Link>
+        <Link to="/create/database"><button>Create New API</button></Link>
         <DatabaseDisplay />
       </>
     );

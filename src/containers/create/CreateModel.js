@@ -5,7 +5,7 @@ import ModelNameForm from '../../components/create/ModelNameForm';
 import ModelEntryForm from '../../components/create/ModelEntryForm';
 import { createModel, addEntry } from '../../actions/modelActions';
 import { selectDbId } from '../../selectors/dbSelectors';
-import { selectMdlId, selectMdlSchema, selectMdlName, selectMdlNameShow, selectMdlEntryShow, selectDbMdls, selectAddNewMdlShow } from '../../selectors/modelSelectors';
+import { selectMdlId, selectMdlSchema, selectMdlName, selectDbMdls } from '../../selectors/modelSelectors';
 import ModelPreview from '../../components/create/ModelPreview';
 
 class CreateModel extends PureComponent {
@@ -16,15 +16,7 @@ class CreateModel extends PureComponent {
     mdlId: PropTypes.string.isRequired,
     mdlSchema: PropTypes.string.isRequired,
     mdlName: PropTypes.string.isRequired,
-    mdlNameShow: PropTypes.bool.isRequired,
-    mdlEntryShow: PropTypes.bool.isRequired,
-    dbMdls: PropTypes.array.isRequired,
-    addNewMdlShow: PropTypes.bool.isRequired
-  }
-
-  state = {
-    nameFormShow: false,
-    entryFormShow: false
+    dbMdls: PropTypes.array.isRequired
   }
 
   handleNameSubmit = state => {
@@ -37,14 +29,13 @@ class CreateModel extends PureComponent {
     this.props.onEntrySubmit(state);
   }
 
-
   render() {
-    const { mdlSchema, mdlName, mdlNameShow, mdlEntryShow, dbMdls, addNewMdlShow } = this.props;
+    const { mdlSchema, mdlName, dbMdls } = this.props;
     const modelPreviewProps = { mdlSchema, mdlName };
     return (
       <>
-        <ModelNameForm mdlNameShow={mdlNameShow} onSubmit={this.handleNameSubmit} dbMdls={dbMdls} />
-        <ModelEntryForm mdlEntryShow={mdlEntryShow} addNewMdlShow={addNewMdlShow} onSubmit={this.handleEntrySubmit} />
+        <ModelNameForm onSubmit={this.handleNameSubmit} dbMdls={dbMdls} />
+        <ModelEntryForm onSubmit={this.handleEntrySubmit} />
         <ModelPreview {...modelPreviewProps} />
       </>
     );
@@ -56,10 +47,7 @@ const mapStateToProps = state => ({
   mdlId: selectMdlId(state),
   mdlSchema: selectMdlSchema(state),
   mdlName: selectMdlName(state),
-  mdlNameShow: selectMdlNameShow(state),
-  mdlEntryShow: selectMdlEntryShow(state),
-  dbMdls: (selectDbMdls(state) || []),
-  addNewMdlShow: selectAddNewMdlShow(state)
+  dbMdls: selectDbMdls(state)
 });
 
 const mapDispatchToProps = dispatch => ({

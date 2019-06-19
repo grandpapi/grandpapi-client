@@ -1,13 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import styles from '../../styles.css';
-
 
 export default class ModelEntryForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    mdlEntryShow: PropTypes.bool.isRequired,
-    // addNewMdlShow: PropTypes.bool.isRequired
   }
 
   state = {
@@ -22,16 +18,10 @@ export default class ModelEntryForm extends PureComponent {
     this.props.onSubmit(this.state);
   }
 
-  // handleNewModelClick = () => {
-  //   console.log('button click');
-  //   console.log('props', this.props);
-  //   store.getState().models.mdlEntryShow = false;
-  // }
   render() {
-    const showHideClassName = this.props.mdlEntryShow ? 'display-block' : 'display-none';
     return (
       <>
-        <form className={styles[showHideClassName]} onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label>
             Field Name:
             <input name="fieldName" onChange={this.handleChange} value={this.state.fieldName} />
@@ -48,7 +38,7 @@ export default class ModelEntryForm extends PureComponent {
           </label>
           <button>Save Entry</button>
         </form>
-        <button className={styles[showHideClassName]}>Start New Model</button>
+        <button>Start New Model</button>
       </>
     );
   }
