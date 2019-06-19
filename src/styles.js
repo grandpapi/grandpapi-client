@@ -27,8 +27,8 @@ export const BodyButton = styled.button`
   text-transform: uppercase;
   font-weight: bold;
   font-family: 'Oxygen', sans-serif;
-  padding: .8rem 1rem;
-  font-size: 1rem;
+  padding: .8rem 1.4rem;
+  font-size: 1.3rem;
   border: none;
   background-color: #b0e2ab;
 `;
@@ -117,9 +117,53 @@ export const HeroButton = styled.button`
   text-transform: uppercase;
   font-weight: bold;
   font-family: 'Oxygen', sans-serif;
-  padding: .8rem 1rem;
-  font-size: 1rem;
+  padding: .8rem 1.4rem;
+  font-size: 1.3rem;  
   border: none;
   background-color: #eaefbd;
 `;
+
+export const InstructContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img: {
+    height: 18rem;
+  }
+
+`;
+
+export const IntroSection = styled.section`
+  text-align: center;
+  width: 70%;
+  margin: 10rem 0;
+`;
+
+export const StartBuildingSection = styled.section`
+  margin-bottom: 6rem;
+  padding-top: 3rem;
+  border-top: .625rem solid #b0e2ab;
+  text-align: center;
+  width: 70%;
+`;
+
+export const IntroLtoR = styled.section`
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 10rem;
+  width: 83%;
+`;
+
+export const IntroGutterSpace = styled.section`
+  margin-right: 4rem;
+`;
+
+export const IntroRtoL = styled.section`
+  display: flex;
+  margin-bottom: 10rem;
+  width: 83%;
+`;
+
+
 //
