@@ -7,7 +7,7 @@ export default function Hero() {
     <HeroSection>
       <HeroTaglineSection>
         <H1>Make an app<br /> with Mega Nap.</H1>
-        <p>Create a database, receive endpoints, and integrate into your frontend app in minutes.</p>
+        <p>Create a database, enter data, and get frontend-ready endpoints in minutes.</p>
         <Link to="/login"><HeroButton>Start Building</HeroButton></Link>
       </HeroTaglineSection>
       <HeroImageSection>
