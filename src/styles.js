@@ -38,8 +38,9 @@ export const PinkSpan = styled.span`
 `;
 
 export const FooterContainer = styled.footer`
-    display: flex;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #442c1d;
   padding: 1em;
   ul {
@@ -58,6 +59,15 @@ export const FooterContainer = styled.footer`
     text-transform: uppercase;
 `;
 
+export const FooterTagline = styled.section`
+  p {
+    color: #b0e2ab;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+`;
+
 //HOME PAGE COMPONENTS
 
 export const HeroSection = styled.section`
@@ -70,7 +80,6 @@ export const HeroSection = styled.section`
 
 export const HeroTaglineSection = styled.section`
   margin: 0 7%;
-
   color: red;
 `;
 
