@@ -27,3 +27,12 @@ p {
     font-size: 1rem;
     font-weight: bold;
 }
+
+.styledBrownNavLink {
+    color: #eaefbd;
+    text-decoration: none;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}

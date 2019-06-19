@@ -1,5 +1,23 @@
 import styled from 'styled-components';
 
+//GLOBAL COMPONENTS
+
+export const NavContainer = styled.nav`
+  display: flex;
+  justify-content: center;
+  background-color: #442c1d;
+  padding: 1em;
+  ul {
+    display: flex;
+  }
+  li {
+    display: inline-block;
+    margin: 0rem 2rem;
+    list-style: none;
+    color: white;
+  }
+`;
+
 //HOME PAGE COMPONENTS
 
 export const HeroSection = styled.section`
@@ -25,11 +43,6 @@ export const SplashHeaderContainer = styled.header`
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 
-`;
-
-export const StyledNavLink = styled.span`
-  color: red;
-  text-decoration: none;
 `;
 
 export const NavLogo = styled.img`
