@@ -20,13 +20,29 @@ export default function reducer(state = initialState, action) {
     case CREATE_MODEL_PENDING:
     case ADD_ENTRY_PENDING:
     case FETCH_MODELS_PENDING:
-      return { ...state, loading: true };
+      return {
+        ...state,
+        loading: true
+      };
     case CREATE_MODEL:
-      return { ...state, loading: false, mdlName: action.payload.mdlName, mdlId: action.payload._id };
+      return {
+        ...state,
+        loading: false,
+        mdlName: action.payload.mdlName,
+        mdlId: action.payload._id
+      };
     case ADD_ENTRY:
-      return { ...state, loading: false, mdlSchema: action.payload.mdlSchema };
+      return {
+        ...state,
+        loading: false,
+        mdlSchema: action.payload.mdlSchema
+      };
     case FETCH_MODELS:
-      return { ...state, loading: false, dbMdls: action.payload };
+      return {
+        ...state,
+        loading: false,
+        dbMdls: action.payload
+      };
     default:
       return state;
   }
