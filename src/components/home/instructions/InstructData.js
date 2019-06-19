@@ -1,11 +1,12 @@
 import React from 'react';
 import { PinkSpan, IntroLtoR, IntroGutterSpace } from '../../../styles';
+import dataGraphic from '../../../../assets/data.png';
 
 export default function InstructData() {
   return (
     <IntroLtoR>
       <section>
-        <img src="assets/data.png" />
+        <img src={dataGraphic} />
       </section>
       <IntroGutterSpace>
         <h2><PinkSpan>Step Three:</PinkSpan> Add your data.</h2>

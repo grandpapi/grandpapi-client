@@ -4,6 +4,30 @@ import { SET_SESSION } from '../actions/sessionActions';
 jest.mock('../services/auth.js', () => ({
   handleAuth() {
     return Promise.resolve([]);
+  },
+  handleCheck() {
+    return Promise.resolve([]);
+  }
+}));
+
+jest.mock('../services/dbMegaNapAPI.js', () => ({
+  postDb() {
+    return Promise.resolve([]);
+  },
+  getDbs() {
+    return Promise.resolve([]);
+  }
+}));
+
+jest.mock('../services/modelMegaNapAPI.js', () => ({
+  postModel() {
+    return Promise.resolve([]);
+  },
+  patchModel() {
+    return Promise.resolve([]);
+  },
+  getModels() {
+    return Promise.resolve([]);
   }
 }));
 

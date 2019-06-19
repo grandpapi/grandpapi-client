@@ -9,6 +9,31 @@ exports[`App component renders App 1`] = `
       path="/"
     />
     <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithoutSession)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/login"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(Callback)",
+          "type": [Function],
+        }
+      }
+      path="/callback"
+    />
+    <Route
       component={[Function]}
       exact={true}
       path="/about"
@@ -33,6 +58,31 @@ exports[`App component renders App 1`] = `
           "type": [Function],
         }
       }
+      path="/dashboard/:dbName/:mdlName"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithSession)",
+          "type": [Function],
+        }
+      }
+      path="/dashboard/:dbName"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithSession)",
+          "type": [Function],
+        }
+      }
+      exact={true}
       path="/dashboard"
     />
     <Route
@@ -46,7 +96,7 @@ exports[`App component renders App 1`] = `
         }
       }
       exact={true}
-      path="/create"
+      path="/create/database"
     />
     <Route
       component={
@@ -54,11 +104,12 @@ exports[`App component renders App 1`] = `
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
-          "displayName": "Connect(Callback)",
+          "displayName": "Connect(WithSession)",
           "type": [Function],
         }
       }
-      path="/callback"
+      exact={true}
+      path="/create/model"
     />
   </Switch>
 </BrowserRouter>

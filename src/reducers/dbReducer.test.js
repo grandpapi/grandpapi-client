@@ -1,5 +1,5 @@
 import dbReducer from './dbReducer';
-import { CREATE_DB_PENDING, CREATE_DB, FETCH_DBS_PENDING, FETCH_DBS } from '../actions/userDatabases/dbActions';
+import { CREATE_DB_PENDING, FETCH_DBS_PENDING, FETCH_DBS } from '../actions/userDatabases/dbActions';
 
 jest.mock('../services/dbMegaNapAPI.js', () => ({
   postDb() {
@@ -22,18 +22,6 @@ describe('db reducer reducer tests', () => {
     })).toEqual({
       loading: true,
       dbName: ''
-    });
-  });
-
-  it('can handle a post to db', () => {
-    expect(dbReducer({ ...initialState, loading: true }, {
-      type: CREATE_DB,
-      payload: {
-        dbName: 'test name'
-      }
-    })).toEqual({
-      loading: false,
-      dbName: 'test name'
     });
   });
 
