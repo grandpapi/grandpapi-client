@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import rejectDuplicateDbs from '../../utils/rejectDuplicates';
+import rejectDuplicates from '../../utils/rejectDuplicates';
 import styles from '../../styles.css';
 import store from '../../store';
 
@@ -19,7 +19,7 @@ export default class DbForm extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    if(rejectDuplicateDbs(this.props.userDbs, this.state.dbName)) {
+    if(rejectDuplicates(this.props.userDbs, this.state.dbName)) {
       this.props.onSubmit(this.state);
       store.getState().models.mdlNameShow = true;
       this.setState({
