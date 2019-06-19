@@ -31,6 +31,7 @@ export const withoutSession = Component => {
   const mapDispatchToProps = dispatch => ({
     handleCheckSession() {
       auth0.checkSession({}, (error, results) => {
+        if(error) return;
         dispatch(checkSession({
           userId: results.idTokenPayload.sub,
           token: results.idToken,
