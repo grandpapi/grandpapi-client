@@ -15,13 +15,14 @@ import PublicApis from '../pages/PublicApis';
 import Login from '../pages/Login';
 import DatabaseDetail from '../pages/DatabaseDetail';
 import ModelDetail from '../pages/ModelDetail';
+import { withoutSession } from '../containers/auth/withoutSession';
 
 export default function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/login" component={withoutSession(Login)} />
         <Route path="/callback" component={Callback} />
         <Route exact path="/about" component={AboutApp} />
         <Route exact path="/docs" component={Docs} />

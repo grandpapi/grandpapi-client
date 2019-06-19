@@ -5,7 +5,7 @@ import ModelNameForm from '../../components/create/ModelNameForm';
 import ModelEntryForm from '../../components/create/ModelEntryForm';
 import { createModel, addEntry } from '../../actions/modelActions';
 import { selectDbId } from '../../selectors/dbSelectors';
-import { selectMdlId, selectMdlSchema, selectMdlName, selectMdlNameShow, selectMdlEntryShow } from '../../selectors/modelSelectors';
+import { selectMdlId, selectMdlSchema, selectMdlName, selectMdlNameShow, selectMdlEntryShow, selectDbMdls, selectAddNewMdlShow } from '../../selectors/modelSelectors';
 import ModelPreview from '../../components/create/ModelPreview';
 
 class CreateModel extends PureComponent {
@@ -17,7 +17,9 @@ class CreateModel extends PureComponent {
     mdlSchema: PropTypes.string.isRequired,
     mdlName: PropTypes.string.isRequired,
     mdlNameShow: PropTypes.bool.isRequired,
-    mdlEntryShow: PropTypes.bool.isRequired
+    mdlEntryShow: PropTypes.bool.isRequired,
+    dbMdls: PropTypes.array.isRequired,
+    addNewMdlShow: PropTypes.bool.isRequired
   }
 
   state = {
@@ -37,12 +39,12 @@ class CreateModel extends PureComponent {
 
 
   render() {
-    const { mdlSchema, mdlName, mdlNameShow, mdlEntryShow } = this.props;
+    const { mdlSchema, mdlName, mdlNameShow, mdlEntryShow, dbMdls, addNewMdlShow } = this.props;
     const modelPreviewProps = { mdlSchema, mdlName };
     return (
       <>
-        <ModelNameForm mdlNameShow={mdlNameShow} onSubmit={this.handleNameSubmit} />
-        <ModelEntryForm mdlEntryShow={mdlEntryShow} onSubmit={this.handleEntrySubmit} />
+        <ModelNameForm mdlNameShow={mdlNameShow} onSubmit={this.handleNameSubmit} dbMdls={dbMdls} />
+        <ModelEntryForm mdlEntryShow={mdlEntryShow} addNewMdlShow={addNewMdlShow} onSubmit={this.handleEntrySubmit} />
         <ModelPreview {...modelPreviewProps} />
       </>
     );
@@ -55,7 +57,9 @@ const mapStateToProps = state => ({
   mdlSchema: selectMdlSchema(state),
   mdlName: selectMdlName(state),
   mdlNameShow: selectMdlNameShow(state),
-  mdlEntryShow: selectMdlEntryShow(state)
+  mdlEntryShow: selectMdlEntryShow(state),
+  dbMdls: (selectDbMdls(state) || []),
+  addNewMdlShow: selectAddNewMdlShow(state)
 });
 
 const mapDispatchToProps = dispatch => ({
