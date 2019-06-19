@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { H1, HeroSection, HeroButton, HeroTaglineSection, HeroImageSection } from '../../styles';
+import splashHeroHeart from '../../../assets/spash-hero-heart.png';
 
 export default function Hero() {
   return (
@@ -11,7 +12,7 @@ export default function Hero() {
         <Link to="/login"><HeroButton>Start Building</HeroButton></Link>
       </HeroTaglineSection>
       <HeroImageSection>
-        <img src="assets/spash-hero-heart.png" />
+        <img src={splashHeroHeart} />
       </HeroImageSection>
 
     </HeroSection>
