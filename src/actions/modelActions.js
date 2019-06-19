@@ -4,8 +4,7 @@ import { postModel, patchModel, getModels } from '../services/modelMegaNapAPI';
 export const [
   createModel,
   CREATE_MODEL,
-  CREATE_MODEL_PENDING,
-  CREATE_MODEL_FULFILLED
+  CREATE_MODEL_PENDING
 ] = createAction('CREATE_MODEL', postModel);
 
 export const [

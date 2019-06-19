@@ -1,11 +1,16 @@
 import React from 'react';
+import { PinkSpan, IntroRtoL, IntroGutterSpace } from '../../../styles';
 
 export default function InstructModel() {
   return (
-    <section>
-      <h2>Create your models</h2>
-      <p>The second step in creating your API is create a model.</p>
-      <button>Next</button>
-    </section>
+    <IntroRtoL>
+      <IntroGutterSpace>
+        <img src="assets/models.png" />
+      </IntroGutterSpace>
+      <section>
+        <h2><PinkSpan>Step Two:</PinkSpan> Create some models.</h2>
+        <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
+      </section>
+    </IntroRtoL>
   );
 }

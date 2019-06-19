@@ -1,3 +1,26 @@
+:root {
+    font-size: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #442c1d;
+}
+
+h2 {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 36px;
+    color: #442c1d;
+}
 .display-block {
     display: block;
   }
@@ -5,3 +28,20 @@
   .display-none {
     display: none;
   }
+
+.styledNavLink {
+    color: #ff0098;
+    text-decoration: none;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.styledBrownNavLink {
+    color: #eaefbd;
+    text-decoration: none;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}

@@ -1,11 +1,16 @@
 import React from 'react';
+import { PinkSpan, IntroLtoR, IntroGutterSpace } from '../../../styles';
 
 export default function InstructDb() {
   return (
-    <section>
-      <h2>Give your database a name.</h2>
-      <p>The first step in creating your API is to start a new database. Choose a name relevant to your project.</p>
-      <button>Next</button>
-    </section>
+    <IntroLtoR>
+      <section>
+        <img src="assets/database.png" />
+      </section>
+      <IntroGutterSpace>
+        <h2><PinkSpan>Step One:</PinkSpan> Create a database and give it a name.</h2>
+        <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
+      </IntroGutterSpace>
+    </IntroLtoR>
   );
 }
