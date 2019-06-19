@@ -22,6 +22,7 @@ export default class DbForm extends PureComponent {
     if(rejectDuplicateDbs(this.props.userDbs, this.state.dbName)) {
       this.props.onSubmit(this.state);
       store.getState().models.mdlNameShow = true;
+      store.getState().models.addNewMdlShow = true;
       this.setState({
         dbName: '',
         publicAccess: true
