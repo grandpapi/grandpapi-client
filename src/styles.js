@@ -62,8 +62,20 @@ export const FooterContainer = styled.footer`
 
 export const HeroSection = styled.section`
   display: flex;
+  justify-content: space-around;
   background-color: #b0e2ab;
   padding-top: 2rem;
+  padding-bottom: 4rem;
+`;
+
+export const HeroTaglineSection = styled.section`
+  margin: 0 7%;
+
+  color: red;
+`;
+
+export const HeroImageSection = styled.section`
+  margin-right: 7%;
 `;
 
 export const H1 = styled.h1`
