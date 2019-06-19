@@ -1,4 +1,9 @@
-import { CREATE_DB, CREATE_DB_PENDING, FETCH_DBS, FETCH_DBS_PENDING, CREATE_DB_FULFILLED } from '../actions/userDatabases/dbActions';
+import {
+  CREATE_DB,
+  CREATE_DB_PENDING,
+  FETCH_DBS, FETCH_DBS_PENDING,
+  CREATE_DB_FULFILLED
+} from '../actions/userDatabases/dbActions';
 
 const initialState = {
   loading: false,
