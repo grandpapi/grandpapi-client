@@ -46,3 +46,19 @@ export const handleAuth = () => {
     });
   });
 };
+
+export const handleCheck = () => {
+  return new Promise((resolve, reject) => {
+    auth0.checkSession({}, (error, results) => {
+      if(results) {
+        return resolve({
+          userId: results.idTokenPayload.sub,
+          token: results.idToken,
+          nickname: results.idTokenPayload.nickname
+        });
+      } else {
+        reject(error);
+      }
+    });
+  });
+};

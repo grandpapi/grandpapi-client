@@ -6,7 +6,8 @@ import styles from '../../styles.css';
 export default class ModelEntryForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    mdlEntryShow: PropTypes.bool.isRequired
+    mdlEntryShow: PropTypes.bool.isRequired,
+    // addNewMdlShow: PropTypes.bool.isRequired
   }
 
   state = {
@@ -21,6 +22,11 @@ export default class ModelEntryForm extends PureComponent {
     this.props.onSubmit(this.state);
   }
 
+  // handleNewModelClick = () => {
+  //   console.log('button click');
+  //   console.log('props', this.props);
+  //   store.getState().models.mdlEntryShow = false;
+  // }
   render() {
     const showHideClassName = this.props.mdlEntryShow ? 'display-block' : 'display-none';
     return (
@@ -42,7 +48,7 @@ export default class ModelEntryForm extends PureComponent {
           </label>
           <button>Save Entry</button>
         </form>
-        <button>Start New Model</button>
+        <button className={styles[showHideClassName]}>Start New Model</button>
       </>
     );
   }

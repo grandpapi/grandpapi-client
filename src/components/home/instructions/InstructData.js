@@ -1,11 +1,16 @@
 import React from 'react';
+import { PinkSpan, IntroLtoR, IntroGutterSpace } from '../../../styles';
 
 export default function InstructData() {
   return (
-    <section>
-      <h2>Add data!</h2>
-      <p>The third step in creating your API is to add data to your database using your models</p>
-      <button>Next</button>
-    </section>
+    <IntroLtoR>
+      <section>
+        <img src="assets/data.png" />
+      </section>
+      <IntroGutterSpace>
+        <h2><PinkSpan>Step Three:</PinkSpan> Add your data.</h2>
+        <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
+      </IntroGutterSpace>
+    </IntroLtoR>
   );
 }

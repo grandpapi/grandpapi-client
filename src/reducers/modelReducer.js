@@ -15,6 +15,7 @@ const initialState = {
   mdlId: '',
   mdlNameShow: false,
   mdlEntryShow: false,
+  addNewMdlShow: false,
   dbMdls: []
 };
 
