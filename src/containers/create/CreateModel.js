@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ModelEntryForm from '../../components/create/ModelEntryForm';
-import { createModel, addEntry } from '../../actions/modelActions';
+import { createModel } from '../../actions/modelActions';
 import { selectMdlId, selectMdlSchema, selectMdlName, selectDbMdls } from '../../selectors/modelSelectors';
 // import ModelPreview from '../../components/create/ModelPreview';
 import { selectCurrentDatabase, selectCurrentModel } from '../../selectors/sessionSelectors';
 import rejectDuplicates from '../../utils/rejectDuplicates';
+import stateToSchema from '../../utils/stateToSchema';
 
 class CreateModel extends PureComponent {
   static propTypes = {
@@ -50,8 +51,15 @@ class CreateModel extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    if(rejectDuplicates(this.props.dbMdls, this.state.mdlName)) {
-      this.props.onSubmit(this.state);
+    const { dbMdls, currentDatabase: { dbId } } = this.props;
+    const { mdlName, mdlSchema } = this.state;
+    if(rejectDuplicates(dbMdls, mdlName)) {
+      const model = {
+        mdlName,
+        mdlSchema: stateToSchema(mdlSchema),
+        dbId
+      };
+      this.props.onSubmit(model);
       this.setState({
         entryCounter: 1,
         mdlName: '',
