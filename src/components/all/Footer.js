@@ -1,15 +1,15 @@
 import React from 'react';
+import { FooterContainer, StyledNavUl } from '../../styles';
 
 export default function Footer() {
   return (
-    <footer>
-      <ul>
+    <FooterContainer>
+      <StyledNavUl>
         <li>About Us</li>
         <li>Careers</li>
         <li>Privacy Policy</li>
         <li>Public APIs</li>
-      </ul>
-    </footer>
+      </StyledNavUl>
+    </FooterContainer>
   );
 }
-

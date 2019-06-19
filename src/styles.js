@@ -18,6 +18,10 @@ export const NavContainer = styled.nav`
   }
 `;
 
+export const StyledNavUl = styled.ul`
+    padding-inline-start: 0;
+`;
+
 export const BodyButton = styled.button`
   color: #ff0098;
   text-transform: uppercase;
@@ -32,6 +36,28 @@ export const BodyButton = styled.button`
 export const PinkSpan = styled.span`
   color: #ff0098;
 `;
+
+export const FooterContainer = styled.footer`
+    display: flex;
+  justify-content: center;
+  background-color: #442c1d;
+  padding: 1em;
+  ul {
+    display: flex;
+  }
+  li {
+    display: inline-block;
+    margin: 0rem 2rem;
+    list-style: none;
+    color: #b0e2ab;
+  }
+    text-decoration: none;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+`;
+
 //HOME PAGE COMPONENTS
 
 export const HeroSection = styled.section`
