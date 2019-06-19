@@ -1,4 +1,4 @@
-import { selectDbId, selectUserDbs } from './dbSelectors';
+import { selectUserDbs } from './dbSelectors';
 
 describe('db selectors tests', () => {
   const state = {
@@ -9,9 +9,6 @@ describe('db selectors tests', () => {
       userDbs: [{ test: 'database' }]
     }
   };
-  it('selects db id', () => {
-    expect(selectDbId(state)).toEqual('test id');
-  });
 
   it('selects user dbs', () => {
     expect(selectUserDbs(state)).toEqual([{ test: 'database' }]);

@@ -9,7 +9,15 @@ exports[`App component renders App 1`] = `
       path="/"
     />
     <Route
-      component={[Function]}
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithoutSession)",
+          "type": [Function],
+        }
+      }
       exact={true}
       path="/login"
     />
@@ -50,6 +58,18 @@ exports[`App component renders App 1`] = `
           "type": [Function],
         }
       }
+      path="/dashboard/:dbName/:mdlName"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithSession)",
+          "type": [Function],
+        }
+      }
       path="/dashboard/:dbName"
     />
     <Route
@@ -76,7 +96,20 @@ exports[`App component renders App 1`] = `
         }
       }
       exact={true}
-      path="/create"
+      path="/create/database"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithSession)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/create/model"
     />
   </Switch>
 </BrowserRouter>

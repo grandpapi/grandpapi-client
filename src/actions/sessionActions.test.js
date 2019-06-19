@@ -3,6 +3,9 @@ import { setSession } from './sessionActions';
 jest.mock('../services/auth.js', () => ({
   handleAuth() {
     return Promise.resolve([]);
+  },
+  handleCheck() {
+    return Promise.resolve([]);
   }
 }));
 
