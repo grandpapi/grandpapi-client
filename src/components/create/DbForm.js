@@ -49,7 +49,6 @@ export default class DbForm extends PureComponent {
         {/* consider changing state to update text */}
         <p>{this.state.publicAccess ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</p>
         <Link to="/dashboard">cancel</Link>
-        <Link to="/create/model">Create a Model Link</Link>
         <button>Confirm and Create Model</button>
       </form>
     );

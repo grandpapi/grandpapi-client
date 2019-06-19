@@ -11,7 +11,8 @@ const initialState = {
   },
   currentModel: {
     mdlName: '',
-    mdlId: ''
+    mdlId: '',
+    mdlSchema: ''
   },
   currentData: {
     dataId: ''
@@ -39,7 +40,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         currentModel: {
           mdlName: action.payload.mdlName,
-          mdlId: action.payload._id
+          mdlId: action.payload._id,
+          mdlSchema: action.payload.mdlSchema
         }
       };
     default:

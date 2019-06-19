@@ -1,61 +1,114 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import ModelNameForm from '../../components/create/ModelNameForm';
 import ModelEntryForm from '../../components/create/ModelEntryForm';
-import { createModel, addEntry } from '../../actions/modelActions';
-import { selectDbId } from '../../selectors/dbSelectors';
+import { createModel } from '../../actions/modelActions';
 import { selectMdlId, selectMdlSchema, selectMdlName, selectDbMdls } from '../../selectors/modelSelectors';
-import ModelPreview from '../../components/create/ModelPreview';
+// import ModelPreview from '../../components/create/ModelPreview';
+import { selectCurrentDatabase, selectCurrentModel } from '../../selectors/sessionSelectors';
+import rejectDuplicates from '../../utils/rejectDuplicates';
+import stateToSchema from '../../utils/stateToSchema';
 
 class CreateModel extends PureComponent {
   static propTypes = {
-    onNameSubmit: PropTypes.func.isRequired,
-    onEntrySubmit: PropTypes.func.isRequired,
-    dbId: PropTypes.string.isRequired,
-    mdlId: PropTypes.string.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+    currentDatabase: PropTypes.shape({
+      dbName: PropTypes.string.isRequired,
+      dbId: PropTypes.string.isRequired
+    }).isRequired,
+    currentModel: PropTypes.shape({
+      mdlName: PropTypes.string.isRequired,
+      mdlId: PropTypes.string.isRequired
+    }),
     mdlSchema: PropTypes.string.isRequired,
-    mdlName: PropTypes.string.isRequired,
     dbMdls: PropTypes.array.isRequired
   }
 
-  handleNameSubmit = state => {
-    state.dbId = this.props.dbId;
-    this.props.onNameSubmit(state);
+  state = {
+    entryCounter: 1,
+    mdlName: '',
+    mdlSchema: {},
+    confirmed: false
   }
 
-  handleEntrySubmit = state => {
-    state.mdlId = this.props.mdlId;
-    this.props.onEntrySubmit(state);
+  handleChange = ({ target }) => this.setState({ [target.name]: target.value });
+
+  handleEntryChange = (entry, at) => {
+    this.setState({
+      mdlSchema: {
+        ...this.state.mdlSchema,
+        [at]: { [entry.fieldName]: entry.dataType }
+      }
+    });
+  }
+
+  addEntry = () => {
+    this.setState({
+      entryCounter: this.state.entryCounter + 1
+    });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const { dbMdls, currentDatabase: { dbId } } = this.props;
+    const { mdlName, mdlSchema } = this.state;
+    if(rejectDuplicates(dbMdls, mdlName)) {
+      const model = {
+        mdlName,
+        mdlSchema: stateToSchema(mdlSchema),
+        dbId
+      };
+      this.props.onSubmit(model);
+      this.setState({
+        entryCounter: 1,
+        mdlName: '',
+        mdlSchema: {},
+        confirmed: true
+      });
+    }
   }
 
   render() {
-    const { mdlSchema, mdlName, dbMdls } = this.props;
-    const modelPreviewProps = { mdlSchema, mdlName };
+    const { mdlSchema, currentModel, currentDatabase } = this.props;
+    if(this.state.confirmed) return <Redirect to={`/dashboard/${currentDatabase.dbName}`} />;
+    // const modelPreviewProps = { mdlSchema, currentModel };
+    const modelEntries = [...Array(this.state.entryCounter)]
+      .map((_, i) => <ModelEntryForm
+        key={i}
+        at={i}
+        handleEntryChange={this.handleEntryChange}
+      />);
     return (
-      <>
-        <ModelNameForm onSubmit={this.handleNameSubmit} dbMdls={dbMdls} />
-        <ModelEntryForm onSubmit={this.handleEntrySubmit} />
-        <ModelPreview {...modelPreviewProps} />
-      </>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Model Name:
+          <input name="mdlName" onChange={this.handleChange} value={this.state.mdlName} />
+        </label>
+        <ul>
+          {modelEntries}
+        </ul>
+        <button type="button" onClick={this.addEntry}>Add Entry</button>
+        {/* <ModelPreview {...modelPreviewProps} /> */}
+        <button>Finish Model</button>
+      </form>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  dbId: selectDbId(state),
+  currentDatabase: selectCurrentDatabase(state),
+  currentModel: selectCurrentModel(state),
   mdlId: selectMdlId(state),
   mdlSchema: selectMdlSchema(state),
   mdlName: selectMdlName(state),
-  dbMdls: selectDbMdls(state)
+  dbMdls: selectDbMdls(state),
+
 });
 
 const mapDispatchToProps = dispatch => ({
-  onNameSubmit(model) {
+  onSubmit(model) {
     dispatch(createModel(model));
-  },
-  onEntrySubmit(model) {
-    dispatch(addEntry(model));
   }
 });
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function ModelPreview({ mdlSchema, mdlName }) {
+export default function ModelPreview({ mdlSchema, currentModel }) {
+  const { mdlName } = currentModel;
   return (
         <>
             <p>{mdlName}</p>
@@ -12,5 +13,8 @@ export default function ModelPreview({ mdlSchema, mdlName }) {
 
 ModelPreview.propTypes = {
   mdlSchema: PropTypes.string.isRequired,
-  mdlName: PropTypes.string.isRequired
+  currentModel: PropTypes.shape({
+    mdlName: PropTypes.string.isRequired,
+    mdlId: PropTypes.string.isRequired
+  }).isRequired
 };
