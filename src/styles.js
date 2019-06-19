@@ -18,6 +18,20 @@ export const NavContainer = styled.nav`
   }
 `;
 
+export const BodyButton = styled.button`
+  color: #ff0098;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Oxygen', sans-serif;
+  padding: .8rem 1rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #b0e2ab;
+`;
+
+export const PinkSpan = styled.span`
+  color: #ff0098;
+`;
 //HOME PAGE COMPONENTS
 
 export const HeroSection = styled.section`
