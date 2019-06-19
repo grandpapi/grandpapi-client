@@ -6,6 +6,9 @@ jest.mock('../services/modelMegaNapAPI.js', () => ({
   },
   patchModel() {
     return Promise.resolve([]);
+  },
+  getModels() {
+    return Promise.resolve([]);
   }
 }));
 
