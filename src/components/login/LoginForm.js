@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { signup, login } from '../../services/auth';
-import { FormHeading, SignUpIn, Form, FormLabel, FormInput, FormSubmitButton } from './loginstyles';
+import { FormHeading, SignUpIn, Form, FormLabel, FormInput, FormSubmitButton } from '../../styles';
 import GlobalHeader from '../all/GlobalHeader';
 import Footer from '../all/Footer';
 

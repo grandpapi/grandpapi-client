@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatabaseLink from './DatabaseLink';
-import { DatabaseUl } from './databaseListStyles';
+import { DatabaseUl } from '../../styles';
 
 export default function DatabaseList({ databases }) {
   const databaseList = databases.map(({ _id, dbName, imgSrc }) => <DatabaseLink key={_id} dbName={dbName} imgSrc={imgSrc} />);
