@@ -1,8 +1,14 @@
 import React from 'react';
 import CreateDb from '../containers/create/CreateDb';
+import GlobalHeader from '../components/all/GlobalHeader';
+import Footer from '../components/all/Footer';
 
 export default function DatabaseCreation() {
   return (
-    <CreateDb />
+    <>
+      <GlobalHeader />
+      <CreateDb />
+      <Footer />
+    </>
   );
 }

@@ -150,6 +150,7 @@ export const InstructContainer = styled.section`
   img: {
     height: 18rem;
   }
+  background-color: white;
 
 `;
 

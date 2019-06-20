@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import { signup, login } from '../../services/auth';
 import { FormHeading, SignUpIn, Form, FormLabel, FormInput, FormSubmitButton } from '../../styles';
-import GlobalHeader from '../all/GlobalHeader';
-import Footer from '../all/Footer';
 
 export default class LoginForm extends PureComponent {
   state = {
@@ -33,7 +31,6 @@ export default class LoginForm extends PureComponent {
   render() {
     return (
       <>
-      <GlobalHeader/>
         <SignUpIn>
           <Form onSubmit={this.handleSignupSubmit}>
             <FormHeading>Sign up</FormHeading>
@@ -72,7 +69,6 @@ export default class LoginForm extends PureComponent {
             <FormSubmitButton>Log In !</FormSubmitButton>
           </Form>
         </SignUpIn>
-        <Footer/>
               </>
     );
   }

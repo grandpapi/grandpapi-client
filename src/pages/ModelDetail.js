@@ -20,6 +20,9 @@ class ModelDetail extends PureComponent {
     const { mdlName, mdlId, mdlSchema } = this.props.currentMdl;
     const { dbName } = this.props.currentDatabase;
     const endpoint = `${process.env.API_URL}/api/${username}/${dbName}/${mdlName}`;
+    // const shareUrl = `https://meganap.com/dashboard/${dbName}/${mdlName}`;
+    // const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}%2F&amp;src=sdkpreparse`;
+
     return (
       <>
       <GlobalHeader />
@@ -36,6 +39,8 @@ class ModelDetail extends PureComponent {
         <button>Add Data</button>
       </Link>
       {/* <DataDisplay endpoint={endpoint} /> */}
+      {/* <h3>Share these endpoints on Facebook:</h3>
+      <div data-href={shareUrl} data-layout="button" data-size="small"><a target="_blank" href={fbShareUrl} className="fb-xfbml-parse-ignore">Share</a></div> */}
       </>
     );
   }
