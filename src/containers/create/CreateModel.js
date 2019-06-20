@@ -10,6 +10,7 @@ import { selectCurrentDatabase, selectCurrentModel } from '../../selectors/sessi
 import rejectDuplicates from '../../utils/rejectDuplicates';
 import stateToSchema from '../../utils/stateToSchema';
 import { Form, FormLabel, FormInput, FormSubmitButton, FormContainer, ModelUl } from '../../styles';
+import monitorInputs from '../../utils/monitorInputs';
 
 class CreateModel extends PureComponent {
   static propTypes = {
@@ -60,13 +61,15 @@ class CreateModel extends PureComponent {
         mdlSchema: stateToSchema(mdlSchema),
         dbId
       };
-      this.props.onSubmit(model);
-      this.setState({
-        entryCounter: 1,
-        mdlName: '',
-        mdlSchema: {},
-        confirmed: true
-      });
+      if(monitorInputs(mdlName, model.mdlSchema)) {
+        this.props.onSubmit(model);
+        this.setState({
+          entryCounter: 1,
+          mdlName: '',
+          mdlSchema: {},
+          confirmed: true
+        });
+      }
     }
   }
 
