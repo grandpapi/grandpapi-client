@@ -240,10 +240,6 @@ padding: 1vw;
 border-radius: 1px;
 `;
 
-export const ModelForm = styled(Form)`
-  width: 50vw;
-`;
-
 export const FormLabel = styled.label`
 display: flex;
 flex-direction: column;
@@ -297,12 +293,6 @@ border-bottom: 1px solid transparent;
   cursor: pointer;
   transition: .75s;
 }
-`;
-
-export const ModelFormInput = styled(FormInput)`
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
 `;
 
 export const FormSelectDiv = styled.div`
@@ -463,4 +453,26 @@ export const ModelUl = styled.ul`
   li {
     list-style-type: none;
   }
+`;
+
+export const ModelForm = styled(Form)`
+  width: 50vw;
+`;
+
+export const ModelFormInput = styled(FormInput)`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+`;
+
+//* Database Entry Form *//
+
+export const DBCheckboxDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const DBCheckboxInput = styled(FormInput)`
+  width: 3vw;
 `;

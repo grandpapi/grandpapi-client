@@ -29,11 +29,11 @@ h2 {
 }
 .display-block {
     display: block;
-  }
-  
-  .display-none {
+}
+
+.display-none {
     display: none;
-  }
+}
 
 .styledNavLink {
     color: #ff0098;
