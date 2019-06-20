@@ -18,6 +18,8 @@ export default function Docs() {
         <li>Something about Fields; naming and dataType</li>
         <li>Create as many models as your database requires. The database **** has the following models</li>
       </ul>
+      <h2>Add Data</h2>
+      <h2>Access API endpoints</h2>
       <Footer />
     </>
   );
