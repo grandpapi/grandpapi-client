@@ -10,7 +10,7 @@ export default function GlobalHeader() {
     <GlobalHeaderContainer>
       <Link to="/"><NavLogo src={logoPink} /></Link>
       <section>
-        <BodyButton><Link to="/dashboard" className={styles.linkInButton}>My Dashboard</Link></BodyButton>
+        <BodyButton header><Link to="/dashboard" className={styles.linkInButton}>My Dashboard</Link></BodyButton>
         <HeroButton onClick={logout}>Log Out</HeroButton>
       </section>
     </GlobalHeaderContainer>

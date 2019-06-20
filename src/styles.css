@@ -66,4 +66,10 @@ h2 {
 .linkInButton {
     text-decoration: none;
     color: #ff0098;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+}
+
+.linkInButton:hover {
+    color: #eaefbd;
 }

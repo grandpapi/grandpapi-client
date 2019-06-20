@@ -65,11 +65,10 @@ export const BodyButton = styled.button`
   &:focus {
     outline: #90be6d solid 2px !important;
   }
-  -webkit-transition: color .6s, background-color .6s;
-  transition: color .45s, background-color .45s;
+  -webkit-transition: background-color .6s;
+  transition: background-color .45s;
   &:hover {
-    color: #eaefbd;
-    background-color: #442c1d;
+    background-color: ${props => props.header ? '#ff0098' : '#442c1d'};
     cursor: pointer;
   }
 `;
