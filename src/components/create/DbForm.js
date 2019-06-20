@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import rejectDuplicates from '../../utils/rejectDuplicates';
+import { Form, FormLabel, FormInput, FormSubmitButton, FormContainer, DBCheckboxDiv, DBCheckboxInput } from '../../styles';
 
 export default class DbForm extends PureComponent {
   static propTypes = {
@@ -37,20 +38,23 @@ export default class DbForm extends PureComponent {
   render() {
     if(this.state.confirmed) return <Redirect to="/create/model" />;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <FormContainer>
+        <Form onSubmit={this.handleSubmit}>
+          <FormLabel htmlFor="dbName">
           Database Name
-          <input name="dbName" onChange={this.handleChange} value={this.state.dbName} />
-        </label>
-        <label>
-          public?
-          <input name="publicAccess" type="checkbox" onChange={this.handleChange} checked={this.state.publicAccess} />
-        </label>
-        {/* consider changing state to update text */}
-        <p>{this.state.publicAccess ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</p>
-        <Link to="/dashboard">cancel</Link>
-        <button>Confirm and Create Model</button>
-      </form>
+          </FormLabel>
+          <FormInput name="dbName" onChange={this.handleChange} value={this.state.dbName} />
+          <DBCheckboxDiv>
+            <FormLabel htmlFor="publicAccess">
+          Public?
+            </FormLabel>
+            <DBCheckboxInput name="publicAccess" type="checkbox" onChange={this.handleChange} checked={this.state.publicAccess} />   
+            <span>{this.state.publicAccess ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</span>
+          </DBCheckboxDiv>
+          <Link to="/dashboard"><span>cancel</span></Link>
+          <FormSubmitButton>Confirm and Create Model</FormSubmitButton>
+        </Form>
+      </FormContainer>
     );
   }
 }

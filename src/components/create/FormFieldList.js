@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormLabel, FormInput, FormInputNumber, FormInputRadio, DBCheckboxDiv } from '../../styles';
 
 export default function FormFieldList({ fields, handleChange, handleImage, data }) {
   console.log(data);
@@ -8,43 +9,37 @@ export default function FormFieldList({ fields, handleChange, handleImage, data 
     switch(value) {
       case 'String':
         return (
-          <label key={key + value}>{key}
-            <input type="text" name={key} onChange={handleChange} value={data[key] || ''} />
-          </label>
+          <>
+          <FormLabel key={key + value}>{key}</FormLabel>
+            <FormInput type="text" name={key} onChange={handleChange} value={data[key] || ''} />
+          </>
         );
       case 'Image':
         return (
-          <label key={key + value}>
-            {key}
-            <input type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} value={data[key] || ''}/>
-          </label>
+          <>
+          <FormLabel key={key + value}>{key} </FormLabel>
+            <FormInput type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} value={data[key] || ''}/>
+          </>
         );
       case 'Number':
         return (
-          <label key={key + value}>
-            {key}
-            <input type="number" name={key} onChange={handleChange} value={data[key] || ''}/>
-          </label>
+          <>
+          <FormLabel key={key + value}>{key}</FormLabel>
+            <FormInputNumber type="number" name={key} onChange={handleChange} value={data[key] || ''}/>
+          </>
         );
       case 'Boolean':
         return (
-          <div key={key + value}>
-            <label >
+          <DBCheckboxDiv key={key + value}>
+            <FormLabel>
               {key} True:
-              <input name={key} type="radio" value={true} onChange={handleChange} />
-            </label>
-            <label>
+              <FormInputRadio name={key} type="radio" value={true} onChange={handleChange} />
+            </FormLabel>
+            <FormLabel>
               {key} False:
-              <input name={key} type="radio" value={false} onChange={handleChange} />
-            </label>
-          </div>
-        );
-      case 'Array':
-        return (
-          <label key={key + value}>
-            {key}
-            <input type="text" name={key} value={data[key]}/>
-          </label>
+              <FormInputRadio name={key} type="radio" value={false} onChange={handleChange} />
+            </FormLabel>
+          </DBCheckboxDiv>
         );
       default:
         return value;
