@@ -38,6 +38,9 @@ export const BodyButton = styled.button`
   font-size: 1.3rem;
   border: none;
   background-color: #b0e2ab;
+  &:focus {
+    outline: #90be6d solid 2px !important;
+  }
 `;
 
 export const PinkSpan = styled.span`
@@ -140,6 +143,9 @@ export const HeroButton = styled.button`
   font-size: 1.3rem;  
   border: none;
   background-color: #eaefbd;
+  &:focus {
+    outline: #90be6d solid 2px !important;
+}
 `;
 
 export const InstructContainer = styled.section`
@@ -306,6 +312,7 @@ export const DatabaseUl = styled.ul`
 
   li {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 24vw;
@@ -313,15 +320,17 @@ export const DatabaseUl = styled.ul`
     height: 24vw;
     list-style-type: none;
     text-align: center;
-    margin-bottom: 5vw;
+    margin: 3vw;
     background-color: #eaefbd;
     border-radius: 5px;
     border: 1px solid transparent;
+    overflow-wrap: break-word;
+    word-wrap: break-all;
+    white-space: normal;
 
     &:hover {
     border: 1px solid #90be6d;
     }
-
   }
 
   a {
@@ -330,6 +339,30 @@ export const DatabaseUl = styled.ul`
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .2em;
+    text-decoration: none;
+    margin-bottom: 3vw;
   }
+`;
 
+export const DBButton = styled(BodyButton)`
+  background-color: #ff0098;
+  color: #eaefbd;
+`;
+
+export const NewDBButton = styled.button`
+    background-color: #eaefbd;
+    border: none;
+    font-size: 2em;
+    color: #ff0098;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .2em;
+      &:hover {
+        span {
+          display:none;
+        }
+      &:hover:before {
+          content:'Add new database';
+        }
+      }
 `;
