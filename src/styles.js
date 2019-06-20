@@ -55,6 +55,7 @@ export const BodyButton = styled.button`
   font-weight: bold;
   font-family: 'Oxygen', sans-serif;
   padding: .8rem 1.4rem;
+  margin-right: 1rem;
   font-size: 1.3rem;
   border: none;
   background-color: #b0e2ab;
@@ -94,7 +95,7 @@ export const FooterContainer = styled.footer`
 
 export const FooterTagline = styled.section`
   p {
-    color: #b0e2ab;
+    color: #eaefbd;
     font-family: 'Oxygen', sans-serif;
     font-size: 1rem;
     font-weight: bold;

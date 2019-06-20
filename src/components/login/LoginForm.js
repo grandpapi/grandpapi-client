@@ -1,15 +1,13 @@
 import React, { PureComponent } from 'react';
 import { signup, login } from '../../services/auth';
 import { 
-  FormHeading, 
-  SignUpIn, 
+  FormHeading,  
   Form, 
   FormLabel, 
   FormInput, 
   FormSubmitButton, 
   FormContainer 
 } from '../../styles';
-import GlobalHeader from '../all/GlobalHeader';
 import Footer from '../all/Footer';
 
 export default class LoginForm extends PureComponent {
@@ -41,7 +39,6 @@ export default class LoginForm extends PureComponent {
   render() {
     return (
       <>
-      <GlobalHeader/>
         <FormContainer>
           <Form onSubmit={this.handleSignupSubmit}>
             <FormHeading>Sign up</FormHeading>

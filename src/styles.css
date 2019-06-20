@@ -48,3 +48,16 @@ h2 {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.footerTaglineTan {
+    color: #eaefbd;
+}
+
+.footerTaglinePink {
+    color: #ff0098;
+}
+
+.linkInButton {
+    text-decoration: none;
+    color: #ff0098;
+}

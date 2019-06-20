@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FooterContainer, StyledNavUl, FooterTagline } from '../../styles';
+import styles from '../../styles.css';
 
 export default function Footer() {
   return (
@@ -13,7 +14,7 @@ export default function Footer() {
         <Link to={"/apis"}><li>Public APIs</li></Link>
       </StyledNavUl>
       <FooterTagline>
-        <p>Mega Nap: For the love of apps</p>
+        <p>Mega Nap: <span className={styles.footerTaglinePink}>For the love of apps.</span></p>
       </FooterTagline>
     </FooterContainer>
   );

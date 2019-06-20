@@ -10,8 +10,8 @@ export default function DatabaseCreation() {
       <GlobalHeader />
       <MainContainer>
         <CreateDb />
-        <Footer />
       </MainContainer>
+      <Footer />
     </BodyContainer>
   );
 }
