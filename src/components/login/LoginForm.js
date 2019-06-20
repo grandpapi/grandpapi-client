@@ -6,7 +6,7 @@ import {
   FormLabel, 
   FormInput, 
   FormSubmitButton, 
-  FormContainer 
+  FormContainer, 
 } from '../../styles';
 import Footer from '../all/Footer';
 
@@ -57,7 +57,7 @@ export default class LoginForm extends PureComponent {
               Password :
             </FormLabel>
             <FormInput name="password" type="password" onChange={this.handleSignupChange} value={this.state.signup.password} placeholder="password"/>
-            <FormSubmitButton>Sign Up !</FormSubmitButton>
+            <FormSubmitButton>Sign Up</FormSubmitButton>
           </Form>
         </FormContainer>
         <FormContainer>
@@ -73,7 +73,7 @@ export default class LoginForm extends PureComponent {
             </FormLabel>
             <FormInput name="password" type="password" onChange={this.handleLoginChange} value={this.state.login.password} />
             
-            <FormSubmitButton>Log In !</FormSubmitButton>
+            <FormSubmitButton>Log In</FormSubmitButton>
           </Form>
         </FormContainer>
         <Footer/>

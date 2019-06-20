@@ -322,18 +322,28 @@ align-items: center;
 justify-content: center;
 text-align: center;
 margin: 2vw;
+font-size: 1.3rem;
 font-family: 'Oxygen', sans-serif;
 text-transform: uppercase;
-background-color: #b0e2ab;
-padding: 5px;
+background-color: #ff0098;
+padding: .8rem 1.4rem;
 border-radius: 1px;
 border: none;
-color: #ff0098;
+color: white;
 cursor: pointer;
 
 &:focus {
   outline: #90be6d solid 2px !important;
 }
+
+-webkit-transition: color .6s, background-color .6s;
+  transition: color .45s, background-color .45s, border .45s;
+  &:hover {
+    color: #442c1d;
+    background-color: #eaefbd;
+    cursor: pointer;
+    border: 2px solid #442c1d;
+  }
 `;
 
 //*  Database List Styles *//
