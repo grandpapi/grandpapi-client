@@ -192,7 +192,7 @@ export const IntroRtoL = styled.section`
 
 //* Login Styles *//
 
-export const SignUpIn = styled.div`
+export const FormContainer = styled.div`
 display: flex;
 flex-flow: column-reverse;
 align-items: center;
@@ -297,7 +297,6 @@ border: none;
 color: #ff0098;
 cursor: pointer;
 
-
 &:focus {
   outline: #90be6d solid 2px !important;
 }
@@ -335,22 +334,7 @@ export const DatabaseUl = styled.ul`
       overflow-wrap: break-word;
       word-wrap: break-all;
       white-space: normal;
-      &:hover {
-        span {
-          display:none;
-          border: 2px solid #90be6d;
-        }
-      &:hover:before {
-          content:'view database';
-          color: #ff0098;
-          text-transform: uppercase;
-          font-family: 'Montserrat', sans-serif;
-          letter-spacing: .2rem;
-          font-size: 2.3rem;
-        }
       }
-    }
-    
   }
 
   a {
@@ -372,20 +356,56 @@ export const DBButton = styled(BodyButton)`
 `;
 
 export const NewDBButton = styled.button`
-    background-color: #eaefbd;
-    border: 2px solid transparent;
-    font-size: 4rem;
-    color: #ff0098;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: .2rem;
-      &:hover {
-          span {
-            display:none;
-          }
-      &:hover:before {
-          content:'Add new database';
-          font-size: 2.5rem;
-        }
+  background-color: #eaefbd;
+  border: 2px solid transparent;
+  font-size: 4rem;
+  color: #ff0098;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .2rem;
+    &:hover {
+      span {
+        display:none;
       }
+    }
+
+    &:hover:before {
+      content:'Add new database';
+      font-size: 2.5rem;
+      cursor: pointer;
+      }
+    &:focus {
+      outline: #90be6d solid 2px !important;
+    }
+`;
+
+export const ViewDBButton = styled.button`
+  background-color: #eaefbd;
+  border: 2px solid transparent;
+  font-size: 2rem;
+  color: #ff0098;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .2rem;
+  overflow-wrap: break-word;
+  word-wrap: break-all;
+  white-space: normal;
+  width: 22vw;
+  &:hover {
+      span {
+        display:none;
+      }
+    }
+    &:hover:before {
+        content:'view database';
+        cursor: pointer;
+        color: #ff0098;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: .2rem;
+        font-size: 2.3rem;
+      }
+    &:focus {
+      outline: #90be6d solid 2px !important;
+    }
 `;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { updateDbState } from '../../actions/userDatabases/dbActions';
-import { DBButton } from '../../styles';
+import { DBButton, ViewDBButton } from '../../styles';
 
 class DatabaseLink extends PureComponent {
   static propTypes = {
@@ -20,8 +20,7 @@ class DatabaseLink extends PureComponent {
         <li>
           <div>
             <Link to={`/dashboard/${dbName}`} onClick={() => onClickDb(dbName, _id)}>
-              {/* <DBButton>View Database</DBButton> */}
-              <h3><span>{dbName}</span></h3>
+              <ViewDBButton><span>{dbName}</span></ViewDBButton>
             </Link>
             {/* <img src={imgSrc} alt={dbName} /> */}
             <Link to={'create/model'} onClick={() => onClickDb(dbName, _id)}>
