@@ -19,6 +19,7 @@ class Dashboard extends PureComponent {
         <GlobalHeader />
         <MainContainer>
           <h2>Welcome to your dashboard, {nickname}!</h2>
+          <p>Click the + button to start a new Database. Click on an existing Database to view its models, or click Add Model to add a new model to a database.</p>
           <DatabaseDisplay />
         </MainContainer>
         <Footer />
