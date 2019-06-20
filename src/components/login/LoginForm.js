@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react';
 import { signup, login } from '../../services/auth';
+import { SignUpInSpan, SignUpIn, SignUpInForm, SignUpInLabel, SignUpInInput, SignUpInButton } from './loginstyles';
+import Nav from '../all/Nav';
+import Footer from '../all/Footer';
 
 export default class LoginForm extends PureComponent {
   state = {
@@ -30,41 +33,46 @@ export default class LoginForm extends PureComponent {
   render() {
     return (
       <>
-        <fieldset>
-          <legend>Sign Up</legend>
-          <form onSubmit={this.handleSignupSubmit}>
-            <label>
-              Email:
-              <input name="email" type="email" onChange={this.handleSignupChange} value={this.state.signup.email} />
-            </label>
-            <label>
-              Username:
-              <input name="username" onChange={this.handleSignupChange} value={this.state.signup.username} />
-            </label>
-            <label>
-              Password:
-              <input name="password" type="password" onChange={this.handleSignupChange} value={this.state.signup.password} />
-            </label>
-            <button>Sign Up!</button>
-          </form>
-        </fieldset>
-        <fieldset>
-          <legend>
-            Log In
-          </legend>
-          <form onSubmit={this.handleLoginSubmit}>
-            <label>
-              Email:
-              <input name="email" type="email" onChange={this.handleLoginChange} value={this.state.login.email} />
-            </label>
-            <label>
-              Password:
-              <input name="password" type="password" onChange={this.handleLoginChange} value={this.state.login.password} />
-            </label>
-            <button>Log In!</button>
-          </form>
-        </fieldset>
-      </>
+      <Nav/>
+        <SignUpIn>
+          <SignUpInForm onSubmit={this.handleSignupSubmit}>
+            <SignUpInSpan>Sign up</SignUpInSpan>
+            <SignUpInLabel htmlFor="email">
+              Email :
+            </SignUpInLabel>
+            <SignUpInInput name="email" type="email" onChange={this.handleSignupChange} value={this.state.signup.email} />
+            
+            <SignUpInLabel htmlFor="username">
+              Username :
+            </SignUpInLabel>
+            <SignUpInInput name="username" onChange={this.handleSignupChange} value={this.state.signup.username} />
+            
+            <SignUpInLabel htmlFor="password">
+              Password :
+            </SignUpInLabel>
+            <SignUpInInput name="password" type="password" onChange={this.handleSignupChange} value={this.state.signup.password} />
+            
+            <SignUpInButton>Sign Up !</SignUpInButton>
+          </SignUpInForm>
+        </SignUpIn>
+        <SignUpIn>
+          <SignUpInForm onSubmit={this.handleLoginSubmit}>
+            <SignUpInSpan>Log In</SignUpInSpan>
+            <SignUpInLabel htmlFor="email">
+              Email :
+            </SignUpInLabel>
+            <SignUpInInput name="email" type="email" onChange={this.handleLoginChange} value={this.state.login.email} />
+            
+            <SignUpInLabel htmlFor="password">
+              Password :
+            </SignUpInLabel>
+            <SignUpInInput name="password" type="password" onChange={this.handleLoginChange} value={this.state.login.password} />
+            
+            <SignUpInButton>Log In !</SignUpInButton>
+          </SignUpInForm>
+        </SignUpIn>
+        <Footer/>
+              </>
     );
   }
 }
