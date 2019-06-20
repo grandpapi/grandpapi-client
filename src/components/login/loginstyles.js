@@ -11,7 +11,7 @@ margin-bottom: 3vh;
 margin-top: 3vh;
 `;
 
-export const SignUpInSpan = styled.span`
+export const FormHeading = styled.span`
 font-family: 'Oxygen', sans-serif;
 color: #442c1d;
 margin-bottom: 2vh;
@@ -19,7 +19,7 @@ margin-top: 1vh;
 font-size: 1.5em;
 `;
 
-export const SignUpInForm = styled.form`
+export const Form = styled.form`
 background-color: #eaefbd;
 display: flex;
 flex-direction: column;
@@ -33,7 +33,7 @@ padding: 1vw;
 border-radius: 1px;
 `;
 
-export const SignUpInLabel = styled.label`
+export const FormLabel = styled.label`
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -48,7 +48,7 @@ text-transform: uppercase;
 letter-spacing: 0.05em;
 `;
 
-export const SignUpInInput = styled.input`
+export const FormInput = styled.input`
 border: 0;
 background-color: #b0e2ab;
 display: flex;
@@ -88,7 +88,7 @@ border-bottom: 1px solid transparent;
 }
 `;
 
-export const SignUpInButton = styled.button`
+export const FormSubmitButton = styled.button`
 display: flex;
 flex-direction: column;
 align-items: center;

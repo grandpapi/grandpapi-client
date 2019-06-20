@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { signup, login } from '../../services/auth';
-import { SignUpInSpan, SignUpIn, SignUpInForm, SignUpInLabel, SignUpInInput, SignUpInButton } from './loginstyles';
+import { FormHeading, SignUpIn, Form, FormLabel, FormInput, FormSubmitButton } from './loginstyles';
 import GlobalHeader from '../all/GlobalHeader';
 import Footer from '../all/Footer';
 
@@ -35,42 +35,42 @@ export default class LoginForm extends PureComponent {
       <>
       <GlobalHeader/>
         <SignUpIn>
-          <SignUpInForm onSubmit={this.handleSignupSubmit}>
-            <SignUpInSpan>Sign up</SignUpInSpan>
+          <Form onSubmit={this.handleSignupSubmit}>
+            <FormHeading>Sign up</FormHeading>
             
-            <SignUpInLabel htmlFor="email">
+            <FormLabel htmlFor="email">
               Email :
-            </SignUpInLabel>
-            <SignUpInInput name="email" type="email" onChange={this.handleSignupChange} value={this.state.signup.email} placeholder="ex: email@yourmemail.com"/>
+            </FormLabel>
+            <FormInput name="email" type="email" onChange={this.handleSignupChange} value={this.state.signup.email} placeholder="ex: email@yourmemail.com"/>
             
-            <SignUpInLabel htmlFor="username">
+            <FormLabel htmlFor="username">
               Username :
-            </SignUpInLabel>
-            <SignUpInInput name="username" onChange={this.handleSignupChange} value={this.state.signup.username} placeholder="ex: CoolUser84"/>
+            </FormLabel>
+            <FormInput name="username" onChange={this.handleSignupChange} value={this.state.signup.username} placeholder="ex: CoolUser84"/>
             
-            <SignUpInLabel htmlFor="password">
+            <FormLabel htmlFor="password">
               Password :
-            </SignUpInLabel>
-            <SignUpInInput name="password" type="password" onChange={this.handleSignupChange} value={this.state.signup.password} placeholder="password"/>
+            </FormLabel>
+            <FormInput name="password" type="password" onChange={this.handleSignupChange} value={this.state.signup.password} placeholder="password"/>
             
-            <SignUpInButton>Sign Up !</SignUpInButton>
-          </SignUpInForm>
+            <FormSubmitButton>Sign Up !</FormSubmitButton>
+          </Form>
         </SignUpIn>
         <SignUpIn>
-          <SignUpInForm onSubmit={this.handleLoginSubmit}>
-            <SignUpInSpan>Log In</SignUpInSpan>
-            <SignUpInLabel htmlFor="email">
+          <Form onSubmit={this.handleLoginSubmit}>
+            <FormHeading>Log In</FormHeading>
+            <FormLabel htmlFor="email">
               Email :
-            </SignUpInLabel>
-            <SignUpInInput name="email" type="email" onChange={this.handleLoginChange} value={this.state.login.email} />
+            </FormLabel>
+            <FormInput name="email" type="email" onChange={this.handleLoginChange} value={this.state.login.email} />
             
-            <SignUpInLabel htmlFor="password">
+            <FormLabel htmlFor="password">
               Password :
-            </SignUpInLabel>
-            <SignUpInInput name="password" type="password" onChange={this.handleLoginChange} value={this.state.login.password} />
+            </FormLabel>
+            <FormInput name="password" type="password" onChange={this.handleLoginChange} value={this.state.login.password} />
             
-            <SignUpInButton>Log In !</SignUpInButton>
-          </SignUpInForm>
+            <FormSubmitButton>Log In !</FormSubmitButton>
+          </Form>
         </SignUpIn>
         <Footer/>
               </>
