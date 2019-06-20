@@ -240,6 +240,10 @@ padding: 1vw;
 border-radius: 1px;
 `;
 
+export const ModelForm = styled(Form)`
+  width: 50vw;
+`;
+
 export const FormLabel = styled.label`
 display: flex;
 flex-direction: column;
@@ -293,6 +297,35 @@ border-bottom: 1px solid transparent;
   cursor: pointer;
   transition: .75s;
 }
+`;
+
+export const ModelFormInput = styled(FormInput)`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+`;
+
+export const FormSelectDiv = styled.div`
+  font-size: 1em;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  & select {
+    outline: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: .5em;
+    margin: 0;
+    transition: border-color .2s;
+    border: none;
+    background-color: #b0e2ab;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    border-radius: 1px;
+    width: 21vw;
+  }
 `;
 
 export const FormSubmitButton = styled.button`
