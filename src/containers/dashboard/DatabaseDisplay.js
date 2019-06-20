@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 import DatabaseList from '../../components/dashboard/DatabaseList';
 import { selectUserDbs } from '../../selectors/dbSelectors';
 import { selectUserId } from '../../selectors/sessionSelectors';
-import { fetchDbs, updateDbState } from '../../actions/userDatabases/dbActions';
+import { fetchDbs } from '../../actions/userDatabases/dbActions';
 
 
 class DatabaseDisplay extends PureComponent {
     static propTypes = {
       fetch: PropTypes.func.isRequired,
-      onClickDb: PropTypes.func.isRequired,
       databases: PropTypes.array.isRequired,
       userId: PropTypes.string.isRequired
     }
@@ -21,7 +20,7 @@ class DatabaseDisplay extends PureComponent {
 
     render() {
       return (
-        <DatabaseList databases={this.props.databases} onClickDb={this.props.onClickDb} />
+        <DatabaseList databases={this.props.databases} />
       );
     }
 }
@@ -34,9 +33,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetch(userId) {
     dispatch(fetchDbs(userId));
-  },
-  onClickDb(dbName, dbId) {
-    dispatch(updateDbState(dbName, dbId));
   }
 });
 

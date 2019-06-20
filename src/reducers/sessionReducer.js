@@ -58,6 +58,11 @@ export default function reducer(state = initialState, action) {
         currentDatabase: {
           dbName: action.payload.dbName,
           dbId: action.payload.dbId
+        },
+        currentModel: {
+          mdlName: '',
+          mdlId: '',
+          mdlSchema: '{}'
         }
       };
     case UPDATE_MDL_STATE:

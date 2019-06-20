@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DatabaseLink from './DatabaseLink';
 
-export default function DatabaseList({ databases, onClickDb }) {
+export default function DatabaseList({ databases }) {
   const databaseList = databases.map(({ _id, dbName, imgSrc }) => (
-    <DatabaseLink key={_id} dbName={dbName} imgSrc={imgSrc} _id={_id} onClickDb={onClickDb} />
+    <DatabaseLink key={_id} dbName={dbName} imgSrc={imgSrc} _id={_id} />
   ));
   return (
     <ul>
@@ -19,5 +19,4 @@ DatabaseList.propTypes = {
     imgSrc: PropTypes.string.isRequired,
     _id: PropTypes.string.isRequired
   })),
-  onClickDb: PropTypes.func.isRequired
 };
