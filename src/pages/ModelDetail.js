@@ -32,8 +32,8 @@ class ModelDetail extends PureComponent {
           <p>{'Endpoint: '}
             <a href={`${endpoint}`} target='_blank' rel='noopener noreferrer'>{endpoint}</a>
           </p>
-          <Link to={'create/data'} onClick={() => onClickMdl(mdlName, mdlId, mdlSchema)}>
-            <button>Add Data</button>
+          <Link to={"/create/data"} onClick={() => onClickMdl(mdlName, mdlId, mdlSchema)}>
+            <button type="button">Add Data</button>
           </Link>
         </MainContainer>
         <Footer />
