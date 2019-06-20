@@ -48,8 +48,7 @@ export default class DbForm extends PureComponent {
             <FormLabel htmlFor="publicAccess">
           Public?
             </FormLabel>
-            <DBCheckboxInput name="publicAccess" type="checkbox" onChange={this.handleChange} checked={this.state.publicAccess} />
-           
+            <DBCheckboxInput name="publicAccess" type="checkbox" onChange={this.handleChange} checked={this.state.publicAccess} />   
             <span>{this.state.publicAccess ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</span>
           </DBCheckboxDiv>
           <Link to="/dashboard"><span>cancel</span></Link>
