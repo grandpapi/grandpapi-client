@@ -70,7 +70,7 @@ class CreateModel extends PureComponent {
   }
 
   render() {
-    const { currentDatabase } = this.props;
+    //const { currentDatabase } = this.props;
     if(this.state.confirmed) return <Redirect to={'/create/data'} />;
     // const modelPreviewProps = { mdlSchema, currentModel };
     const modelEntries = [...Array(this.state.entryCounter)]

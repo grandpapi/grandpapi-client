@@ -1,6 +1,7 @@
 import { SET_SESSION, CHECK_SESSION } from '../actions/sessionActions';
 import { CREATE_DB } from '../actions/userDatabases/dbActions';
 import { CREATE_MODEL } from '../actions/modelActions';
+import { CREATE_DATA } from '../actions/dataActions';
 
 const initialState = {
   username: '',
@@ -42,6 +43,13 @@ export default function reducer(state = initialState, action) {
           mdlName: action.payload.mdlName,
           mdlId: action.payload._id,
           mdlSchema: action.payload.mdlSchema
+        }
+      };
+    case CREATE_DATA:
+      return {
+        ...state,
+        currentData: {
+          dataId: action.payload._id
         }
       };
     default:
