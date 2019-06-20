@@ -4,7 +4,9 @@ import DatabaseLink from './DatabaseLink';
 import { DatabaseUl } from '../../styles';
 
 export default function DatabaseList({ databases }) {
-  const databaseList = databases.map(({ _id, dbName, imgSrc }) => <DatabaseLink key={_id} dbName={dbName} imgSrc={imgSrc} />);
+  const databaseList = databases.map(({ _id, dbName, imgSrc }) => (
+    <DatabaseLink key={_id} dbName={dbName} imgSrc={imgSrc} _id={_id} />
+  ));
   return (
     <DatabaseUl>
       {databaseList}
@@ -17,5 +19,5 @@ DatabaseList.propTypes = {
     dbName: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired,
     _id: PropTypes.string.isRequired
-  }))
+  })),
 };

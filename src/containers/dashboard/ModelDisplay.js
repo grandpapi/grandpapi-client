@@ -18,7 +18,7 @@ class ModelDisplay extends PureComponent {
 
   render() {
     return (
-      <ModelList dbName={this.props.dbName} models={this.props.dbMdls}/>
+      <ModelList dbName={this.props.dbName} models={this.props.dbMdls} />
     );
   }
 }
