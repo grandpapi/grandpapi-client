@@ -1,12 +1,12 @@
 import React from 'react';
-import Nav from './Nav';
+import Nav from '../all/Nav';
 import { Link } from 'react-router-dom';
 import logoPink from '../../../assets/logo-pink.png';
-import { NavLogo, GlobalHeaderContainer, NavContainer, HeroButton } from '../../styles';
+import { NavLogo, GlobalHeaderContainer, NavContainer } from '../../styles';
 import styles from '../../styles.css';
-import { logout } from '../../services/auth';
+// import { logout } from '../../services/auth';
 
-export default function GlobalHeader() {
+export default function LoginHeader() {
   const dashLink = <li><Link className={styles.styledBrownNavLink} to="/dashboard">My Dashboard</Link></li>;
 
   return (
@@ -16,7 +16,7 @@ export default function GlobalHeader() {
         <Nav dashLink={dashLink} />
       </NavContainer>
       {/* TODO: change to ternary based on login status */}
-      <HeroButton onClick={logout}>Log Out</HeroButton>
+      {/* <HeroButton onClick={logout}>Log Out</HeroButton> */}
     </GlobalHeaderContainer>
   );
 }

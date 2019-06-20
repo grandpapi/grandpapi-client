@@ -17,8 +17,8 @@ function Nav({ dashLink }) {
   );
 }
 
-Nav.PropTypes = {
+Nav.propTypes = {
   dashLink: PropTypes.element
-}
+};
 
 export default Nav;

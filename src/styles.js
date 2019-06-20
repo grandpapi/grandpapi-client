@@ -12,7 +12,6 @@ export const BodyContainer = styled.div`
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* flex-grow: 1; */
   margin-bottom: 10.5rem;
 `;
 
