@@ -19,6 +19,7 @@ import DatabaseDetail from '../pages/DatabaseDetail';
 import ModelDetail from '../pages/ModelDetail';
 import { withoutSession } from '../containers/auth/withoutSession';
 import DataCreation from '../pages/DataCreation';
+import AboutTable3 from '../pages/AboutTable3';
 
 export default function App() {
   return (
@@ -30,6 +31,8 @@ export default function App() {
         <Route exact path="/about" component={AboutApp} />
         <Route exact path="/docs" component={Docs} />
         <Route exact path="/apis" component={PublicApis} />
+        <Route exact path="/table3" component={AboutTable3} />
+        
         <Route path="/dashboard/:dbName/:mdlName" component={withSession(ModelDetail)}/>
         <Route path="/dashboard/:dbName" component={withSession(DatabaseDetail)}/>
         <Route exact path="/dashboard" component={withSession(Dashboard)} />
