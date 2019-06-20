@@ -2,6 +2,20 @@ import styled from 'styled-components';
 
 //GLOBAL COMPONENTS
 
+export const BodyContainer = styled.div`
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 1; */
+  margin-bottom: 10.5rem;
+`;
+
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
@@ -45,6 +59,9 @@ export const PinkSpan = styled.span`
 `;
 
 export const FooterContainer = styled.footer`
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
