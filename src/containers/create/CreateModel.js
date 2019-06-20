@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ModelEntryForm from '../../components/create/ModelEntryForm';
 import { createModel } from '../../actions/modelActions';
-import { selectMdlId, selectMdlSchema, selectMdlName, selectDbMdls } from '../../selectors/modelSelectors';
+import { selectDbMdls } from '../../selectors/modelSelectors';
 // import ModelPreview from '../../components/create/ModelPreview';
 import { selectCurrentDatabase, selectCurrentModel } from '../../selectors/sessionSelectors';
 import rejectDuplicates from '../../utils/rejectDuplicates';
@@ -21,7 +21,7 @@ class CreateModel extends PureComponent {
       mdlName: PropTypes.string.isRequired,
       mdlId: PropTypes.string.isRequired
     }),
-    mdlSchema: PropTypes.string.isRequired,
+    // mdlSchema: PropTypes.string.isRequired,
     dbMdls: PropTypes.array.isRequired
   }
 
@@ -70,8 +70,8 @@ class CreateModel extends PureComponent {
   }
 
   render() {
-    const { mdlSchema, currentModel, currentDatabase } = this.props;
-    if(this.state.confirmed) return <Redirect to={`/dashboard/${currentDatabase.dbName}`} />;
+    const { currentDatabase } = this.props;
+    if(this.state.confirmed) return <Redirect to={'/create/data'} />;
     // const modelPreviewProps = { mdlSchema, currentModel };
     const modelEntries = [...Array(this.state.entryCounter)]
       .map((_, i) => <ModelEntryForm
@@ -99,9 +99,6 @@ class CreateModel extends PureComponent {
 const mapStateToProps = state => ({
   currentDatabase: selectCurrentDatabase(state),
   currentModel: selectCurrentModel(state),
-  mdlId: selectMdlId(state),
-  mdlSchema: selectMdlSchema(state),
-  mdlName: selectMdlName(state),
   dbMdls: selectDbMdls(state),
 
 });

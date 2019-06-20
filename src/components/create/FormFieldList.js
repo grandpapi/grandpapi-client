@@ -21,16 +21,16 @@ export default function FormFieldList({ fields }) {
         );
       case 'Boolean':
         return (
-                    <>
-                        <label key={key}>
-                          {field[0]} True:
-                          <input type="radio" value="true" />
-                        </label>
-                        <label>
-                          {field[0]} False:
-                          <input type="radio" value="false" />
-                        </label>
-                    </>
+          <div key={key}>
+            <label >
+              {field[0]} True:
+              <input type="radio" value="true" />
+            </label>
+            <label>
+              {field[0]} False:
+              <input type="radio" value="false" />
+            </label>
+          </div>
         );
       case 'Array':
         return (
@@ -43,7 +43,7 @@ export default function FormFieldList({ fields }) {
 
   return (
     <form>
-      {fieldList}
+      {fieldList} 
       <button>Submit Data</button>
     </form>
   );

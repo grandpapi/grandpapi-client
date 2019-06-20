@@ -12,7 +12,7 @@ const initialState = {
   currentModel: {
     mdlName: '',
     mdlId: '',
-    mdlSchema: ''
+    mdlSchema: '{}'
   },
   currentData: {
     dataId: ''
