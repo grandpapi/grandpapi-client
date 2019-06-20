@@ -85,11 +85,11 @@ export const FooterContainer = styled.footer`
     list-style: none;
     color: #b0e2ab;
   }
-    text-decoration: none;
-    font-family: 'Oxygen', sans-serif;
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
 `;
 
 export const FooterTagline = styled.section`
@@ -113,7 +113,6 @@ export const HeroSection = styled.section`
 
 export const HeroTaglineSection = styled.section`
   margin: 0 7%;
-  color: red;
 `;
 
 export const HeroImageSection = styled.section`
