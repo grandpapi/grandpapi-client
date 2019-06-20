@@ -9,6 +9,7 @@ import { selectDbMdls } from '../../selectors/modelSelectors';
 import { selectCurrentDatabase, selectCurrentModel } from '../../selectors/sessionSelectors';
 import rejectDuplicates from '../../utils/rejectDuplicates';
 import stateToSchema from '../../utils/stateToSchema';
+import { Form, FormLabel, FormInput, FormSubmitButton } from '../../styles';
 
 class CreateModel extends PureComponent {
   static propTypes = {
@@ -80,18 +81,18 @@ class CreateModel extends PureComponent {
         handleEntryChange={this.handleEntryChange}
       />);
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <Form onSubmit={this.handleSubmit}>
+        <FormLabel>
           Model Name:
-          <input name="mdlName" onChange={this.handleChange} value={this.state.mdlName} />
-        </label>
+          <FormInput name="mdlName" onChange={this.handleChange} value={this.state.mdlName} />
+        </FormLabel>
         <ul>
           {modelEntries}
         </ul>
-        <button type="button" onClick={this.addEntry}>Add Entry</button>
+        <FormSubmitButton type="button" onClick={this.addEntry}>Add Entry</FormSubmitButton>
         {/* <ModelPreview {...modelPreviewProps} /> */}
-        <button>Finish Model</button>
-      </form>
+        <FormSubmitButton>Finish Model</FormSubmitButton>
+      </Form>
     );
   }
 }

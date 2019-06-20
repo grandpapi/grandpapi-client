@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { FormLabel, FormInput } from '../../styles';
 
 export default class ModelEntryForm extends PureComponent {
   static propTypes = {
@@ -23,20 +24,20 @@ export default class ModelEntryForm extends PureComponent {
   render() {
     return (
       <li>
-        <label>
+        <FormLabel>
           Field Name:
-          <input name="fieldName" onChange={this.handleChange} value={this.state.fieldName} />
-        </label>
-        <label>
+        </FormLabel>
+        <FormInput name="fieldName" onChange={this.handleChange} value={this.state.fieldName} />
+        <FormLabel>
           Data Type:
-          <select name="dataType" onChange={this.handleChange} value={this.state.dataType}>
-            <option value="String">String</option>
-            <option value="Number">Number</option>
-            <option value="Boolean">Boolean</option>
-            <option value="Array">Array</option>
-            <option value="Image">Image</option>
-          </select>
-        </label>
+        </FormLabel>
+        <select name="dataType" onChange={this.handleChange} value={this.state.dataType}>
+          <option value="String">String</option>
+          <option value="Number">Number</option>
+          <option value="Boolean">Boolean</option>
+          <option value="Array">Array</option>
+          <option value="Image">Image</option>
+        </select>
       </li>
     );
   }
