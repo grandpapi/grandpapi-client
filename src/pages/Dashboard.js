@@ -7,6 +7,7 @@ import DatabaseDisplay from '../containers/dashboard/DatabaseDisplay';
 import GlobalHeader from '../components/all/GlobalHeader';
 import Footer from '../components/all/Footer';
 import { BodyContainer, MainContainer } from '../styles';
+import Breadcrumbs from '../containers/dashboard/Breadcrumbs';
 
 class Dashboard extends PureComponent {
   static propTypes = {
@@ -18,6 +19,7 @@ class Dashboard extends PureComponent {
     return (
       <BodyContainer>
         <GlobalHeader />
+        <Breadcrumbs />
         <MainContainer>
           <h2>Welcome to your dashboard, {nickname}!</h2>
           <Link to="/create/database"><button>+</button></Link>

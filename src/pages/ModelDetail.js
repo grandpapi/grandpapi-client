@@ -7,6 +7,7 @@ import { selectCurrentModel, selectNickname, selectCurrentDatabase } from '../se
 import { updateMdlState } from '../actions/modelActions';
 import { BodyContainer, MainContainer } from '../styles';
 import Footer from '../components/all/Footer';
+import Breadcrumbs from '../containers/dashboard/Breadcrumbs';
 
 class ModelDetail extends PureComponent {
   static propTypes = {
@@ -25,6 +26,7 @@ class ModelDetail extends PureComponent {
     return (
       <BodyContainer>
         <GlobalHeader />
+        <Breadcrumbs />
         <MainContainer>
           <h1>{mdlName}</h1>
           <h3>Model Schema: </h3>

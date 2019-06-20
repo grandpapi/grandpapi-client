@@ -5,11 +5,13 @@ import ModelDisplay from '../containers/dashboard/ModelDisplay';
 import GlobalHeader from '../components/all/GlobalHeader';
 import Footer from '../components/all/Footer';
 import { BodyContainer, MainContainer } from '../styles';
+import Breadcrumbs from '../containers/dashboard/Breadcrumbs';
 
 function DatabaseDetail({ match }) {
   return (
     <BodyContainer>
       <GlobalHeader />
+      <Breadcrumbs />
       <MainContainer>
         <ModelDisplay dbName={match.params.dbName} />
       </MainContainer>
