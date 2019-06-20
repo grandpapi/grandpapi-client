@@ -13,13 +13,13 @@ export const signup = ({ email, username, password }) => auth0.redirect.signupAn
   email,
   username,
   password
-});
+}, console.log);
 
 export const login = ({ email, password }) => auth0.login({
   realm: 'Username-Password-Authentication',
   email,
   password
-});
+}, console.log);
 
 export const logout = () => auth0.logout({
   returnTo: process.env.AUTH_LOGOUT_URL
