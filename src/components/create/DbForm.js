@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import rejectDuplicates from '../../utils/rejectDuplicates';
+import monitorInputs from '../../utils/monitorInputs';
 
 export default class DbForm extends PureComponent {
   static propTypes = {
@@ -17,7 +18,7 @@ export default class DbForm extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    if(rejectDuplicates(this.props.userDbs, this.state.dbName)) {
+    if(rejectDuplicates(this.props.userDbs, this.state.dbName) && monitorInputs(this.state.dbName)) {
       this.props.onSubmit(this.state);
       this.setState({
         dbName: '',
