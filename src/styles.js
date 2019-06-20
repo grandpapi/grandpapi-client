@@ -468,6 +468,7 @@ export const ViewDBButton = styled.button`
 //* Model Entry Form *//
 
 export const ModelUl = styled.ul`
+  padding-left: 0px;
   li {
     list-style-type: none;
   }
