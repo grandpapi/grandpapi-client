@@ -35,7 +35,6 @@ export default class ModelEntryForm extends PureComponent {
           <option value="String">String</option>
           <option value="Number">Number</option>
           <option value="Boolean">Boolean</option>
-          <option value="Array">Array</option>
           <option value="Image">Image</option>
         </select>
       </li>
