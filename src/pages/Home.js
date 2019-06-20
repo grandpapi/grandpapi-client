@@ -7,21 +7,24 @@ import InstructData from '../components/home/instructions/InstructData';
 import InstructDeploy from '../components/home/instructions/InstructDeploy';
 import InstructStartBuilding from '../components/home/instructions/InstructStartBuilding';
 import InstructIntro from '../components/home/instructions/InstructIntro';
-import { InstructContainer } from '../styles';
+import { InstructContainer, BodyContainer, MainContainer } from '../styles';
 
 export default function Home() {
   return (
-    <>
-      <Splash />
-      <InstructContainer>
-        <InstructIntro />
-        <InstructDb />
-        <InstructModel />
-        <InstructData />
-        <InstructDeploy />
-        <InstructStartBuilding />
-      </InstructContainer>
+    <BodyContainer>
+      <MainContainer noPadding>
+        <Splash />
+        <InstructContainer>
+          <InstructIntro />
+          <InstructDb />
+          <InstructModel />
+          <InstructData />
+          <InstructDeploy />
+          <InstructStartBuilding />
+        </InstructContainer>
+      </MainContainer>
       <Footer />
-    </>
+    </BodyContainer>
+
   );
 }

@@ -2,11 +2,31 @@ import styled from 'styled-components';
 
 //GLOBAL COMPONENTS
 
-export const HeaderContainer = styled.header`
+export const BodyContainer = styled.div`
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10.5rem;
+  padding: ${props => props.noPadding ? '0rem' : '0rem 3rem'};
+`;
+
+export const GlobalHeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #442c1d;
-  padding: 1em; 
+  padding: .8rem 1rem;
+  padding-right: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+
 `;
 
 export const NavContainer = styled.nav`
@@ -45,6 +65,9 @@ export const PinkSpan = styled.span`
 `;
 
 export const FooterContainer = styled.footer`
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,17 +136,7 @@ export const SplashHeaderContainer = styled.header`
 
 `;
 
-export const GlobalHeaderContainer = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #442c1d;
-  padding: .8rem 1rem;
-  padding-right: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
 
-`;
 
 export const NavLogo = styled.img`
   src: 'assets/logo-pink.png';
@@ -150,6 +163,7 @@ export const InstructContainer = styled.section`
   img: {
     height: 18rem;
   }
+  background-color: white;
 
 `;
 
