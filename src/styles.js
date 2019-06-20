@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 //GLOBAL COMPONENTS
 
+export const HeaderContainer = styled.header`
+  display: flex;
+  justify-content: space-between;
+  background-color: #442c1d;
+  padding: 1em; 
+`;
+
 export const NavContainer = styled.nav`
   display: flex;
   justify-content: center;
