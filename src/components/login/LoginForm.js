@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { signup, login } from '../../services/auth';
 import { SignUpInSpan, SignUpIn, SignUpInForm, SignUpInLabel, SignUpInInput, SignUpInButton } from './loginstyles';
-import Nav from '../all/Nav';
+import GlobalHeader from '../all/GlobalHeader';
 import Footer from '../all/Footer';
 
 export default class LoginForm extends PureComponent {
@@ -33,24 +33,25 @@ export default class LoginForm extends PureComponent {
   render() {
     return (
       <>
-      <Nav/>
+      <GlobalHeader/>
         <SignUpIn>
           <SignUpInForm onSubmit={this.handleSignupSubmit}>
             <SignUpInSpan>Sign up</SignUpInSpan>
+            
             <SignUpInLabel htmlFor="email">
               Email :
             </SignUpInLabel>
-            <SignUpInInput name="email" type="email" onChange={this.handleSignupChange} value={this.state.signup.email} />
+            <SignUpInInput name="email" type="email" onChange={this.handleSignupChange} value={this.state.signup.email} placeholder="ex: email@yourmemail.com"/>
             
             <SignUpInLabel htmlFor="username">
               Username :
             </SignUpInLabel>
-            <SignUpInInput name="username" onChange={this.handleSignupChange} value={this.state.signup.username} />
+            <SignUpInInput name="username" onChange={this.handleSignupChange} value={this.state.signup.username} placeholder="ex: CoolUser84"/>
             
             <SignUpInLabel htmlFor="password">
               Password :
             </SignUpInLabel>
-            <SignUpInInput name="password" type="password" onChange={this.handleSignupChange} value={this.state.signup.password} />
+            <SignUpInInput name="password" type="password" onChange={this.handleSignupChange} value={this.state.signup.password} placeholder="password"/>
             
             <SignUpInButton>Sign Up !</SignUpInButton>
           </SignUpInForm>

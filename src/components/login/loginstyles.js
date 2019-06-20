@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const SignUpIn = styled.div`
 display: flex;
-flex-direction: column;
+flex-flow: column-reverse;
 align-items: center;
 justify-content: center;
 text-align: center;
@@ -43,6 +43,9 @@ color: #442c1d;
 margin-bottom: 1.5vh;
 font-size: 1em;
 font-family: 'Oxygen', sans-serif;
+transition: all .75s;
+text-transform: uppercase;
+letter-spacing: 0.05em;
 `;
 
 export const SignUpInInput = styled.input`
@@ -61,9 +64,27 @@ min-width: 150px;
 font-size: 1em;
 font-family: 'Montserrat', sans-serif;
 cursor: text;
+border-bottom: 1px solid transparent;
+
+&:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 &:focus {
-  outline: #90be6d solid 2px !important;
+  outline: 0 !important;
+  border-bottom: 1px solid #666;
+  background: #b0e2ab;
+  transition: .75s;
+}
+
+&:focus + label {
+  outline: 0 !important;
+  cursor: pointer;
+  transition: .75s;
 }
 `;
 
@@ -81,6 +102,7 @@ padding: 5px;
 border-radius: 1px;
 border: none;
 color: #ff0098;
+cursor: pointer;
 
 
 &:focus {
