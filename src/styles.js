@@ -12,7 +12,7 @@ export const BodyContainer = styled.div`
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 10.5rem;
+  margin-bottom: 13.625rem;
   padding: ${props => props.noPadding ? '0rem' : '0rem 3rem'};
 `;
 
@@ -498,6 +498,7 @@ export const ViewDBButton = styled.button`
 //* Model Entry Form *//
 
 export const ModelUl = styled.ul`
+  padding-left: 0px;
   li {
     list-style-type: none;
   }

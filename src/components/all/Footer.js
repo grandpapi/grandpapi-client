@@ -10,7 +10,6 @@ export default function Footer() {
       <StyledNavUl>
         <Link to={"/about"}><li>About Mega Nap</li></Link>
         <Link to={"/docs"}><li>Documentation</li></Link>
-        <Link to={"/apis"}><li>Privacy Policy</li></Link>
         <Link to={"/apis"}><li>Public APIs</li></Link>
       </StyledNavUl>
       <StyledNavUl>
