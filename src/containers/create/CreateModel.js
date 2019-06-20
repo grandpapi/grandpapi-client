@@ -9,7 +9,7 @@ import { selectDbMdls } from '../../selectors/modelSelectors';
 import { selectCurrentDatabase, selectCurrentModel } from '../../selectors/sessionSelectors';
 import rejectDuplicates from '../../utils/rejectDuplicates';
 import stateToSchema from '../../utils/stateToSchema';
-import { Form, FormLabel, FormInput, FormSubmitButton } from '../../styles';
+import { Form, FormLabel, FormInput, FormSubmitButton, FormContainer, ModelUl } from '../../styles';
 
 class CreateModel extends PureComponent {
   static propTypes = {
@@ -81,18 +81,20 @@ class CreateModel extends PureComponent {
         handleEntryChange={this.handleEntryChange}
       />);
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <FormLabel>
+      <FormContainer>
+        <Form onSubmit={this.handleSubmit}>
+          <FormLabel htmlFor="mdlName">
           Model Name:
+          </FormLabel>
           <FormInput name="mdlName" onChange={this.handleChange} value={this.state.mdlName} />
-        </FormLabel>
-        <ul>
-          {modelEntries}
-        </ul>
-        <FormSubmitButton type="button" onClick={this.addEntry}>Add Entry</FormSubmitButton>
-        {/* <ModelPreview {...modelPreviewProps} /> */}
-        <FormSubmitButton>Finish Model</FormSubmitButton>
-      </Form>
+          <ModelUl>
+            {modelEntries}
+          </ModelUl>
+          <FormSubmitButton type="button" onClick={this.addEntry}>Add Entry</FormSubmitButton>
+          {/* <ModelPreview {...modelPreviewProps} /> */}
+          <FormSubmitButton>Finish Model</FormSubmitButton>
+        </Form>
+      </FormContainer>
     );
   }
 }
