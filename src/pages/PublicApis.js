@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from '../components/all/Nav';
 import Footer from '../components/all/Footer';
+import GlobalHeader from '../components/all/GlobalHeader';
 
 export default function PublicApis() {
   return (
     <>
-      <Nav />
+      <GlobalHeader />
       <h1>Public Apis</h1>
       <Footer />
     </>

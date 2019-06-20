@@ -1,11 +1,13 @@
 import React from 'react';
-import Nav from '../components/all/Nav';
+import GlobalHeader from '../components/all/GlobalHeader';
+import Footer from '../components/all/Footer';
 
 export default function Docs() {
   return (
 		<>
-      <Nav />
+      <GlobalHeader />
       <h1>Docs</h1>
+      <Footer />
     </>
   );
 }

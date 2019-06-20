@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from '../components/all/Nav';
 import Footer from '../components/all/Footer';
 import GlobalHeader from '../components/all/GlobalHeader';
 
