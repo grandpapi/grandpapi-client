@@ -22,7 +22,8 @@ class DataEntryForm extends PureComponent {
     confirmed: false
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.confirmed !== this.state.confirmed) this.setState({ confirmed: false });
     if(prevProps !== this.props) {
       const fields = Object.entries(JSON.parse(this.props.mdlSchema));
       this.setState({
@@ -32,7 +33,7 @@ class DataEntryForm extends PureComponent {
   }
 
   handleChange = ({ target }) => {
-    this.setState({ data: { ...this.state.data, [target.name]: target.value }, confirmed: false });
+    this.setState({ data: { ...this.state.data, [target.name]: target.value } });
   }
 
   handleImage = ({ target }) => {
@@ -54,7 +55,7 @@ class DataEntryForm extends PureComponent {
     const { fields } = this.state;
     const { currentDatabase: { dbName } } = this.props;
     const H3 = styled.h3`
-    animation: fade 500ms ease-out forwards;
+    animation: fade 1000ms ease-out forwards;
       @keyframes fade {
         from {
           opacity: 1
@@ -68,7 +69,7 @@ class DataEntryForm extends PureComponent {
       <>
         <Link to={`/dashboard/${dbName}`}>Back to Database</Link>
         <form onSubmit={this.handleSubmit}>
-          <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data}/>
+          <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data} confirmed={this.state.confirmed} />
           <button>Submit Data</button>
         </form>
         {this.state.confirmed && <H3>Data Added!</H3>}
