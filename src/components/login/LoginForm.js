@@ -1,6 +1,14 @@
 import React, { PureComponent } from 'react';
 import { signup, login } from '../../services/auth';
-import { FormHeading, SignUpIn, Form, FormLabel, FormInput, FormSubmitButton, FormContainer } from '../../styles';
+import { 
+  FormHeading, 
+  SignUpIn, 
+  Form, 
+  FormLabel, 
+  FormInput, 
+  FormSubmitButton, 
+  FormContainer 
+} from '../../styles';
 import GlobalHeader from '../all/GlobalHeader';
 import Footer from '../all/Footer';
 
@@ -52,7 +60,6 @@ export default class LoginForm extends PureComponent {
               Password :
             </FormLabel>
             <FormInput name="password" type="password" onChange={this.handleSignupChange} value={this.state.signup.password} placeholder="password"/>
-            
             <FormSubmitButton>Sign Up !</FormSubmitButton>
           </Form>
         </FormContainer>

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import DatabaseList from '../../components/dashboard/DatabaseList';
 import { selectUserDbs } from '../../selectors/dbSelectors';
 import { selectUserId } from '../../selectors/sessionSelectors';
@@ -19,8 +20,14 @@ class DatabaseDisplay extends PureComponent {
     }
 
     render() {
+      const { databases } = this.props;
       return (
-        <DatabaseList databases={this.props.databases} />
+        <>
+        <DatabaseList databases={databases} />
+        {databases.length === 0 && (
+          <Link to="/create/database">Create your first database</Link>
+        )}
+        </>
       );
     }
 }
