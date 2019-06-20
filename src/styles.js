@@ -233,7 +233,7 @@ align-items: center;
 justify-content: center;
 text-align: center;
 color: #442c1d;
-margin-bottom: 1.5vh;
+margin: 1.5vh;
 font-size: 1em;
 font-family: 'Oxygen', sans-serif;
 transition: all .75s;
@@ -287,7 +287,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
-margin-bottom: 2vw;
+margin: 2vw;
 font-family: 'Oxygen', sans-serif;
 text-transform: uppercase;
 background-color: #b0e2ab;
@@ -408,4 +408,12 @@ export const ViewDBButton = styled.button`
     &:focus {
       outline: #90be6d solid 2px !important;
     }
+`;
+
+//* Model Entry Form *//
+
+export const ModelUl = styled.ul`
+  li {
+    list-style-type: none;
+  }
 `;
