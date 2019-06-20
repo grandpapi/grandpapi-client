@@ -320,7 +320,8 @@ export const DatabaseUl = styled.ul`
 
     &:hover {
     border: 1px solid #90be6d;
-  }
+    }
+
   }
 
   a {
