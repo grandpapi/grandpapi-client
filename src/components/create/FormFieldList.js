@@ -1,54 +1,64 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function FormFieldList({ fields }) {
+export default function FormFieldList({ fields, handleChange, handleImage }) {
   const fieldList = fields.map(field => {
-    const key = field[0] + field[1];
-    switch(field[1]) {
+    const [key, value] = field;
+    switch(value) {
       case 'String':
         return (
-          <label key={key}>{field[0]}
-            <input type="text" name={field[0]} />
+          <label key={key + value}>{key}
+            <input type="text" name={key} onChange={handleChange} />
           </label>
         );
       case 'Image':
         return (
-          <label key={key}>{field[0]}<input type="text" name={field[0]} /></label>
+          <label key={key + value}>
+            {key}
+            <input type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} />
+          </label>
         );
       case 'Number':
         return (
-          <label key={key}>{field[0]}<input type="number" name={field[0]} /></label>
+          <label key={key + value}>
+            {key}
+            <input type="number" name={key} onChange={handleChange} />
+          </label>
         );
       case 'Boolean':
         return (
-          <div key={key}>
+          <div key={key + value}>
             <label >
-              {field[0]} True:
-              <input type="radio" value="true" />
+              {key} True:
+              <input name={key} type="radio" value={true} onChange={handleChange} />
             </label>
             <label>
-              {field[0]} False:
-              <input type="radio" value="false" />
+              {key} False:
+              <input name={key} type="radio" value={false} onChange={handleChange} />
             </label>
           </div>
         );
       case 'Array':
         return (
-          <label key={key}>{field[0]}<input type="text" name={field[0]} /></label>
+          <label key={key + value}>
+            {key}
+            <input type="text" name={key} />
+          </label>
         );
       default:
-        return field[1];
+        return value;
     }
   });
 
   return (
-    <form>
-      {fieldList} 
-      <button>Submit Data</button>
-    </form>
+    <>
+      {fieldList}
+    </>
   );
 }
 
 FormFieldList.propTypes = {
-  fields: PropTypes.array.isRequired
+  fields: PropTypes.array.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleImage: PropTypes.func.isRequired
 };

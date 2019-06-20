@@ -15,7 +15,8 @@ class DataEntryForm extends PureComponent {
   }
 
   state = {
-    fields: []
+    fields: [],
+    data: {}
   }
 
   componentDidUpdate(prevProps) {
@@ -27,21 +28,31 @@ class DataEntryForm extends PureComponent {
     }
   }
 
-  handleChange = ({ target }) => this.setState({ [target.name]: target.value });
+  handleChange = ({ target }) => {
+    this.setState({ data: { ...this.state.data, [target.name]: target.value } });
+  }
+
+  handleImage = ({ target }) => {
+    const reader = new FileReader();
+    reader.onload = event => {
+      this.setState({ data: { ...this.state.data, [target.name]: event.target.result } });
+    };
+    reader.readAsDataURL(target.files[0]);
+  }
 
   handleSubmit = event => {
     event.preventDefault();
     const { username, currentDatabase: { dbName }, currentModel: { mdlName } } = this.props;
-    this.props.onSubmit(this.state);
+    this.props.onSubmit(username, dbName, mdlName, this.state.data);
   }
 
   render() {
     const { fields } = this.state;
     return (
-      <>
-        <h1>hi</h1>
-        <FormFieldList fields={fields} />
-      </>
+      <form onSubmit={this.handleSubmit}>
+        <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} />
+        <button>Submit Data</button>
+      </form>
     );
   }
 }
