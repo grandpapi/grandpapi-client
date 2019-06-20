@@ -22,7 +22,7 @@ class ModelLink extends PureComponent {
           <h3>{mdlName}</h3>
         </li>
       </Link>
-      <Link to={'create/data'} onClick={() => onClickMdl(mdlName, _id, mdlSchema)}>
+      <Link to="/create/data" onClick={() => onClickMdl(mdlName, _id, mdlSchema)}>
         <button>Add Data</button>
       </Link>
       </>
