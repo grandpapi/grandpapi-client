@@ -20,7 +20,6 @@ class Dashboard extends PureComponent {
         <GlobalHeader />
         <MainContainer>
           <h2>Welcome to your dashboard, {nickname}!</h2>
-          <Link to="/create/database"><button>+</button></Link>
           <DatabaseDisplay />
         </MainContainer>
         <Footer />
