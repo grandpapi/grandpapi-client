@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function FormFieldList({ fields, handleChange }) {
+export default function FormFieldList({ fields, handleChange, handleImage }) {
   const fieldList = fields.map(field => {
     const [key, value] = field;
     switch(value) {
@@ -15,7 +15,7 @@ export default function FormFieldList({ fields, handleChange }) {
         return (
           <label key={key + value}>
             {key}
-            <input type="text" name={key} onChange={handleChange} />
+            <input type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} />
           </label>
         );
       case 'Number':
@@ -59,5 +59,6 @@ export default function FormFieldList({ fields, handleChange }) {
 
 FormFieldList.propTypes = {
   fields: PropTypes.array.isRequired,
-  handleChange: PropTypes.func.isRequired
+  handleChange: PropTypes.func.isRequired,
+  handleImage: PropTypes.func.isRequired
 };
