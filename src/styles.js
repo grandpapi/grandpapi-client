@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 //GLOBAL COMPONENTS
 
@@ -47,6 +47,7 @@ export const NavContainer = styled.nav`
     color: #ff0098;
   }
 `;
+
 
 export const StyledNavUl = styled.ul`
     padding-inline-start: 0;
@@ -152,11 +153,22 @@ export const SplashHeaderContainer = styled.header`
 `;
 
 
-
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 export const NavLogo = styled.img`
   src: 'assets/logo-pink.png';
   height: 4.4375rem;
   width: auto;
+  &:hover {
+    cursor: pointer;
+    animation: ${rotate} .4s ease-in;
+  }
 `;
 
 export const HeroButton = styled.button`
@@ -327,7 +339,7 @@ text-transform: uppercase;
 background-color: #ff0098;
 padding: .8rem 1.4rem;
 border-radius: 1px;
-border: none;
+border: 2px solid transparent;
 color: white;
 cursor: pointer;
 
