@@ -49,6 +49,21 @@ exports[`App component renders App 1`] = `
       path="/apis"
     />
     <Route
+      component={[Function]}
+      exact={true}
+      path="/table3"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/careers"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/privacy"
+    />
+    <Route
       component={
         Object {
           "$$typeof": Symbol(react.memo),
@@ -110,6 +125,19 @@ exports[`App component renders App 1`] = `
       }
       exact={true}
       path="/create/model"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithSession)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/create/data"
     />
   </Switch>
 </BrowserRouter>
