@@ -6,7 +6,7 @@ export default function ModelPreview({ mdlSchema, currentModel }) {
   return (
         <>
             <p>{mdlName}</p>
-            <p>{mdlSchema }</p>
+            <p>{mdlSchema}</p>
         </>
   );
 }
