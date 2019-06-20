@@ -295,6 +295,13 @@ border-bottom: 1px solid transparent;
 }
 `;
 
+export const FormInputNumber = styled(FormInput)`
+  width: 7vw;
+`;
+
+export const FormInputRadio = styled(FormInput)`
+  width: 5vw;
+`;
 export const FormSelectDiv = styled.div`
   font-size: 1em;
   position: relative;

@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { selectNickname } from '../selectors/sessionSelectors';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import DatabaseDisplay from '../containers/dashboard/DatabaseDisplay';
 import GlobalHeader from '../components/all/GlobalHeader';
 import Footer from '../components/all/Footer';
