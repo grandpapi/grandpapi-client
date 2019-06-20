@@ -2,11 +2,31 @@ import styled from 'styled-components';
 
 //GLOBAL COMPONENTS
 
-export const HeaderContainer = styled.header`
+export const BodyContainer = styled.div`
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10.5rem;
+  padding: ${props => props.noPadding ? '0rem' : '0rem 3rem'};
+`;
+
+export const GlobalHeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #442c1d;
-  padding: 1em; 
+  padding: .8rem 1rem;
+  padding-right: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+
 `;
 
 export const NavContainer = styled.nav`
@@ -38,6 +58,9 @@ export const BodyButton = styled.button`
   font-size: 1.3rem;
   border: none;
   background-color: #b0e2ab;
+  &:focus {
+    outline: #90be6d solid 2px !important;
+  }
 `;
 
 export const PinkSpan = styled.span`
@@ -45,6 +68,9 @@ export const PinkSpan = styled.span`
 `;
 
 export const FooterContainer = styled.footer`
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,17 +139,7 @@ export const SplashHeaderContainer = styled.header`
 
 `;
 
-export const GlobalHeaderContainer = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #442c1d;
-  padding: .8rem 1rem;
-  padding-right: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
 
-`;
 
 export const NavLogo = styled.img`
   src: 'assets/logo-pink.png';
@@ -140,6 +156,9 @@ export const HeroButton = styled.button`
   font-size: 1.3rem;  
   border: none;
   background-color: #eaefbd;
+  &:focus {
+    outline: #90be6d solid 2px !important;
+}
 `;
 
 export const InstructContainer = styled.section`
@@ -150,6 +169,7 @@ export const InstructContainer = styled.section`
   img: {
     height: 18rem;
   }
+  background-color: white;
 
 `;
 
@@ -186,7 +206,7 @@ export const IntroRtoL = styled.section`
 
 //* Login Styles *//
 
-export const SignUpIn = styled.div`
+export const FormContainer = styled.div`
 display: flex;
 flex-flow: column-reverse;
 align-items: center;
@@ -227,7 +247,7 @@ align-items: center;
 justify-content: center;
 text-align: center;
 color: #442c1d;
-margin-bottom: 1.5vh;
+margin: 1.5vh;
 font-size: 1em;
 font-family: 'Oxygen', sans-serif;
 transition: all .75s;
@@ -281,7 +301,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
-margin-bottom: 2vw;
+margin: 2vw;
 font-family: 'Oxygen', sans-serif;
 text-transform: uppercase;
 background-color: #b0e2ab;
@@ -290,7 +310,6 @@ border-radius: 1px;
 border: none;
 color: #ff0098;
 cursor: pointer;
-
 
 &:focus {
   outline: #90be6d solid 2px !important;
@@ -306,29 +325,109 @@ export const DatabaseUl = styled.ul`
 
   li {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 24vw;
     min-width: 220px;
+    min-height: 220px;
     height: 24vw;
     list-style-type: none;
     text-align: center;
-    margin-bottom: 5vw;
+    margin: 3vw;
     background-color: #eaefbd;
     border-radius: 5px;
-    border: 1px solid transparent;
-
+    border: 2px solid transparent;
     &:hover {
-    border: 1px solid #90be6d;
-  }
+        border: 2px solid #90be6d;
+      }
+    
+    div {
+      width: 22vw;
+      min-width: 200px;
+      overflow-wrap: break-word;
+      word-wrap: break-all;
+      white-space: normal;
+      }
   }
 
   a {
-    font-size: 1.5em;
+    display: block;
+    font-size: 2rem;
     color: #ff0098;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: .2em;
+    letter-spacing: .2rem;
+    text-decoration: none;
   }
+`;
 
+export const DBButton = styled(BodyButton)`
+  background-color: #ff0098;
+  color: #eaefbd;
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+`;
+
+export const NewDBButton = styled.button`
+  background-color: #eaefbd;
+  border: 2px solid transparent;
+  font-size: 4rem;
+  color: #ff0098;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .2rem;
+    &:hover {
+      span {
+        display:none;
+      }
+    }
+
+    &:hover:before {
+      content:'Add new database';
+      font-size: 2.5rem;
+      cursor: pointer;
+      }
+    &:focus {
+      outline: #90be6d solid 2px !important;
+    }
+`;
+
+export const ViewDBButton = styled.button`
+  background-color: #eaefbd;
+  border: 2px solid transparent;
+  font-size: 2rem;
+  color: #ff0098;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .2rem;
+  overflow-wrap: break-word;
+  word-wrap: break-all;
+  white-space: normal;
+  width: 22vw;
+  &:hover {
+      span {
+        display:none;
+      }
+    }
+    &:hover:before {
+        content:'view database';
+        cursor: pointer;
+        color: #ff0098;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: .2rem;
+        font-size: 2.3rem;
+      }
+    &:focus {
+      outline: #90be6d solid 2px !important;
+    }
+`;
+
+//* Model Entry Form *//
+
+export const ModelUl = styled.ul`
+  li {
+    list-style-type: none;
+  }
 `;

@@ -1,28 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function FormFieldList({ fields, handleChange, handleImage }) {
+export default function FormFieldList({ fields, handleChange, handleImage, data }) {
+  console.log(data);
   const fieldList = fields.map(field => {
     const [key, value] = field;
     switch(value) {
       case 'String':
         return (
           <label key={key + value}>{key}
-            <input type="text" name={key} onChange={handleChange} />
+            <input type="text" name={key} onChange={handleChange} value={data[key] || ''} />
           </label>
         );
       case 'Image':
         return (
           <label key={key + value}>
             {key}
-            <input type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} />
+            <input type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} value={data[key] || ''}/>
           </label>
         );
       case 'Number':
         return (
           <label key={key + value}>
             {key}
-            <input type="number" name={key} onChange={handleChange} />
+            <input type="number" name={key} onChange={handleChange} value={data[key] || ''}/>
           </label>
         );
       case 'Boolean':
@@ -42,7 +43,7 @@ export default function FormFieldList({ fields, handleChange, handleImage }) {
         return (
           <label key={key + value}>
             {key}
-            <input type="text" name={key} />
+            <input type="text" name={key} value={data[key]}/>
           </label>
         );
       default:
@@ -60,5 +61,6 @@ export default function FormFieldList({ fields, handleChange, handleImage }) {
 FormFieldList.propTypes = {
   fields: PropTypes.array.isRequired,
   handleChange: PropTypes.func.isRequired,
-  handleImage: PropTypes.func.isRequired
+  handleImage: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired
 };
