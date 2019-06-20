@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatabaseLink from './DatabaseLink';
-import { DatabaseUl } from '../../styles';
+import { DatabaseUl, NewDBButton } from '../../styles';
+import { Link } from 'react-router-dom';
 
 export default function DatabaseList({ databases }) {
   const databaseList = databases.map(({ _id, dbName }) => (
@@ -9,8 +10,12 @@ export default function DatabaseList({ databases }) {
   ));
   return (
     <DatabaseUl>
+      <li>
+        <Link to="/create/database"><NewDBButton><span>+</span></NewDBButton></Link>
+      </li> 
       {databaseList}
     </DatabaseUl>
+
   );
 }
 

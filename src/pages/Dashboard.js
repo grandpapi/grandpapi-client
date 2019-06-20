@@ -33,7 +33,6 @@ const mapStateToProps = (state) => ({
   nickname: selectNickname(state)
 });
 
-
 export default connect(
   mapStateToProps
 )(Dashboard); 
