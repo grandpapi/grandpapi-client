@@ -2,12 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ModelList from '../../components/dashboard/ModelList';
 import { connect } from 'react-redux';
-import { fetchModels } from '../../actions/modelActions';
+import { fetchModels, updateMdlState } from '../../actions/modelActions';
 import { selectDbMdls } from '../../selectors/modelSelectors';
 
 class ModelDisplay extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func.isRequired,
+    onClickMdl: PropTypes.func.isRequired,
     dbMdls: PropTypes.array,
     dbName: PropTypes.string.isRequired
   }
@@ -18,7 +19,7 @@ class ModelDisplay extends PureComponent {
 
   render() {
     return (
-      <ModelList dbName={this.props.dbName} models={this.props.dbMdls}/>
+      <ModelList dbName={this.props.dbName} models={this.props.dbMdls} onClickMdl={this.props.onClickMdl}/>
     );
   }
 }
@@ -30,6 +31,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetch(dbName) {
     dispatch(fetchModels(dbName));
+  },
+  onClickMdl(mdlName, mdlId, mdlSchema) {
+    dispatch(updateMdlState(mdlName, mdlId, mdlSchema));
   }
 });
 
