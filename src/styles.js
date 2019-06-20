@@ -43,6 +43,9 @@ export const NavContainer = styled.nav`
     list-style: none;
     color: white;
   }
+  a:hover {
+    color: #ff0098;
+  }
 `;
 
 export const StyledNavUl = styled.ul`
@@ -61,6 +64,13 @@ export const BodyButton = styled.button`
   background-color: #b0e2ab;
   &:focus {
     outline: #90be6d solid 2px !important;
+  }
+  -webkit-transition: color .6s, background-color .6s;
+  transition: color .45s, background-color .45s;
+  &:hover {
+    color: #eaefbd;
+    background-color: #442c1d;
+    cursor: pointer;
   }
 `;
 
@@ -91,6 +101,9 @@ export const FooterContainer = styled.footer`
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
+  li:hover {
+    color: #ff0098;
+  }
 `;
 
 export const FooterTagline = styled.section`
@@ -158,7 +171,14 @@ export const HeroButton = styled.button`
   background-color: #eaefbd;
   &:focus {
     outline: #90be6d solid 2px !important;
-}
+  }
+  -webkit-transition: color .6s, background-color .6s;
+  transition: color .45s, background-color .45s;
+  &:hover {
+    color: #b0e2ab;
+    background-color: #ff0098;
+    cursor: pointer;
+  }
 `;
 
 export const InstructContainer = styled.section`

@@ -12,7 +12,6 @@ export default function GlobalHeader() {
       <section>
         <BodyButton><Link to="/dashboard" className={styles.linkInButton}>My Dashboard</Link></BodyButton>
         <HeroButton onClick={logout}>Log Out</HeroButton>
-
       </section>
     </GlobalHeaderContainer>
   );
