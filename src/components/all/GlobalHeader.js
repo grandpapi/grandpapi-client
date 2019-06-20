@@ -15,7 +15,6 @@ export default function GlobalHeader() {
       <NavContainer>
         <Nav dashLink={dashLink} />
       </NavContainer>
-      {/* TODO: change to ternary based on login status */}
       <HeroButton onClick={logout}>Log Out</HeroButton>
     </GlobalHeaderContainer>
   );

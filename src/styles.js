@@ -15,11 +15,24 @@ export const MainContainer = styled.div`
   margin-bottom: 10.5rem;
 `;
 
-export const HeaderContainer = styled.header`
+// export const HeaderContainer = styled.header`
+//   display: flex;
+//   justify-content: space-between;
+//   background-color: #442c1d;
+//   padding: 1em; 
+// `;
+
+export const GlobalHeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #442c1d;
-  padding: 1em; 
+  padding: .8rem 1rem;
+  padding-right: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+
 `;
 
 export const NavContainer = styled.nav`
@@ -129,17 +142,7 @@ export const SplashHeaderContainer = styled.header`
 
 `;
 
-export const GlobalHeaderContainer = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #442c1d;
-  padding: .8rem 1rem;
-  padding-right: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
 
-`;
 
 export const NavLogo = styled.img`
   src: 'assets/logo-pink.png';
