@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 import ModelDisplay from '../containers/dashboard/ModelDisplay';
 import GlobalHeader from '../components/all/GlobalHeader';
 import Footer from '../components/all/Footer';
+import { BodyContainer, MainContainer } from '../styles';
 
 function DatabaseDetail({ match }) {
   return (
-        <>
-            <GlobalHeader />
-            <ModelDisplay dbName={match.params.dbName} />
-            <Footer />
-        </>
+    <BodyContainer>
+      <MainContainer>
+        <GlobalHeader />
+        <ModelDisplay dbName={match.params.dbName} />
+      </MainContainer>
+      <Footer />
+    </BodyContainer>
   );
 }
 

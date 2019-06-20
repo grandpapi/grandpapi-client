@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import DatabaseDisplay from '../containers/dashboard/DatabaseDisplay';
 import GlobalHeader from '../components/all/GlobalHeader';
 import Footer from '../components/all/Footer';
+import { BodyContainer, MainContainer } from '../styles';
 
 class Dashboard extends PureComponent {
   static propTypes = {
@@ -16,14 +17,16 @@ class Dashboard extends PureComponent {
   render() {
     const { nickname } = this.props;
     return (
-      <>
-        <GlobalHeader />
-        <h1>Welcome to your dashboard, {nickname}!</h1>
-        <button onClick={logout}>Log Out</button>
-        <Link to="/create/database"><button>+</button></Link>
-        <DatabaseDisplay />
+      <BodyContainer>
+        <MainContainer>
+          <GlobalHeader />
+          <h1>Welcome to your dashboard, {nickname}!</h1>
+          <button onClick={logout}>Log Out</button>
+          <Link to="/create/database"><button>+</button></Link>
+          <DatabaseDisplay />
+        </MainContainer>
         <Footer />
-      </>
+      </BodyContainer>
     );
   }
 }

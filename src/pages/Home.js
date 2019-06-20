@@ -22,10 +22,8 @@ export default function Home() {
           <InstructDeploy />
           <InstructStartBuilding />
         </InstructContainer>
-
       </MainContainer>
       <Footer />
-
     </BodyContainer>
 
   );
