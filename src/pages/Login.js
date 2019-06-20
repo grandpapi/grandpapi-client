@@ -7,7 +7,7 @@ import { BodyContainer, MainContainer } from '../styles';
 export default function Login() {
   return (
     <BodyContainer>
-      <MainContainer>
+      <MainContainer noPadding>
         <LoginHeader />
         <LoginForm />
       </MainContainer>
