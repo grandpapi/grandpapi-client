@@ -6,8 +6,8 @@ import { BodyContainer, MainContainer } from '../styles';
 export default function PublicApis() {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <h1>Public Apis</h1>
       </MainContainer>
       <Footer />

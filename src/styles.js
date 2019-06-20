@@ -13,14 +13,8 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 10.5rem;
+  padding: ${props => props.noPadding ? "0rem" : "0rem 3rem"};
 `;
-
-// export const HeaderContainer = styled.header`
-//   display: flex;
-//   justify-content: space-between;
-//   background-color: #442c1d;
-//   padding: 1em; 
-// `;
 
 export const GlobalHeaderContainer = styled.header`
   display: flex;

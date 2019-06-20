@@ -12,7 +12,7 @@ import { InstructContainer, BodyContainer, MainContainer } from '../styles';
 export default function Home() {
   return (
     <BodyContainer>
-      <MainContainer>
+      <MainContainer noPadding>
         <Splash />
         <InstructContainer>
           <InstructIntro />

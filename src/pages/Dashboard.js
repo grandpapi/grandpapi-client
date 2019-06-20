@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { selectNickname } from '../selectors/sessionSelectors';
 import { connect } from 'react-redux';
-import { logout } from '../services/auth';
 import { Link } from 'react-router-dom';
 import DatabaseDisplay from '../containers/dashboard/DatabaseDisplay';
 import GlobalHeader from '../components/all/GlobalHeader';
@@ -18,8 +17,8 @@ class Dashboard extends PureComponent {
     const { nickname } = this.props;
     return (
       <BodyContainer>
+        <GlobalHeader />
         <MainContainer>
-          <GlobalHeader />
           <h2>Welcome to your dashboard, {nickname}!</h2>
           <Link to="/create/database"><button>+</button></Link>
           <DatabaseDisplay />

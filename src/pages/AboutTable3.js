@@ -6,8 +6,8 @@ import { BodyContainer, MainContainer } from '../styles';
 export default function AboutTable3() {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <h1>Table 3</h1>
         <p>Grandpapi took a MegaNap</p>
       </MainContainer>

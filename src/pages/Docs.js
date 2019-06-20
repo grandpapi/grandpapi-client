@@ -6,8 +6,8 @@ import { BodyContainer, MainContainer } from '../styles';
 export default function Docs() {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <h1>Docs</h1>
         <h2>Name Your Database</h2>
         <ul>

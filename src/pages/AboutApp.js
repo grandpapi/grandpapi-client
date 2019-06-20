@@ -6,8 +6,8 @@ import { BodyContainer, MainContainer } from '../styles';
 export default function AboutApp() {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <h1>About App</h1>
         <h2>FAQ</h2>
         <h3>What is an API?</h3>

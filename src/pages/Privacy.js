@@ -6,8 +6,8 @@ import { MainContainer, BodyContainer } from '../styles';
 export default function Privacy() {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <h1>Privacy Policy</h1>
         <p> Something clever </p>
       </MainContainer>

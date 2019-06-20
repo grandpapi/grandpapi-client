@@ -7,8 +7,8 @@ import { BodyContainer, MainContainer } from '../styles';
 export default function DatabaseCreation() {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <CreateDb />
         <Footer />
       </MainContainer>

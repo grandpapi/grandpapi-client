@@ -24,8 +24,8 @@ class ModelDetail extends PureComponent {
 
     return (
       <BodyContainer>
+        <GlobalHeader />
         <MainContainer>
-          <GlobalHeader />
           <h1>{mdlName}</h1>
           <h3>Model Schema: </h3>
           <p>{mdlSchema}</p>

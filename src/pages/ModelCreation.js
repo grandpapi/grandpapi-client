@@ -7,8 +7,8 @@ import { BodyContainer, MainContainer } from '../styles';
 export default function ModelCreation() {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <CreateModel />
       </MainContainer>
       <Footer />

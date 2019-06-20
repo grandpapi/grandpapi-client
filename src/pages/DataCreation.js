@@ -7,8 +7,8 @@ import { BodyContainer, MainContainer } from '../styles';
 export default function DataCreation() {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <DataEntryForm />
       </MainContainer>
       <Footer />

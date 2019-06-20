@@ -6,8 +6,8 @@ import { BodyContainer, MainContainer } from '../styles';
 export default function Careers() {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <h1>Come Work for Us</h1>
         <p>We have very little capital, but lots of love</p>
       </MainContainer>

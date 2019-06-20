@@ -9,8 +9,8 @@ import { BodyContainer, MainContainer } from '../styles';
 function DatabaseDetail({ match }) {
   return (
     <BodyContainer>
+      <GlobalHeader />
       <MainContainer>
-        <GlobalHeader />
         <ModelDisplay dbName={match.params.dbName} />
       </MainContainer>
       <Footer />
