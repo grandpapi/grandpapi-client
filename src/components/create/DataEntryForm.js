@@ -15,7 +15,8 @@ class DataEntryForm extends PureComponent {
   }
 
   state = {
-    fields: []
+    fields: [],
+    data: {}
   }
 
   componentDidUpdate(prevProps) {
@@ -27,21 +28,23 @@ class DataEntryForm extends PureComponent {
     }
   }
 
-  handleChange = ({ target }) => this.setState({ [target.name]: target.value });
+  handleChange = ({ target }) => {
+    this.setState({ data: { ...this.state.data, [target.name]: target.value } });
+  }
 
   handleSubmit = event => {
     event.preventDefault();
     const { username, currentDatabase: { dbName }, currentModel: { mdlName } } = this.props;
-    this.props.onSubmit(this.state);
+    this.props.onSubmit(username, dbName, mdlName, this.state.data);
   }
 
   render() {
     const { fields } = this.state;
     return (
-      <>
-        <h1>hi</h1>
-        <FormFieldList fields={fields} />
-      </>
+      <form onSubmit={this.handleSubmit}>
+        <FormFieldList fields={fields} handleChange={this.handleChange} />
+        <button>Submit Data</button>
+      </form>
     );
   }
 }
