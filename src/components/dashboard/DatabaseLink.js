@@ -17,18 +17,17 @@ class DatabaseLink extends PureComponent {
     const { dbName, _id, onClickDb } = this.props;
     return (
       <>
-      
         <li>
-          <Link to={`/dashboard/${dbName}`} onClick={() => onClickDb(dbName, _id)}>
-            <h3>{dbName}</h3>
-          </Link>
-          {/* <img src={imgSrc} alt={dbName} /> */}
-          <Link to={'create/model'} onClick={() => onClickDb(dbName, _id)}>
-            <DBButton>Add Model</DBButton>
-          </Link>
+          <div>
+            <Link to={`/dashboard/${dbName}`} onClick={() => onClickDb(dbName, _id)}>
+              <h3>{dbName}</h3>
+            </Link>
+            {/* <img src={imgSrc} alt={dbName} /> */}
+            <Link to={'create/model'} onClick={() => onClickDb(dbName, _id)}>
+              <DBButton>+Add Model</DBButton>
+            </Link>
+          </div>
         </li>
-     
-      
       </>
     );
   }

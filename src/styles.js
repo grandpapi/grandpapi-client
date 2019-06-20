@@ -317,6 +317,7 @@ export const DatabaseUl = styled.ul`
     justify-content: center;
     width: 24vw;
     min-width: 220px;
+    min-height: 220px;
     height: 24vw;
     list-style-type: none;
     text-align: center;
@@ -324,9 +325,14 @@ export const DatabaseUl = styled.ul`
     background-color: #eaefbd;
     border-radius: 5px;
     border: 1px solid transparent;
-    overflow-wrap: break-word;
-    word-wrap: break-all;
-    white-space: normal;
+    
+    div {
+      width: 22vw;
+      min-width: 200px;
+      overflow-wrap: break-word;
+      word-wrap: break-all;
+      white-space: normal;
+    }
 
     &:hover {
     border: 1px solid #90be6d;
@@ -334,13 +340,14 @@ export const DatabaseUl = styled.ul`
   }
 
   a {
-    font-size: 1.5em;
+    display: block;
+    font-size: 2rem;
     color: #ff0098;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: .2em;
+    letter-spacing: .2rem;
     text-decoration: none;
-    margin-bottom: 3vw;
+    margin-bottom: 2vw;
   }
 `;
 
@@ -352,17 +359,18 @@ export const DBButton = styled(BodyButton)`
 export const NewDBButton = styled.button`
     background-color: #eaefbd;
     border: none;
-    font-size: 2em;
+    font-size: 4rem;
     color: #ff0098;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: .2em;
+    letter-spacing: .2rem;
       &:hover {
         span {
           display:none;
         }
       &:hover:before {
           content:'Add new database';
+          font-size: 2.5rem;
         }
       }
 `;
