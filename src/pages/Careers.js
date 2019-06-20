@@ -2,12 +2,12 @@ import React from 'react';
 import Nav from '../components/all/Nav';
 import Footer from '../components/all/Footer';
 
-export default function AboutTable3() {
+export default function Careers() {
   return (
     <>
       <Nav />
-      <h1>Table 3</h1>
-      <p>Grandpapi took a MegaNap</p>
+      <h1>Come Work for Us</h1>
+      <p>We have very little capital, but lots of love</p>
       <Footer />
     </>
   );
