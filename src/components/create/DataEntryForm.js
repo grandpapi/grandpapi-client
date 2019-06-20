@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import FormFieldList from './FormFieldList';
 import PropTypes from 'prop-types';
 import { selectCurrentModelSchema, selectCurrentModel, selectCurrentDatabase, selectNickname } from '../../selectors/sessionSelectors';
 import { createData } from '../../actions/dataActions';
+import styled from 'styled-components';
 
 class DataEntryForm extends PureComponent {
   static propTypes = {
@@ -16,7 +18,8 @@ class DataEntryForm extends PureComponent {
 
   state = {
     fields: [],
-    data: {}
+    data: {},
+    confirmed: false
   }
 
   componentDidUpdate(prevProps) {
@@ -29,7 +32,7 @@ class DataEntryForm extends PureComponent {
   }
 
   handleChange = ({ target }) => {
-    this.setState({ data: { ...this.state.data, [target.name]: target.value } });
+    this.setState({ data: { ...this.state.data, [target.name]: target.value }, confirmed: false });
   }
 
   handleImage = ({ target }) => {
@@ -44,15 +47,32 @@ class DataEntryForm extends PureComponent {
     event.preventDefault();
     const { username, currentDatabase: { dbName }, currentModel: { mdlName } } = this.props;
     this.props.onSubmit(username, dbName, mdlName, this.state.data);
+    this.setState({ data: {}, confirmed: true });
   }
 
   render() {
     const { fields } = this.state;
+    const { currentDatabase: { dbName } } = this.props;
+    const H3 = styled.h3`
+    animation: fade 500ms ease-out forwards;
+      @keyframes fade {
+        from {
+          opacity: 1
+        }
+        to {
+          opacity: 0
+        }
+      }
+    `;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} />
-        <button>Submit Data</button>
-      </form>
+      <>
+        <Link to={`/dashboard/${dbName}`}>Back to Database</Link>
+        <form onSubmit={this.handleSubmit}>
+          <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data}/>
+          <button>Submit Data</button>
+        </form>
+        {this.state.confirmed && <H3>Data Added!</H3>}
+      </>
     );
   }
 }
