@@ -10,7 +10,8 @@ export default function InstructModel() {
       </IntroGutterSpace>
       <section>
         <h2><PinkSpan>Step Two:</PinkSpan> Create some models.</h2>
-        <p>These will determine how your data is stored in your databse and how it you'll receive it when you make a fetch.</p>
+        <p>These will determine how your data is stored in your
+          database and how you'll receive it when you make a fetch.</p>
       </section>
     </IntroRtoL>
   );

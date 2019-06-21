@@ -12,7 +12,7 @@ export const BodyContainer = styled.div`
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 13.625rem;
+  margin-bottom: 14.625rem;
   padding: ${props => props.noPadding ? '0rem' : '0rem 3rem'};
 `;
 
@@ -68,6 +68,7 @@ export const BreadcrumbsSection = styled.section`
     font-family: 'Oxygen', sans-serif;
     text-decoration: none;
     font-size: .85rem;
+    padding: 0rem .8rem;
   }
   span {
     color: #ff0098;
