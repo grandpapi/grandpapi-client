@@ -1,4 +1,4 @@
-import { SET_SESSION, CHECK_SESSION } from '../actions/sessionActions';
+import { SET_SESSION, CHECK_SESSION, NAVIGATE_DASHBOARD, NAVIGATE_DATABASE } from '../actions/sessionActions';
 import { CREATE_DB, UPDATE_DB_STATE } from '../actions/dbActions';
 import { CREATE_MODEL, UPDATE_MDL_STATE } from '../actions/modelActions';
 import { CREATE_DATA } from '../actions/dataActions';
@@ -72,6 +72,28 @@ export default function reducer(state = initialState, action) {
           mdlName: action.payload.mdlName,
           mdlId: action.payload.mdlId,
           mdlSchema: action.payload.mdlSchema
+        }
+      };
+    case NAVIGATE_DASHBOARD:
+      return {
+        ...state,
+        currentDatabase: {
+          dbName: '',
+          dbId: ''
+        },
+        currentModel: {
+          mdlName: '',
+          mdlId: '',
+          mdlSchema: '{}'
+        }
+      };
+    case NAVIGATE_DATABASE:
+      return {
+        ...state,
+        currentModel: {
+          mdlName: '',
+          mdlId: '',
+          mdlSchema: '{}'
         }
       };
     default:
