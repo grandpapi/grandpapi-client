@@ -10,7 +10,7 @@ class DatabaseLink extends PureComponent {
     dbName: PropTypes.string.isRequired,
     _id: PropTypes.string.isRequired,
     onClickDb: PropTypes.func.isRequired,
-  // imgSrc: PropTypes.string.isRequired,
+    publicAccess: PropTypes.bool
   }
 
   render() {
@@ -18,15 +18,21 @@ class DatabaseLink extends PureComponent {
     return (
       <>
         <li>
-          <div>
-            <Link to={`/dashboard/${dbName}`} onClick={() => onClickDb(dbName, _id)}>
-              <ViewDBButton><span>{dbName}</span></ViewDBButton>
-            </Link>
-            {/* <img src={imgSrc} alt={dbName} /> */}
-            <Link to={'create/model'} onClick={() => onClickDb(dbName, _id)}>
-              <DBButton>+Add Model</DBButton>
-            </Link>
-          </div>
+          {
+            !this.props.publicAccess ?
+              <div>
+                <Link to={`/dashboard/${dbName}`} onClick={() => onClickDb(dbName, _id)}>
+                  <ViewDBButton><span>{dbName}</span></ViewDBButton>
+                </Link>
+                <Link to={'create/model'} onClick={() => onClickDb(dbName, _id)}>
+                  <DBButton>+Add Model</DBButton>
+                </Link>
+              </div>
+              :
+              <Link to={`/apis/${dbName}`} onClick={() => onClickDb(dbName, _id)}>
+                <ViewDBButton><span>{dbName}</span></ViewDBButton>
+              </Link>
+          }
         </li>
       </>
     );

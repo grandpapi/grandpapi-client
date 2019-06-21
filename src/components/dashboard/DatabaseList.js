@@ -4,15 +4,18 @@ import DatabaseLink from './DatabaseLink';
 import { DatabaseUl, NewDBButton } from '../../styles';
 import { Link } from 'react-router-dom';
 
-export default function DatabaseList({ databases }) {
+export default function DatabaseList({ databases, publicAccess }) {
   const databaseList = databases.map(({ _id, dbName }) => (
-    <DatabaseLink key={_id} dbName={dbName} _id={_id} />
+    <DatabaseLink key={_id} dbName={dbName} _id={_id} publicAccess={publicAccess} />
   ));
   return (
     <DatabaseUl>
-      <li>
-        <Link to="/create/database"><NewDBButton><span>+</span></NewDBButton></Link>
-      </li> 
+      {
+        !publicAccess &&
+        <li>
+          <Link to="/create/database"><NewDBButton><span>+</span></NewDBButton></Link>
+        </li>
+      }
       {databaseList}
     </DatabaseUl>
 
@@ -24,4 +27,5 @@ DatabaseList.propTypes = {
     dbName: PropTypes.string.isRequired,
     _id: PropTypes.string.isRequired
   })),
+  publicAccess: PropTypes.bool
 };
