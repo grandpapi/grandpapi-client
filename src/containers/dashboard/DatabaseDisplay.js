@@ -6,33 +6,37 @@ import DatabaseList from '../../components/dashboard/DatabaseList';
 import { selectUserDbs } from '../../selectors/dbSelectors';
 import { selectUserId } from '../../selectors/sessionSelectors';
 import { fetchDbs } from '../../actions/userDatabases/dbActions';
+import { HeroButton } from '../../styles';
 
 
 class DatabaseDisplay extends PureComponent {
-    static propTypes = {
-      fetch: PropTypes.func.isRequired,
-      databases: PropTypes.array.isRequired,
-      userId: PropTypes.string.isRequired
-    }
+  static propTypes = {
+    fetch: PropTypes.func.isRequired,
+    databases: PropTypes.array.isRequired,
+    userId: PropTypes.string.isRequired
+  }
 
-    componentDidMount() {
-      this.props.fetch(this.props.userId);
-    }
+  componentDidMount() {
+    this.props.fetch(this.props.userId);
+  }
 
-    render() {
-      const { databases } = this.props;
-      return (
-        <>
-        <Link to="/endpoints">
-          Endpoints
+  render() {
+    const { databases } = this.props;
+    return (
+      <>
+        <Link to="/endpoints" style={{ width: '16.2rem' }}>
+          <HeroButton>
+            View My Endpoints
+          </HeroButton>
         </Link>
+
         <DatabaseList databases={databases} />
         {databases.length === 0 && (
           <Link to="/create/database">Create your first database</Link>
         )}
-        </>
-      );
-    }
+      </>
+    );
+  }
 }
 
 const mapStateToProps = state => ({
