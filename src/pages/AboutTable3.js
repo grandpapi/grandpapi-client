@@ -19,23 +19,23 @@ export default function AboutTable3() {
         <TeamSection>
           <li>
             <img src={Emily} alt="Emily Baier" />
-            <a href="https://www.linkedin.com/in/emily-baier/">Emily Baier</a>
+            <a target="blank" href="https://www.linkedin.com/in/emily-baier/">Emily Baier</a>
           </li>
           <li>
             <img src={Marty} alt="Marty Martinez" />
-            <a href="https://www.linkedin.com/in/marty-martinez/">Marty Martinez</a>
+            <a target="blank" href="https://www.linkedin.com/in/marty-martinez/">Marty Martinez</a>
           </li>
           <li>
             <img src={Ben} alt="Ben Parisot" />
-            <a href="https://www.linkedin.com/in/benparisot/">Ben Parisot</a>
+            <a target="blank" href="https://www.linkedin.com/in/benparisot/">Ben Parisot</a>
           </li>
           <li>
             <img src={Chris} alt="Chris Piccaro" />
-            <a href="https://www.linkedin.com/in/chris-piccaro/">Chris Piccaro</a>
+            <a target="blank" href="https://www.linkedin.com/in/chris-piccaro/">Chris Piccaro</a>
           </li>
           <li>
             <img src={Tommy} alt="Tommy Tran" />
-            <a href="https://www.linkedin.com/in/tranttommy/">Tommy Tran</a>
+            <a target="blank" href="https://www.linkedin.com/in/tranttommy/">Tommy Tran</a>
           </li>
         </TeamSection>
 
