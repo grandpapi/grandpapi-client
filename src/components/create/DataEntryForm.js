@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { selectCurrentModelSchema, selectCurrentModel, selectCurrentDatabase, selectNickname } from '../../selectors/sessionSelectors';
 import { createData } from '../../actions/dataActions';
 import styled from 'styled-components';
+import { Form, FormContainer } from '../../styles';
 
 class DataEntryForm extends PureComponent {
   static propTypes = {
@@ -74,10 +75,12 @@ class DataEntryForm extends PureComponent {
     return (
       <>
         <Link to={`/dashboard/${dbName}`}>Back to Database</Link>
-        <form onSubmit={this.handleSubmit}>
-          <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data}/>
-          <button>Submit Data</button>
-        </form>
+        <FormContainer>
+          <Form onSubmit={this.handleSubmit}>
+            <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data}/>
+            <button>Submit Data</button>
+          </Form>
+        </FormContainer>
         {this.state.confirmed && <H3>Data Added!</H3>}
       </>
     );

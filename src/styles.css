@@ -1,8 +1,5 @@
 :root {
     font-size: 100%;
-}
-
-* {
     margin: 0;
     padding: 0;
 }
@@ -29,11 +26,11 @@ h2 {
 }
 .display-block {
     display: block;
-  }
-  
-  .display-none {
+}
+
+.display-none {
     display: none;
-  }
+}
 
 .styledNavLink {
     color: #ff0098;
@@ -41,6 +38,12 @@ h2 {
     font-family: 'Oxygen', sans-serif;
     font-size: 1rem;
     font-weight: bold;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+
+.styledNavLink:hover {
+    color: #eaefbd; 
 }
 
 .styledBrownNavLink {
@@ -50,4 +53,23 @@ h2 {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.footerTaglineTan {
+    color: #eaefbd;
+}
+
+.footerTaglinePink {
+    color: #ff0098;
+}
+
+.linkInButton {
+    text-decoration: none;
+    color: #ff0098;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+}
+
+.linkInButton:hover {
+    color: #eaefbd;
 }
