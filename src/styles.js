@@ -12,7 +12,7 @@ export const BodyContainer = styled.div`
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 13.625rem;
+  margin-bottom: 14.625rem;
   padding: ${props => props.noPadding ? '0rem' : '0rem 3rem'};
 `;
 
@@ -25,8 +25,6 @@ export const GlobalHeaderContainer = styled.header`
   padding-right: 1.5rem;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  margin-bottom: 3rem;
-
 `;
 
 export const NavContainer = styled.nav`
@@ -48,8 +46,39 @@ export const NavContainer = styled.nav`
   }
 `;
 
+export const BodyLi = styled.li`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  color: #442c1d;
+`;
+
+
 export const StyledNavUl = styled.ul`
     padding-inline-start: 0;
+`;
+
+export const BreadcrumbsSection = styled.section`
+  margin-top: 0;
+  background-color: #eaefbd;
+  margin-bottom: 3rem;
+  padding: 1rem 0rem 1rem 2rem;
+  a {
+    color: #ff0098;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    font-size: .85rem;
+    padding: 0rem .8rem;
+  }
+  span {
+    color: #ff0098;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    font-size: .85rem;
+  }
 `;
 
 export const BodyButton = styled.button`
@@ -112,6 +141,45 @@ export const FooterTagline = styled.section`
     font-size: 1rem;
     font-weight: bold;
   }
+`;
+
+export const Hr = styled.hr`
+  text-align: center;
+  color: #ff0098;
+  background-color: #ff0098;
+  height: .5rem;
+  width: 60%;
+  border: none;
+  margin: 6rem auto;
+`;
+
+export const TeamSection = styled.section`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  img {
+    height: 12rem;
+    margin-bottom: .5rem;
+  }
+  a {
+    color: #ff0098;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    font-size: 1.15rem;
+    text-align: center;
+    &:hover {
+      color: #442c1d;
+    }
+  }
+
 `;
 
 //HOME PAGE COMPONENTS

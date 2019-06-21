@@ -8,7 +8,8 @@ export default function PublicApis() {
     <BodyContainer>
       <GlobalHeader />
       <MainContainer>
-        <h1>Public Apis</h1>
+        <h2>Public Apis</h2>
+        <p>View a list of Mega Nap users' recently published API endpoints:</p>
       </MainContainer>
       <Footer />
     </BodyContainer>

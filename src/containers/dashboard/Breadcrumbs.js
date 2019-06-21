@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { selectSession } from '../../selectors/sessionSelectors';
+import { BreadcrumbsSection } from '../../styles';
 
 class Breadcrumbs extends PureComponent {
 // $$$currentDatabase
@@ -34,7 +35,7 @@ class Breadcrumbs extends PureComponent {
     const { dbName } = this.props.session.currentDatabase;
     const { mdlName } = this.props.session.currentModel;
     return (
-      <section>
+      <BreadcrumbsSection>
         <Link to="/dashboard">
         Dashboard
         </Link>
@@ -54,7 +55,7 @@ class Breadcrumbs extends PureComponent {
         </Link>
         </>
         )}
-      </section>
+      </BreadcrumbsSection>
     );
   }
 }
