@@ -20,7 +20,8 @@ class DataEntryForm extends PureComponent {
   state = {
     fields: [],
     data: {},
-    confirmed: false
+    confirmed: false,
+    dataSubmitted: false
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -38,7 +39,7 @@ class DataEntryForm extends PureComponent {
   }
 
   handleChange = ({ target }) => {
-    this.setState({ data: { ...this.state.data, [target.name]: target.value } });
+    this.setState({ data: { ...this.state.data, [target.name]: target.value }, dataSubmitted: false });
   }
 
   handleImage = ({ target }) => {
@@ -53,7 +54,7 @@ class DataEntryForm extends PureComponent {
     event.preventDefault();
     const { username, currentDatabase: { dbName }, currentModel: { mdlName } } = this.props;
     this.props.onSubmit(username, dbName, mdlName, this.state.data);
-    this.setState({ data: {}, confirmed: true });
+    this.setState({ data: {}, confirmed: true, dataSubmitted: true });
   }
 
   render() {
@@ -73,7 +74,7 @@ class DataEntryForm extends PureComponent {
     return (
       <>
         <Link to={`/dashboard/${dbName}`}>Back to Database</Link>
-        {this.state.confirmed && <H3>Data Added!</H3>}
+        {this.state.dataSubmitted && <H3>Data Added!</H3>}
         <FormContainer>
           <Form onSubmit={this.handleSubmit}>
             <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data} confirmed={this.state.confirmed} />
