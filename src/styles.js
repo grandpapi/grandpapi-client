@@ -25,8 +25,6 @@ export const GlobalHeaderContainer = styled.header`
   padding-right: 1.5rem;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  margin-bottom: 3rem;
-
 `;
 
 export const NavContainer = styled.nav`
@@ -51,6 +49,29 @@ export const NavContainer = styled.nav`
 
 export const StyledNavUl = styled.ul`
     padding-inline-start: 0;
+`;
+
+export const BreadcrumbsSection = styled.section`
+  margin-top: 0;
+  background-color: #eaefbd;
+  margin-bottom: 3rem;
+  padding: 1rem 0rem 1rem 2rem;
+  a {
+    color: #ff0098;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    font-size: .85rem;
+  }
+  span {
+    color: #ff0098;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    font-size: .85rem;
+  }
 `;
 
 export const BodyButton = styled.button`
@@ -113,6 +134,16 @@ export const FooterTagline = styled.section`
     font-size: 1rem;
     font-weight: bold;
   }
+`;
+
+export const Hr = styled.hr`
+  text-align: center;
+  color: #ff0098;
+  background-color: #ff0098;
+  height: .5rem;
+  width: 60%;
+  border: none;
+  margin: 8rem auto;
 `;
 
 //HOME PAGE COMPONENTS
