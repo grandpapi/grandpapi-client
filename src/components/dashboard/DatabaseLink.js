@@ -50,12 +50,3 @@ export default connect(
   null,
   mapDispatchToProps
 )(DatabaseLink);
-
-
-// dbName: "mydb"
-// deployed: false
-// publicAccess: true
-// userId: "auth0|5d0ae8658055fd0cc73772eb"
-// username: "christopher"
-// __v: 0
-// _id: "5d0ae87c57161611f480db22"

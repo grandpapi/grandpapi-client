@@ -5,14 +5,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchModels } from '../../actions/modelActions';
 import { selectDbMdls } from '../../selectors/modelSelectors';
-// import { selectNickname } from '../../selectors/sessionSelectors';
 import SingleDbEndpointList from '../../components/dashboard/SingleDbEndpointList';
 import { selectCurrentDatabase } from '../../selectors/sessionSelectors';
 
 class ModelDisplay extends PureComponent {
   static propTypes = {
     fetch: PropTypes.func.isRequired,
-    // username: PropTypes.string.isRequired,
     dbMdls: PropTypes.array,
     dbName: PropTypes.string.isRequired,
     currentDatabase: PropTypes.shape({
@@ -52,7 +50,6 @@ class ModelDisplay extends PureComponent {
 
 const mapStateToProps = state => ({
   dbMdls: selectDbMdls(state),
-  // username: selectNickname(state),
   currentDatabase: selectCurrentDatabase(state)
 });
 
