@@ -23,6 +23,13 @@ class DataEntryForm extends PureComponent {
     confirmed: false
   }
 
+  componentDidMount() {
+    const fields = Object.entries(JSON.parse(this.props.mdlSchema));
+    this.setState({
+      fields
+    });
+  }
+
   componentDidUpdate(prevProps) {
     if(prevProps !== this.props) {
       const fields = Object.entries(JSON.parse(this.props.mdlSchema));
