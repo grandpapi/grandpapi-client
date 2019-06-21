@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import DatabaseList from '../../components/dashboard/DatabaseList';
 import { selectUserDbs } from '../../selectors/dbSelectors';
 import { selectUserId } from '../../selectors/sessionSelectors';
 import { fetchDbs } from '../../actions/dbActions';
-import { HeroButton } from '../../styles';
+// import { HeroButton } from '../../styles';
 
 class DatabaseDisplay extends PureComponent {
   static propTypes = {
@@ -23,11 +23,11 @@ class DatabaseDisplay extends PureComponent {
     const { databases } = this.props;
     return (
       <>
-        <Link to="/endpoints" style={{ width: '16.2rem' }}>
+        {/* <Link to="/endpoints" style={{ width: '16.2rem' }}>
           <HeroButton>
             View My Endpoints
           </HeroButton>
-        </Link>
+        </Link> */}
 
         <DatabaseList databases={databases} />
       </>
