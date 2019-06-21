@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../components/all/Footer';
 import GlobalHeader from '../components/all/GlobalHeader';
-import { MainContainer, BodyContainer } from '../styles';
+import { MainContainer, BodyContainer, BodyLi } from '../styles';
 
 export default function Privacy() {
   return (
@@ -22,7 +22,7 @@ export default function Privacy() {
         <p>We want to inform you that whenever you visit our Service, we collect information that your browser sends to us that is called Log Data. This Log Data may include information such as your computer’s Internet Protocol address, browser version, pages of our Service that you visit, the time and date of your visit, the time spent on those pages, and other statistics.</p>
 
         <h3>Service Providers</h3>
-        <p>We may employ third-party companies and individuals due to the following reasons:<p/>
+        <p>We may employ third-party companies and individuals due to the following reasons:</p>
 
         <BodyLi>To facilitate our Service;</BodyLi>
         <BodyLi>To provide the Service on our behalf;</BodyLi>

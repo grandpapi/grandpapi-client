@@ -148,7 +148,7 @@ export const Hr = styled.hr`
   height: .5rem;
   width: 60%;
   border: none;
-  margin: 8rem auto;
+  margin: 6rem auto;
 `;
 
 //HOME PAGE COMPONENTS

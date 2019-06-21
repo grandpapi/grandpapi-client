@@ -13,10 +13,10 @@ export default function AboutApp() {
         <p>API stands for Application Programming Interface.  Mega Nap specifically deals with web APIs.   The specifics of APIs are out of the scope of this FAQ, but we encourage you to learn more about them here: <a href='https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction'>MDN - APIs</a></p>
 
         <Hr />
-        <h3>What does MegaNap do for me?</h3>
-        <p>MegaNap is an easy way to create a RESTful API without manually coding it.  If you are a coding newbie learning about fetching, it can be really difficult to find a simple API with fun information to use.  Our boredom of the Pokemon API is what inspired this project! But, this tool is also really useful for front end developers that need to prototype as well.</p>
+        <h3>What does Mega Nap do for me?</h3>
+        <p>Mega Nap is an easy way to create a RESTful API without manually coding it.  If you are a coding newbie learning about fetching, it can be really difficult to find a simple API with fun information to use.  Our boredom of the Pokemon API is what inspired this project! But, this tool is also really useful for front end developers that need to prototype as well.</p>
         <Hr />
-        <h3>What will I get from MegaNap after adding my data?</h3>
+        <h3>What will I get from Mega Nap after adding my data?</h3>
         <p>You will receive endpoints - unique URIs - that you can use to fetch your data from. </p>
         <Hr />
         <h3>I want to make a more complicated API.</h3>

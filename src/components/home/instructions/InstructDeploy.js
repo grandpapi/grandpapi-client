@@ -10,7 +10,7 @@ export default function InstructDeploy() {
       </IntroGutterSpace>
       <section>
         <h2><PinkSpan>Step Four:</PinkSpan> Deploy and start using your new endpoints!</h2>
-        <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
+        <p>Once you get your RESTful API endpoints you can use them however you like. What will you make with your new Mega Nap app?</p>
       </section>
     </IntroRtoL>
   );
