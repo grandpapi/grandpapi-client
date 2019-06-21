@@ -19,9 +19,12 @@ class GlobalHeader extends PureComponent {
     if(!this.props.token) {
       return <Link className={styles.styledNavLink} to="/login">Log In | Sign Up</Link>;
     }
-    return <>
-    <BodyButton header><Link to="/dashboard" className={styles.linkInButton} onClick={() => this.props.dashboardClick()}>My Dashboard</Link></BodyButton>
-      <HeroButton onClick={logout}>Log Out</HeroButton></>;
+    return (
+      <>
+        <BodyButton header><Link to="/dashboard" className={styles.linkInButton} onClick={() => this.props.dashboardClick()}>My Dashboard</Link></BodyButton>
+        <HeroButton onClick={logout}>Log Out</HeroButton>
+      </>
+    );
   }
   render() {
     return (

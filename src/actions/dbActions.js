@@ -15,7 +15,7 @@ export const [
   FETCH_DBS_PENDING
 ] = createAction('FETCH_DBS', getDbs);
 
-export const updateDbState = (dbName, dbId) => ({
+export const updateDbState = (dbName, dbId, username) => ({
   type: UPDATE_DB_STATE,
-  payload: { dbName, dbId }
+  payload: { dbName, dbId, username }
 });

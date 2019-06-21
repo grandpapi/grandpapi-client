@@ -30,9 +30,6 @@ class DatabaseDisplay extends PureComponent {
         </Link>
 
         <DatabaseList databases={databases} />
-        {databases.length === 0 && (
-          <Link to="/create/database">Create your first database</Link>
-        )}
       </>
     );
   }

@@ -8,7 +8,8 @@ const initialState = {
   token: '',
   currentDatabase: {
     dbName: '',
-    dbId: ''
+    dbId: '',
+    username: ''
   },
   currentModel: {
     mdlName: '',
@@ -34,6 +35,7 @@ export default function reducer(state = initialState, action) {
         currentDatabase: {
           dbName: action.payload.dbName,
           dbId: action.payload._id,
+          username: action.payload.username
         }
       };
     case CREATE_MODEL:
@@ -57,7 +59,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         currentDatabase: {
           dbName: action.payload.dbName,
-          dbId: action.payload.dbId
+          dbId: action.payload.dbId,
+          username: action.payload.username
         },
         currentModel: {
           mdlName: '',
@@ -79,7 +82,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         currentDatabase: {
           dbName: '',
-          dbId: ''
+          dbId: '',
+          username: ''
         },
         currentModel: {
           mdlName: '',

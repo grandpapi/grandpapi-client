@@ -13,7 +13,7 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 14.625rem;
-  padding: ${props => props.noPadding ? '0rem' : '0rem 3rem'};
+  padding: ${props => props.noPadding ? '0rem' : '3rem 6.5rem'};
 `;
 
 export const GlobalHeaderContainer = styled.header`
@@ -221,7 +221,6 @@ export const SplashHeaderContainer = styled.header`
   padding-right: 1.5rem;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-
 `;
 
 const rotate = keyframes`
