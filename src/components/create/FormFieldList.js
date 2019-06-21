@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormLabel, FormInput, FormInputNumber, FormInputRadio, DBCheckboxDiv } from '../../styles';
 
-export default function FormFieldList({ fields, handleChange, handleImage, data }) {
+export default function FormFieldList({ fields, handleChange, handleImage, data, confirmed }) {
   console.log(data);
   const fieldList = fields.map(field => {
     const [key, value] = field;
@@ -17,8 +17,8 @@ export default function FormFieldList({ fields, handleChange, handleImage, data 
       case 'Image':
         return (
           <>
-          <FormLabel key={key + value}>{key} </FormLabel>
-            <FormInput type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} value={data[key] || ''}/>
+          <FormLabel key={key + value + (!confirmed && key)>{key} </FormLabel>
+            <FormInput type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} />
           </>
         );
       case 'Number':
@@ -57,5 +57,6 @@ FormFieldList.propTypes = {
   fields: PropTypes.array.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleImage: PropTypes.func.isRequired,
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  confirmed: PropTypes.bool.isRequired
 };
