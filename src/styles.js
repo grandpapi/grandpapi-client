@@ -529,6 +529,7 @@ export const DBCheckboxInput = styled(FormInput)`
 
 export const DatabaseDetailUl = styled.ul`
   display: flex;
+  align-items: center;
   justify-content: space-around;
   flex-flow: row wrap;
 
@@ -557,6 +558,7 @@ export const DatabaseDetailUl = styled.ul`
       overflow-wrap: break-word;
       word-wrap: break-all;
       white-space: normal;
+      text-align: center;
       }
   }
 
@@ -575,7 +577,7 @@ export const ViewMdlButton = styled(ViewDBButton)`
  width: 12vw;
  font-size: 1.5rem;
  &:hover:before {
-        content:'view data';
+        content:'view schema';
         cursor: pointer;
         color: #ff0098;
         text-transform: uppercase;
@@ -583,4 +585,27 @@ export const ViewMdlButton = styled(ViewDBButton)`
         letter-spacing: .1rem;
         font-size: 1.5rem;
       }
+`;
+
+//* Endpoint list on Model Detail page *//
+
+export const EndpointLi = styled.li`
+  list-style-type: none;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1rem;
+  font-size: .75rem;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: #ff0098;
+    }
+  }
+`;
+
+//* Big Curly Bois *//
+
+export const BigCurly = styled.span`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #ff0098;
 `;
