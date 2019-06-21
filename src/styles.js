@@ -152,6 +152,35 @@ export const Hr = styled.hr`
   margin: 6rem auto;
 `;
 
+export const TeamSection = styled.section`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  img {
+    height: 12rem;
+    margin-bottom: .5rem;
+  }
+  a {
+    color: #ff0098;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    font-size: 1.15rem;
+    text-align: center;
+    &:hover {
+      color: #442c1d;
+    }
+  }
+
+`;
+
 //HOME PAGE COMPONENTS
 
 export const HeroSection = styled.section`
