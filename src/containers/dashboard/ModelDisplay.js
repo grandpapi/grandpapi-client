@@ -21,9 +21,6 @@ class ModelDisplay extends PureComponent {
     }).isRequired
   }
 
-  newModel = () => {
-
-  }
   componentDidMount() {
     this.props.fetch(this.props.dbName);
   }
