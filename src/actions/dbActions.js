@@ -1,5 +1,5 @@
 import { createAction } from 'promise-middleware-redux';
-import { postDb, getDbs } from '../../services/dbMegaNapAPI';
+import { postDb, getDbs } from '../services/dbMegaNapAPI';
 
 export const UPDATE_DB_STATE = 'UPDATE_DB_STATE';
 

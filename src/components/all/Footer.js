@@ -13,11 +13,10 @@ export default function Footer() {
       </StyledNavUl>
       <StyledNavUl>
         <Link to="/table3"><li>About Us</li></Link>
-        <Link to="/careers"><li>Careers</li></Link>
         <Link to="/privacy"><li>Privacy Policy</li></Link>
       </StyledNavUl>
       <FooterTagline>
-        <p>Mega Nap, <span className={styles.footerTaglinePink}>For the love of apps.</span></p>
+        <p>Mega Nap  —  <span className={styles.footerTaglinePink}>For the love of apps.</span></p>
       </FooterTagline>
     </FooterContainer>
   );
