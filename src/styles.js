@@ -357,6 +357,10 @@ text-transform: uppercase;
 letter-spacing: 0.05em;
 `;
 
+export const FormLabelTop = styled(FormLabel)`
+  margin-top: 3vw;
+`;
+
 export const FormInput = styled.input`
 border: 0;
 background-color: #b0e2ab;
