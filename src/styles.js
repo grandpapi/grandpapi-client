@@ -106,6 +106,11 @@ export const PinkSpan = styled.span`
   color: #ff0098;
 `;
 
+export const PinkFontSpan = styled.span`
+  color: #ff0098;
+  font-family: 'Montserrat', sans-serif;
+`;
+
 export const FooterContainer = styled.footer`
   position: absolute;
   width: 100vw;
