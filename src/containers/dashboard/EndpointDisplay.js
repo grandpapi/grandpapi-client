@@ -38,7 +38,7 @@ class EndpointDisplay extends PureComponent {
     
     return (
       <>
-      <h3>Endpoints</h3>
+      <h2>Endpoints</h2>
       <AllDbEndpointsList username={username} dbNames={dbNames} models={modelsByDb} />
       {models.length === 0 && (
         <>

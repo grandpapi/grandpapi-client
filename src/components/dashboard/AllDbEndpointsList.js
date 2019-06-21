@@ -5,7 +5,7 @@ import { EndpointLi } from '../../styles';
 
 export default function AllDbEndpointsList({ username, dbNames, models }) {
   const endpoints = dbNames.map((dbName, i) => {
-    return <li key={dbName}>
+    return <EndpointLi key={dbName}>
       <h3>{`${dbName}: `}</h3>
       <ul>
         {models[i].map(model => {
@@ -16,7 +16,7 @@ export default function AllDbEndpointsList({ username, dbNames, models }) {
           );
         })}
       </ul>
-    </li>;
+    </EndpointLi>;
   });
   return (
     <>
