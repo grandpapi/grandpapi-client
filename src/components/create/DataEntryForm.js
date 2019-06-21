@@ -7,10 +7,12 @@ import { selectCurrentModelSchema, selectCurrentModel, selectCurrentDatabase, se
 import { createData } from '../../actions/dataActions';
 import styled from 'styled-components';
 import { Form, FormContainer } from '../../styles';
+import { navigateDatabase } from '../../actions/sessionActions';
 
 class DataEntryForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    databaseClick: PropTypes.func.isRequired,
     mdlSchema: PropTypes.string.isRequired,
     currentModel: PropTypes.object.isRequired,
     currentDatabase: PropTypes.object.isRequired,
@@ -52,7 +54,7 @@ class DataEntryForm extends PureComponent {
 
   render() {
     const { fields } = this.state;
-    const { currentDatabase: { dbName } } = this.props;
+    const { databaseClick, currentDatabase: { dbName } } = this.props;
     const H3 = styled.h3`
     animation: fade 1000ms ease-out forwards;
       @keyframes fade {
@@ -66,7 +68,7 @@ class DataEntryForm extends PureComponent {
     `;
     return (
       <>
-        <Link to={`/dashboard/${dbName}`}>Back to Database</Link>
+        <Link to={`/dashboard/${dbName}`} onClick={() => databaseClick()}>Back to Database</Link>
         <FormContainer>
           <Form onSubmit={this.handleSubmit}>
             <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data} confirmed={this.state.confirmed} />
@@ -89,6 +91,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onSubmit(username, database, model, data) {
     dispatch(createData(username, database, model, data));
+  },
+  databaseClick() {
+    dispatch(navigateDatabase());
   }
 });
 
