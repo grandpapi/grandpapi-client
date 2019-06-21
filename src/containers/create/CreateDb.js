@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import DbForm from '../../components/create/DbForm';
-import { createDb } from '../../actions/userDatabases/dbActions';
+import { createDb } from '../../actions/dbActions';
 import { selectUserDbs } from '../../selectors/dbSelectors';
 
 const mapStateToProps = state => ({

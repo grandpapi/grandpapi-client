@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import DatabaseList from '../../components/dashboard/DatabaseList';
 import { selectUserDbs } from '../../selectors/dbSelectors';
 import { selectUserId } from '../../selectors/sessionSelectors';
-import { fetchDbs } from '../../actions/userDatabases/dbActions';
+import { fetchDbs } from '../../actions/dbActions';
 
 
 class DatabaseDisplay extends PureComponent {

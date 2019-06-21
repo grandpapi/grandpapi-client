@@ -1,5 +1,5 @@
 import dbReducer from './dbReducer';
-import { CREATE_DB_PENDING, FETCH_DBS_PENDING, FETCH_DBS } from '../actions/userDatabases/dbActions';
+import { CREATE_DB_PENDING, FETCH_DBS_PENDING, FETCH_DBS } from '../actions/dbActions';
 
 jest.mock('../services/dbMegaNapAPI.js', () => ({
   postDb() {
