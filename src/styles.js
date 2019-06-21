@@ -467,6 +467,7 @@ cursor: pointer;
 
 export const DatabaseUl = styled.ul`
   display: flex;
+  align-items: center;
   justify-content: space-around;
   flex-flow: row wrap;
 
@@ -630,6 +631,10 @@ export const DatabaseDetailUl = styled.ul`
       }
     
     div {
+      display: flex;
+      flex-direction: column-count;
+      align-items: center;
+      justify-content: center;
       width: 12vw;
       min-width: 100px;
       overflow-wrap: break-word;
@@ -651,7 +656,7 @@ export const DatabaseDetailUl = styled.ul`
 `;
 
 export const ViewMdlButton = styled(ViewDBButton)`
- width: 12vw;
+ width: 10vw;
  font-size: 1.5rem;
  &:hover:before {
         content:'view schema';

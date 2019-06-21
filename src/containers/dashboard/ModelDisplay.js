@@ -8,6 +8,7 @@ import { selectDbMdls } from '../../selectors/modelSelectors';
 import { selectNickname } from '../../selectors/sessionSelectors';
 import SingleDbEndpointList from '../../components/dashboard/SingleDbEndpointList';
 import { selectCurrentDatabase } from '../../selectors/sessionSelectors';
+import { DBButton } from '../../styles';
 
 class ModelDisplay extends PureComponent {
   static propTypes = {
@@ -30,7 +31,7 @@ class ModelDisplay extends PureComponent {
     const { username, dbName, dbMdls, publicAccess } = this.props;
     if(dbMdls.length === 0 && !publicAccess) return (
       <>
-        <Link to="/create/model">Add Model</Link>
+      <Link to="/create/model"><DBButton>Add Model</DBButton></Link>
         <p>Add a few models to your Database!</p>
       </>
     );
@@ -39,7 +40,7 @@ class ModelDisplay extends PureComponent {
         {
           !publicAccess &&
           <>
-            <Link to="/create/model">Add Model</Link>
+            <Link to="/create/model"><DBButton>Add Model</DBButton></Link>
             <ModelList dbName={dbName} models={dbMdls} publicAccess={publicAccess} />
           </>
         }
