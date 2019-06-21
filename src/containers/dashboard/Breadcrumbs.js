@@ -29,7 +29,7 @@ class Breadcrumbs extends PureComponent {
     const { dashboardClick, databaseClick } = this.props;
     return (
       <BreadcrumbsSection>
-        <Link to="/dashboard" onClick={() => dashboardClick()} >
+        <Link to="/dashboard" onClick={() => dashboardClick()}>
         Dashboard
         </Link>
         {dbName && (

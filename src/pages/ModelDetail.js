@@ -28,7 +28,7 @@ class ModelDetail extends PureComponent {
         <GlobalHeader />
         <Breadcrumbs />
         <MainContainer>
-          <h1>{mdlName}</h1>
+          <h2>{mdlName}</h2>
           <h3>Model Schema: </h3>
           <p>{mdlSchema}</p>
           <EndpointP>{'Endpoint: '}
