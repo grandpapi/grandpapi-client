@@ -25,14 +25,12 @@ class DataEntryForm extends PureComponent {
 
   componentDidUpdate(prevProps, prevState) {
     if(prevState.confirmed !== this.state.confirmed) this.setState({ confirmed: false });
-    if(prevProps !== this.props) {
-      const fields = Object.entries(JSON.parse(this.props.mdlSchema));
-      this.setState({
-        fields
-      });
-    }
   }
 
+  componentDidMount() {
+    const fields = Object.entries(JSON.parse(this.props.mdlSchema));
+    this.setState({ fields });
+  }
   handleChange = ({ target }) => {
     this.setState({ data: { ...this.state.data, [target.name]: target.value } });
   }
@@ -71,7 +69,7 @@ class DataEntryForm extends PureComponent {
         <Link to={`/dashboard/${dbName}`}>Back to Database</Link>
         <FormContainer>
           <Form onSubmit={this.handleSubmit}>
-          <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data} confirmed={this.state.confirmed} />
+            <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data} confirmed={this.state.confirmed} />
             <button>Submit Data</button>
           </Form>
         </FormContainer>

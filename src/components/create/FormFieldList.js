@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { FormLabel, FormInput, FormInputNumber, FormInputRadio, DBCheckboxDiv } from '../../styles';
 
 export default function FormFieldList({ fields, handleChange, handleImage, data, confirmed }) {
-  console.log(data);
   const fieldList = fields.map(field => {
     const [key, value] = field;
     switch(value) {
@@ -17,7 +16,7 @@ export default function FormFieldList({ fields, handleChange, handleImage, data,
       case 'Image':
         return (
           <>
-          <FormLabel key={key + value + (!confirmed && key)>{key} </FormLabel>
+            <FormLabel key={key + value + (!confirmed && key)}>{key} </FormLabel>
             <FormInput type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} />
           </>
         );
