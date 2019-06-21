@@ -4,7 +4,9 @@ import EndpointLink from './EndpointLink';
 
 export default function SingleDbEndpointList({ username, dbName, dbMdls }) {
   const endpoints = dbMdls.map(mdl => {
-    return <EndpointLink key={mdl._id} username={username} dbName={dbName} mdlName={mdl.mdlName} />;
+    return <li key={mdl._id}>
+      <EndpointLink username={username} dbName={dbName} mdlName={mdl.mdlName} />
+    </li>;
   });
   return (
     <>

@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { selectNickname } from '../selectors/sessionSelectors';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import DatabaseDisplay from '../containers/dashboard/DatabaseDisplay';
 import GlobalHeader from '../components/all/GlobalHeader';
 import Footer from '../components/all/Footer';
@@ -20,7 +19,7 @@ class Dashboard extends PureComponent {
         <GlobalHeader />
         <MainContainer>
           <h2>Welcome to your dashboard, {nickname}!</h2>
-          <Link to="/create/database"><button>+</button></Link>
+          <p>Click the + button to start a new Database. Click on an existing Database to view its Models, or click Add Model to add a new Model to a Database.</p>
           <DatabaseDisplay />
         </MainContainer>
         <Footer />

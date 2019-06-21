@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 //GLOBAL COMPONENTS
 
@@ -12,7 +12,7 @@ export const BodyContainer = styled.div`
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 10.5rem;
+  margin-bottom: 13.625rem;
   padding: ${props => props.noPadding ? '0rem' : '0rem 3rem'};
 `;
 
@@ -43,7 +43,11 @@ export const NavContainer = styled.nav`
     list-style: none;
     color: white;
   }
+  a:hover {
+    color: #ff0098;
+  }
 `;
+
 
 export const StyledNavUl = styled.ul`
     padding-inline-start: 0;
@@ -55,11 +59,18 @@ export const BodyButton = styled.button`
   font-weight: bold;
   font-family: 'Oxygen', sans-serif;
   padding: .8rem 1.4rem;
+  margin-right: 1rem;
   font-size: 1.3rem;
   border: none;
   background-color: #b0e2ab;
   &:focus {
     outline: #90be6d solid 2px !important;
+  }
+  -webkit-transition: background-color .6s;
+  transition: background-color .45s;
+  &:hover {
+    background-color: ${props => props.header ? '#ff0098' : '#442c1d'};
+    cursor: pointer;
   }
 `;
 
@@ -85,16 +96,19 @@ export const FooterContainer = styled.footer`
     list-style: none;
     color: #b0e2ab;
   }
-    text-decoration: none;
-    font-family: 'Oxygen', sans-serif;
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  li:hover {
+    color: #ff0098;
+  }
 `;
 
 export const FooterTagline = styled.section`
   p {
-    color: #b0e2ab;
+    color: #eaefbd;
     font-family: 'Oxygen', sans-serif;
     font-size: 1rem;
     font-weight: bold;
@@ -113,7 +127,6 @@ export const HeroSection = styled.section`
 
 export const HeroTaglineSection = styled.section`
   margin: 0 7%;
-  color: red;
 `;
 
 export const HeroImageSection = styled.section`
@@ -140,11 +153,22 @@ export const SplashHeaderContainer = styled.header`
 `;
 
 
-
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 export const NavLogo = styled.img`
   src: 'assets/logo-pink.png';
   height: 4.4375rem;
   width: auto;
+  &:hover {
+    cursor: pointer;
+    animation: ${rotate} .4s ease-in;
+  }
 `;
 
 export const HeroButton = styled.button`
@@ -158,7 +182,14 @@ export const HeroButton = styled.button`
   background-color: #eaefbd;
   &:focus {
     outline: #90be6d solid 2px !important;
-}
+  }
+  -webkit-transition: color .6s, background-color .6s;
+  transition: color .45s, background-color .45s;
+  &:hover {
+    color: #b0e2ab;
+    background-color: #ff0098;
+    cursor: pointer;
+  }
 `;
 
 export const InstructContainer = styled.section`
@@ -295,6 +326,36 @@ border-bottom: 1px solid transparent;
 }
 `;
 
+export const FormInputNumber = styled(FormInput)`
+  width: 7vw;
+`;
+
+export const FormInputRadio = styled(FormInput)`
+  width: 5vw;
+`;
+export const FormSelectDiv = styled.div`
+  font-size: 1em;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  & select {
+    outline: none;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: .5em;
+    margin: 0;
+    transition: border-color .2s;
+    border: none;
+    background-color: #b0e2ab;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    border-radius: 1px;
+    width: 21vw;
+  }
+`;
+
 export const FormSubmitButton = styled.button`
 display: flex;
 flex-direction: column;
@@ -302,18 +363,28 @@ align-items: center;
 justify-content: center;
 text-align: center;
 margin: 2vw;
+font-size: 1.3rem;
 font-family: 'Oxygen', sans-serif;
 text-transform: uppercase;
-background-color: #b0e2ab;
-padding: 5px;
+background-color: #ff0098;
+padding: .8rem 1.4rem;
 border-radius: 1px;
-border: none;
-color: #ff0098;
+border: 2px solid transparent;
+color: white;
 cursor: pointer;
 
 &:focus {
   outline: #90be6d solid 2px !important;
 }
+
+-webkit-transition: color .6s, background-color .6s;
+  transition: color .45s, background-color .45s, border .45s;
+  &:hover {
+    color: #442c1d;
+    background-color: #eaefbd;
+    cursor: pointer;
+    border: 2px solid #442c1d;
+  }
 `;
 
 //*  Database List Styles *//
@@ -427,7 +498,30 @@ export const ViewDBButton = styled.button`
 //* Model Entry Form *//
 
 export const ModelUl = styled.ul`
+  padding-left: 0px;
   li {
     list-style-type: none;
   }
+`;
+
+export const ModelForm = styled(Form)`
+  width: 50vw;
+`;
+
+export const ModelFormInput = styled(FormInput)`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+`;
+
+//* Database Entry Form *//
+
+export const DBCheckboxDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const DBCheckboxInput = styled(FormInput)`
+  width: 3vw;
 `;

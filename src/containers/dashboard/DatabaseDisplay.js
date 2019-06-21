@@ -23,6 +23,9 @@ class DatabaseDisplay extends PureComponent {
       const { databases } = this.props;
       return (
         <>
+        <Link to="/endpoints">
+          Endpoints
+        </Link>
         <DatabaseList databases={databases} />
         {databases.length === 0 && (
           <Link to="/create/database">Create your first database</Link>
