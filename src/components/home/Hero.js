@@ -8,7 +8,7 @@ export default function Hero() {
     <HeroSection>
       <HeroTaglineSection>
         <H1>Make an app<br /> with Mega Nap.</H1>
-        <p>Get RESTful API endpoints from any data set in minutes.</p>
+        <p>Get RESTful API endpoints from any data set to use in your frontend app in minutes.</p>
         <Link to="/login"><HeroButton>Start Building</HeroButton></Link>
       </HeroTaglineSection>
       <HeroImageSection>
