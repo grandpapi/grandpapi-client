@@ -22,7 +22,7 @@ class EndpointDisplay extends PureComponent {
   render() {
     const { models, username } = this.props;
 
-    if(models.length === 0) return <h1>Endpoints</h1>;
+    if(models.length === 0) return <h2>Endpoints</h2>;
 
     const dbNames = [...new Set(models.map(model => model.dbId.dbName))];
     
