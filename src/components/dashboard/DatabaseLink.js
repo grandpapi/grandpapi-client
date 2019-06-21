@@ -25,7 +25,7 @@ class DatabaseLink extends PureComponent {
                   <ViewDBButton><span>{dbName}</span></ViewDBButton>
                 </Link>
                 <Link to={'create/model'} onClick={() => onClickDb(dbName, _id)}>
-                  <DBButton>+Add Model</DBButton>
+                  <DBButton>Add Model</DBButton>
                 </Link>
               </div>
               :

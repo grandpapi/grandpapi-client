@@ -8,24 +8,27 @@ export default function FormFieldList({ fields, handleChange, handleImage, data,
     switch(value) {
       case 'String':
         return (
-          <FormLabel key={key + value}>
-            {key}
+          <>
+          <FormLabel key={key + value}>{key}
             <FormInput type="text" name={key} onChange={handleChange} value={data[key] || ''} />
           </FormLabel>
+          </>
         );
       case 'Image':
         return (
-          <FormLabel key={key + value + (!confirmed && key)}>
-            {key}
-            <FormInput type="file" accept="image/png,image/jpeg,image/svg+xml" name={key} onChange={handleImage} />
-          </FormLabel>
+          <>
+            <FormLabel key={key + value + (!confirmed && key)}>{key}
+              <FormInput type="file" accept="image/.png,image/.jpeg,image/.svg+xml,image/.jpg" name={key} onChange={handleImage} />
+            </FormLabel>
+          </>
         );
       case 'Number':
         return (
-          <FormLabel key={key + value}>
-            {key}
-            <FormInputNumber type="number" name={key} onChange={handleChange} value={data[key] || ''} />
+          <>
+          <FormLabel key={key + value}>{key}
+            <FormInputNumber type="number" name={key} onChange={handleChange} value={data[key] || ''}/>
           </FormLabel>
+          </>
         );
       case 'Boolean':
         return (

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import GlobalHeader from '../components/all/GlobalHeader';
 import { selectCurrentModel, selectNickname, selectCurrentDatabase } from '../selectors/sessionSelectors';
 import { updateMdlState } from '../actions/modelActions';
-import { BodyContainer, MainContainer } from '../styles';
+import { BodyContainer, MainContainer, EndpointP } from '../styles';
 import Footer from '../components/all/Footer';
 import Breadcrumbs from '../containers/dashboard/Breadcrumbs';
 
@@ -28,12 +28,12 @@ class ModelDetail extends PureComponent {
         <GlobalHeader />
         <Breadcrumbs />
         <MainContainer>
-          <h1>{mdlName}</h1>
+          <h2>{mdlName}</h2>
           <h3>Model Schema: </h3>
           <p>{mdlSchema}</p>
-          <p>{'Endpoint: '}
+          <EndpointP>{'Endpoint: '}
             <a href={`${endpoint}`} target='_blank' rel='noopener noreferrer'>{endpoint}</a>
-          </p>
+          </EndpointP>
           <Link to="/create/data" onClick={() => onClickMdl(mdlName, mdlId, mdlSchema)}>
             <button type="button">Add Data</button>
           </Link>

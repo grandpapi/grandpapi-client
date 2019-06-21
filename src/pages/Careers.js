@@ -8,8 +8,8 @@ export default function Careers() {
     <BodyContainer>
       <GlobalHeader />
       <MainContainer>
-        <h1>Come Work for Us</h1>
-        <p>We have very little capital, but lots of love</p>
+        <h2>Come Work for Us</h2>
+        <p>We aren't currently hiring, but we're always interested in hearing from talented job seekers. Drop us a line at jobs@meganap.com and let us know what you're good at.</p>
       </MainContainer>
       <Footer />
     </BodyContainer>

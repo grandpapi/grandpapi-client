@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EndpointLink from './EndpointLink';
+import { EndpointLi } from '../../styles';
 
 export default function SingleDbEndpointList({ username, dbName, dbMdls }) {
   const endpoints = dbMdls.map(mdl => {
-    return <li key={mdl._id}>
+    return <EndpointLi key={mdl._id}>
       <EndpointLink username={username} dbName={dbName} mdlName={mdl.mdlName} />
-    </li>;
+    </EndpointLi>;
   });
   return (
     <>
