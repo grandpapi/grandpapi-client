@@ -75,7 +75,7 @@ class DataEntryForm extends PureComponent {
     `;
     return (
       <>
-        <Link to={`/dashboard/${dbName}`} onClick={() => databaseClick()}>Back to Database</Link>
+        <Link to={`/dashboard/${dbName}`} onClick={() => databaseClick()}><DBButton>Back to Database</DBButton></Link>
         {this.state.dataSubmitted && <H3>Data Added!</H3>}
         <FormContainer>
           <Form onSubmit={this.handleSubmit}>
