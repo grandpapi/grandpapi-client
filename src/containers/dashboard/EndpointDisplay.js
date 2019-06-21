@@ -42,7 +42,7 @@ class EndpointDisplay extends PureComponent {
       <AllDbEndpointsList username={username} dbNames={dbNames} models={modelsByDb} />
       {models.length === 0 && (
         <>
-        <h2>No endpoints yet...</h2>
+        <h3>No endpoints yet...</h3>
         <p>Create a database, then a model.</p>
         <Link to="/create/database">Create a database</Link>
         </>
