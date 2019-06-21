@@ -682,7 +682,7 @@ export const EndpointLi = styled.li`
 export const EndpointP = styled.p`
   font-family: 'Montserrat', sans-serif;
   letter-spacing: .1rem;
-  font-size: .75rem;
+  font-size: 1.25rem;
   a {
     text-decoration: none;
     &:hover {
