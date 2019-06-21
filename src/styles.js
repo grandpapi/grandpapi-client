@@ -602,6 +602,18 @@ export const EndpointLi = styled.li`
   }
 `;
 
+export const EndpointP = styled.p`
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1rem;
+  font-size: .75rem;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: #ff0098;
+    }
+  }
+`;
+
 //* Big Curly Bois *//
 
 export const BigCurly = styled.span`
