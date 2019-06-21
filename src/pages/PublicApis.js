@@ -9,6 +9,8 @@ export default function PublicApis() {
     <BodyContainer>
       <GlobalHeader />
       <MainContainer>
+            <h2>Public Apis</h2>
+            <p>View a list of Mega Nap users' public API endpoints:</p>
         <PublicDatabaseDisplay />
       </MainContainer>
       <Footer />

@@ -12,7 +12,7 @@ export const BodyContainer = styled.div`
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 13.625rem;
+  margin-bottom: 14.625rem;
   padding: ${props => props.noPadding ? '0rem' : '0rem 3rem'};
 `;
 
@@ -25,8 +25,6 @@ export const GlobalHeaderContainer = styled.header`
   padding-right: 1.5rem;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  margin-bottom: 3rem;
-
 `;
 
 export const NavContainer = styled.nav`
@@ -48,9 +46,39 @@ export const NavContainer = styled.nav`
   }
 `;
 
+export const BodyLi = styled.li`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  color: #442c1d;
+`;
+
 
 export const StyledNavUl = styled.ul`
     padding-inline-start: 0;
+`;
+
+export const BreadcrumbsSection = styled.section`
+  margin-top: 0;
+  background-color: #eaefbd;
+  margin-bottom: 3rem;
+  padding: 1rem 0rem 1rem 2rem;
+  a {
+    color: #ff0098;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    font-size: .85rem;
+    padding: 0rem .8rem;
+  }
+  span {
+    color: #ff0098;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    font-size: .85rem;
+  }
 `;
 
 export const BodyButton = styled.button`
@@ -115,6 +143,45 @@ export const FooterTagline = styled.section`
   }
 `;
 
+export const Hr = styled.hr`
+  text-align: center;
+  color: #ff0098;
+  background-color: #ff0098;
+  height: .5rem;
+  width: 60%;
+  border: none;
+  margin: 6rem auto;
+`;
+
+export const TeamSection = styled.section`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  img {
+    height: 12rem;
+    margin-bottom: .5rem;
+  }
+  a {
+    color: #ff0098;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Oxygen', sans-serif;
+    text-decoration: none;
+    font-size: 1.15rem;
+    text-align: center;
+    &:hover {
+      color: #442c1d;
+    }
+  }
+
+`;
+
 //HOME PAGE COMPONENTS
 
 export const HeroSection = styled.section`
@@ -151,7 +218,6 @@ export const SplashHeaderContainer = styled.header`
   text-transform: uppercase;
 
 `;
-
 
 const rotate = keyframes`
   from {
@@ -333,6 +399,7 @@ export const FormInputNumber = styled(FormInput)`
 export const FormInputRadio = styled(FormInput)`
   width: 5vw;
 `;
+
 export const FormSelectDiv = styled.div`
   font-size: 1em;
   position: relative;
@@ -524,4 +591,101 @@ export const DBCheckboxDiv = styled.div`
 
 export const DBCheckboxInput = styled(FormInput)`
   width: 3vw;
+`;
+
+//* Database Detail Page *//
+
+export const DatabaseDetailUl = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: row wrap;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 14vw;
+    min-width: 120px;
+    min-height: 120px;
+    height: 14vw;
+    list-style-type: none;
+    text-align: center;
+    margin: 3vw;
+    background-color: #eaefbd;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    &:hover {
+        border: 2px solid #90be6d;
+      }
+    
+    div {
+      width: 12vw;
+      min-width: 100px;
+      overflow-wrap: break-word;
+      word-wrap: break-all;
+      white-space: normal;
+      text-align: center;
+      }
+  }
+
+  a {
+    display: block;
+    font-size: 1rem;
+    color: #ff0098;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1rem;
+    text-decoration: none;
+  }
+`;
+
+export const ViewMdlButton = styled(ViewDBButton)`
+ width: 12vw;
+ font-size: 1.5rem;
+ &:hover:before {
+        content:'view schema';
+        cursor: pointer;
+        color: #ff0098;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: .1rem;
+        font-size: 1.5rem;
+      }
+`;
+
+//* Endpoint list on Model Detail page *//
+
+export const EndpointLi = styled.li`
+  list-style-type: none;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1rem;
+  font-size: .75rem;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: #ff0098;
+    }
+  }
+`;
+
+export const EndpointP = styled.p`
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1rem;
+  font-size: .75rem;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: #ff0098;
+    }
+  }
+`;
+
+//* Big Curly Bois *//
+
+export const BigCurly = styled.span`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #ff0098;
 `;
