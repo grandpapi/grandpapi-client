@@ -1,4 +1,4 @@
-import React, { PureCompoenent } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -12,14 +12,14 @@ import { selectToken } from '../../selectors/sessionSelectors';
 class GlobalHeader extends PureComponent {
   static propTypes = {
     token: PropTypes.string.isRequired,
-    dashboardClick: PropTypes.string.isRequired
+    dashboardClick: PropTypes.func.isRequired
   }
 
   navTokenCheck = () => {
     if(!this.props.token) {
       return <Link className={styles.styledNavLink} to="/login">Log In | Sign Up</Link>;
     }
-    return <><BodyButton header><Link to="/dashboard" className={styles.linkInButton} onClick={() => dashboardClick()}>My Dashboard</Link></BodyButton>
+    return <><BodyButton header><Link to="/dashboard" className={styles.linkInButton} onClick={() => this.props.dashboardClick()}>My Dashboard</Link></BodyButton>
       <HeroButton onClick={logout}>Log Out</HeroButton></>;
   }
   render() {
