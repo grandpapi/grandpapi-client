@@ -10,8 +10,8 @@ export default function AboutApp() {
       <MainContainer>
         <h2>FAQ</h2>
         <h3>What is an API?</h3>
-        <p>An API stands for Application Programming Interface.  MegaNap specifically deals with web APIs.   The specifics of APIs are out of the scope of this FAQ, but we encourage you to learn more about them here!</p>
-        <a href='https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction'>MDN - APIs</a>
+        <p>API stands for Application Programming Interface.  Mega Nap specifically deals with web APIs.   The specifics of APIs are out of the scope of this FAQ, but we encourage you to learn more about them here: <a href='https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction'>MDN - APIs</a></p>
+
         <Hr />
         <h3>What does MegaNap do for me?</h3>
         <p>MegaNap is an easy way to create a RESTful API without manually coding it.  If you are a coding newbie learning about fetching, it can be really difficult to find a simple API with fun information to use.  Our boredom of the Pokemon API is what inspired this project! But, this tool is also really useful for front end developers that need to prototype as well.</p>

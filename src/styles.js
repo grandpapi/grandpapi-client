@@ -46,6 +46,11 @@ export const NavContainer = styled.nav`
   }
 `;
 
+export const BodyLi = styled.li`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  color: #442c1d;
+`;
 
 export const StyledNavUl = styled.ul`
     padding-inline-start: 0;
