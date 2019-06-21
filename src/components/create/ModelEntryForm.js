@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { FormLabel, ModelFormInput, FormSelectDiv } from '../../styles';
+import { FormLabel, FormLabelTop, ModelFormInput, FormSelectDiv } from '../../styles';
 
 export default class ModelEntryForm extends PureComponent {
   static propTypes = {
@@ -24,9 +24,9 @@ export default class ModelEntryForm extends PureComponent {
   render() {
     return (
       <li>
-        <FormLabel>
+        <FormLabelTop>
           Field Name:
-        </FormLabel>
+        </FormLabelTop>
         <ModelFormInput name="fieldName" onChange={this.handleChange} value={this.state.fieldName} />
         <FormLabel>
           Data Type:

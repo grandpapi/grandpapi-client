@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import rejectDuplicates from '../../utils/rejectDuplicates';
 import monitorInputs from '../../utils/monitorInputs';
-import { Form, FormLabel, FormInput, FormSubmitButton, FormContainer, DBCheckboxDiv, DBCheckboxInput } from '../../styles';
+import { Form, FormLabel, FormInput, FormSubmitButton, FormContainer, DBCheckboxDiv, DBCheckboxInput, PinkFontSpan } from '../../styles';
 
 export default class DbForm extends PureComponent {
   static propTypes = {
@@ -50,9 +50,9 @@ export default class DbForm extends PureComponent {
           Public?
             </FormLabel>
             <DBCheckboxInput name="publicAccess" type="checkbox" onChange={this.handleChange} checked={this.state.publicAccess} />   
-            <span>{this.state.publicAccess ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</span>
+            <PinkFontSpan>{this.state.publicAccess ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</PinkFontSpan>
           </DBCheckboxDiv>
-          <Link to="/dashboard"><span>cancel</span></Link>
+          <Link to="/dashboard"><PinkFontSpan>cancel</PinkFontSpan></Link>
           <FormSubmitButton>Confirm and Create Model</FormSubmitButton>
         </Form>
       </FormContainer>

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { selectCurrentModelSchema, selectCurrentModel, selectCurrentDatabase, selectNickname } from '../../selectors/sessionSelectors';
 import { createData } from '../../actions/dataActions';
 import styled from 'styled-components';
-import { Form, FormContainer } from '../../styles';
+import { Form, FormContainer, DBButton } from '../../styles';
 import { navigateDatabase } from '../../actions/sessionActions';
 
 class DataEntryForm extends PureComponent {
@@ -80,7 +80,7 @@ class DataEntryForm extends PureComponent {
         <FormContainer>
           <Form onSubmit={this.handleSubmit}>
             <FormFieldList fields={fields} handleChange={this.handleChange} handleImage={this.handleImage} data={this.state.data} confirmed={this.state.confirmed} />
-            <button>Submit Data</button>
+            <DBButton>Submit Data</DBButton>
           </Form>
         </FormContainer>
       </>

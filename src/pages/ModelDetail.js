@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import GlobalHeader from '../components/all/GlobalHeader';
 import { selectCurrentModel, selectNickname, selectCurrentDatabase } from '../selectors/sessionSelectors';
 import { updateMdlState } from '../actions/modelActions';
-import { BodyContainer, MainContainer, EndpointP } from '../styles';
+import { BodyContainer, MainContainer, EndpointP, DBButton } from '../styles';
 import Footer from '../components/all/Footer';
 import Breadcrumbs from '../containers/dashboard/Breadcrumbs';
+import SchemaPreview from '../components/create/SchemaPreview';
 
 class ModelDetail extends PureComponent {
   static propTypes = {
@@ -30,12 +31,13 @@ class ModelDetail extends PureComponent {
         <MainContainer>
           <h2>{mdlName}</h2>
           <h3>Model Schema: </h3>
-          <p>{mdlSchema}</p>
+          <SchemaPreview text={mdlSchema}></SchemaPreview>
+          {/* <p>{mdlSchema}</p> */}
           <EndpointP>{'Endpoint: '}
             <a href={`${endpoint}`} target='_blank' rel='noopener noreferrer'>{endpoint}</a>
           </EndpointP>
           <Link to="/create/data" onClick={() => onClickMdl(mdlName, mdlId, mdlSchema)}>
-            <button type="button">Add Data</button>
+            <DBButton>Add Data</DBButton>
           </Link>
         </MainContainer>
         <Footer />

@@ -106,6 +106,11 @@ export const PinkSpan = styled.span`
   color: #ff0098;
 `;
 
+export const PinkFontSpan = styled.span`
+  color: #ff0098;
+  font-family: 'Montserrat', sans-serif;
+`;
+
 export const FooterContainer = styled.footer`
   position: absolute;
   width: 100vw;
@@ -349,6 +354,10 @@ font-family: 'Oxygen', sans-serif;
 transition: all .75s;
 text-transform: uppercase;
 letter-spacing: 0.05em;
+`;
+
+export const FormLabelTop = styled(FormLabel)`
+  margin-top: 3vw;
 `;
 
 export const FormInput = styled.input`
@@ -672,7 +681,7 @@ export const EndpointLi = styled.li`
 export const EndpointP = styled.p`
   font-family: 'Montserrat', sans-serif;
   letter-spacing: .1rem;
-  font-size: .75rem;
+  font-size: 1.25rem;
   a {
     text-decoration: none;
     &:hover {
