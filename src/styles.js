@@ -52,6 +52,7 @@ export const BodyLi = styled.li`
   color: #442c1d;
 `;
 
+
 export const StyledNavUl = styled.ul`
     padding-inline-start: 0;
 `;
@@ -217,7 +218,6 @@ export const SplashHeaderContainer = styled.header`
   text-transform: uppercase;
 
 `;
-
 
 const rotate = keyframes`
   from {
@@ -399,6 +399,7 @@ export const FormInputNumber = styled(FormInput)`
 export const FormInputRadio = styled(FormInput)`
   width: 5vw;
 `;
+
 export const FormSelectDiv = styled.div`
   font-size: 1em;
   position: relative;
@@ -590,4 +591,101 @@ export const DBCheckboxDiv = styled.div`
 
 export const DBCheckboxInput = styled(FormInput)`
   width: 3vw;
+`;
+
+//* Database Detail Page *//
+
+export const DatabaseDetailUl = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: row wrap;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 14vw;
+    min-width: 120px;
+    min-height: 120px;
+    height: 14vw;
+    list-style-type: none;
+    text-align: center;
+    margin: 3vw;
+    background-color: #eaefbd;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    &:hover {
+        border: 2px solid #90be6d;
+      }
+    
+    div {
+      width: 12vw;
+      min-width: 100px;
+      overflow-wrap: break-word;
+      word-wrap: break-all;
+      white-space: normal;
+      text-align: center;
+      }
+  }
+
+  a {
+    display: block;
+    font-size: 1rem;
+    color: #ff0098;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1rem;
+    text-decoration: none;
+  }
+`;
+
+export const ViewMdlButton = styled(ViewDBButton)`
+ width: 12vw;
+ font-size: 1.5rem;
+ &:hover:before {
+        content:'view schema';
+        cursor: pointer;
+        color: #ff0098;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: .1rem;
+        font-size: 1.5rem;
+      }
+`;
+
+//* Endpoint list on Model Detail page *//
+
+export const EndpointLi = styled.li`
+  list-style-type: none;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1rem;
+  font-size: .75rem;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: #ff0098;
+    }
+  }
+`;
+
+export const EndpointP = styled.p`
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1rem;
+  font-size: .75rem;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: #ff0098;
+    }
+  }
+`;
+
+//* Big Curly Bois *//
+
+export const BigCurly = styled.span`
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #ff0098;
 `;

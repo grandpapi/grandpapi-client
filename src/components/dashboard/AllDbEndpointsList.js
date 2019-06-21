@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EndpointLink from './EndpointLink';
+import { EndpointLi } from '../../styles';
 
 export default function AllDbEndpointsList({ username, dbNames, models }) {
   const endpoints = dbNames.map((dbName, i) => {
@@ -9,9 +10,9 @@ export default function AllDbEndpointsList({ username, dbNames, models }) {
       <ul>
         {models[i].map(model => {
           return (
-            <li key={model._id}>
+            <EndpointLi key={model._id}>
               <EndpointLink username={username} dbName={dbName} mdlName={model.mdlName} />
-            </li>
+            </EndpointLi>
           );
         })}
       </ul>

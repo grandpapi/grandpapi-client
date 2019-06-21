@@ -18,7 +18,7 @@ export default function FormFieldList({ fields, handleChange, handleImage, data,
         return (
           <>
             <FormLabel key={key + value + (!confirmed && key)}>{key}
-              <FormInput type="file" accept="image/.png,image/.jpeg,image/.svg+xml" name={key} onChange={handleImage} />
+              <FormInput type="file" accept="image/.png,image/.jpeg,image/.svg+xml,image/.jpg" name={key} onChange={handleImage} />
             </FormLabel>
           </>
         );
