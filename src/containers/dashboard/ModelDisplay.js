@@ -18,25 +18,31 @@ class ModelDisplay extends PureComponent {
     currentDatabase: PropTypes.shape({
       dbName: PropTypes.string.isRequired,
       dbId: PropTypes.string.isRequired
-    }).isRequired
+    }).isRequired,
+    publicAccess: PropTypes.bool
   }
 
   componentDidMount() {
-    this.props.fetch(this.props.dbName);
+    this.props.fetch(this.props.currentDatabase.dbId);
   }
 
   render() {
-    const { username, dbName, dbMdls } = this.props;
-    if(dbMdls.length === 0) return (
+    const { username, dbName, dbMdls, publicAccess } = this.props;
+    if(dbMdls.length === 0 && !publicAccess) return (
       <>
         <Link to="/create/model">Add Model</Link>
         <p>Add a few models to your Database!</p>
-        </>
+      </>
     );
     return (
       <>
-        <Link to="/create/model">Add Model</Link>
-        <ModelList dbName={dbName} models={dbMdls} />
+        {
+          !publicAccess &&
+          <>
+            <Link to="/create/model">Add Model</Link>
+            <ModelList dbName={dbName} models={dbMdls} publicAccess={publicAccess} />
+          </>
+        }
         <SingleDbEndpointList username={username} dbName={dbName} dbMdls={dbMdls} />
       </>
     );
@@ -50,8 +56,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetch(dbName) {
-    dispatch(fetchModels(dbName));
+  fetch(dbId) {
+    dispatch(fetchModels(dbId));
   }
 });
 
