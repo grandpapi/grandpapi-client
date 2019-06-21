@@ -24,7 +24,7 @@ class DatabaseLink extends PureComponent {
             </Link>
             {/* <img src={imgSrc} alt={dbName} /> */}
             <Link to={'create/model'} onClick={() => onClickDb(dbName, _id)}>
-              <DBButton>+Add Model</DBButton>
+              <DBButton>Add Model</DBButton>
             </Link>
           </div>
         </li>
