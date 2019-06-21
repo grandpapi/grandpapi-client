@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ModelLink from './ModelLink';
+import { DatabaseDetailUl } from '../../styles';
 
 export default function ModelList({ models, dbName }) {
   const modelList = models.map(({ _id, mdlName, mdlSchema }) => {
@@ -8,9 +9,9 @@ export default function ModelList({ models, dbName }) {
   });
 
   return (
-    <ul>
+    <DatabaseDetailUl>
       {modelList}
-    </ul>
+    </DatabaseDetailUl>
   );
 }
 

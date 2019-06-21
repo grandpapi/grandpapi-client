@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { selectSession } from '../../selectors/sessionSelectors';
 import { navigateDashboard, navigateDatabase } from '../../actions/sessionActions';
+import { BreadcrumbsSection } from '../../styles';
 
 class Breadcrumbs extends PureComponent {
   static propTypes = {
@@ -27,8 +28,8 @@ class Breadcrumbs extends PureComponent {
     const { mdlName } = this.props.session.currentModel;
     const { dashboardClick, databaseClick } = this.props;
     return (
-      <section>
-        <Link to="/dashboard" onClick={() => dashboardClick()}>
+      <BreadcrumbsSection>
+        <Link to="/dashboard" onClick={() => dashboardClick()} >
         Dashboard
         </Link>
         {dbName && (
@@ -47,7 +48,7 @@ class Breadcrumbs extends PureComponent {
         </Link>
         </>
         )}
-      </section>
+      </BreadcrumbsSection>
     );
   }
 }

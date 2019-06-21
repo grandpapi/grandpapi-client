@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { updateMdlState } from '../../actions/modelActions';
+import { DBButton, ViewMdlButton } from '../../styles';
 
 class ModelLink extends PureComponent {
   static propTypes = {
@@ -17,14 +18,18 @@ class ModelLink extends PureComponent {
     const { dbName, mdlName, _id, mdlSchema, onClickMdl } = this.props;
     return (
       <>
-      <Link to={`${dbName}/${mdlName}`} onClick={() => onClickMdl(mdlName, _id, mdlSchema)}>
         <li>
-          <h3>{mdlName}</h3>
+          <div>
+            <Link to={`${dbName}/${mdlName}`} onClick={() => onClickMdl(mdlName, _id, mdlSchema)}>
+              <ViewMdlButton><span>{mdlName}</span></ViewMdlButton>
+              <Link to="/create/data" onClick={() => onClickMdl(mdlName, _id, mdlSchema)}>
+                <DBButton>Add Data</DBButton>
+              </Link>
+            </Link>
+          </div>
         </li>
-      </Link>
-      <Link to="/create/data" onClick={() => onClickMdl(mdlName, _id, mdlSchema)}>
-        <button>Add Data</button>
-      </Link>
+      
+      
       </>
     );
   }
