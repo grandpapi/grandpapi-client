@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { updateDbState } from '../../actions/userDatabases/dbActions';
+import { updateDbState } from '../../actions/dbActions';
 import { DBButton, ViewDBButton } from '../../styles';
 
 class DatabaseLink extends PureComponent {

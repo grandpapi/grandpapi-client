@@ -1,5 +1,5 @@
 import { SET_SESSION, CHECK_SESSION } from '../actions/sessionActions';
-import { CREATE_DB, UPDATE_DB_STATE } from '../actions/userDatabases/dbActions';
+import { CREATE_DB, UPDATE_DB_STATE } from '../actions/dbActions';
 import { CREATE_MODEL, UPDATE_MDL_STATE } from '../actions/modelActions';
 import { CREATE_DATA } from '../actions/dataActions';
 
