@@ -19,11 +19,23 @@ p {
     color: #442c1d;
 }
 
+
+a {
+    color: #ff0098;
+}
+
 h2 {
     font-family: 'Oxygen', sans-serif;
-    font-size: 36px;
+    font-size: 2.25rem;
     color: #442c1d;
 }
+
+h3 {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.8rem;
+    color: #442c1d;
+}
+
 .display-block {
     display: block;
 }

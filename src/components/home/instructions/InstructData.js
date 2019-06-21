@@ -10,7 +10,7 @@ export default function InstructData() {
       </section>
       <IntroGutterSpace>
         <h2><PinkSpan>Step Three:</PinkSpan> Add your data.</h2>
-        <p>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.</p>
+        <p>What can you put here? Anything you want! Scientific data, movie trivia, information about your pets — the sky's the limit.</p>
       </IntroGutterSpace>
     </IntroLtoR>
   );
