@@ -1,13 +1,13 @@
-import { createModel, addEntry } from './modelActions';
+import { createModel, fetchModels, fetchAllModels,  } from './modelActions';
 
 jest.mock('../services/modelMegaNapAPI.js', () => ({
   postModel() {
     return Promise.resolve([]);
   },
-  patchModel() {
+  getModels() {
     return Promise.resolve([]);
   },
-  getModels() {
+  getAllModels() {
     return Promise.resolve([]);
   }
 }));
@@ -24,13 +24,24 @@ describe('model actions', () => {
     });
   });
   
-  it('creates an action to patch entries', () => {
-    const modelAction = addEntry();
+  it('creates an action to fetch models', () => {
+    const modelAction = fetchModels();
     expect(modelAction).toEqual({
-      type: 'ADD_ENTRY',
-      pendingType: 'ADD_ENTRY_PENDING',
-      fulfilledType: 'ADD_ENTRY_FULFILLED',
-      rejectedType: 'ADD_ENTRY_REJECTED',
+      type: 'FETCH_MODEL',
+      pendingType: 'FETCH_MODEL_PENDING',
+      fulfilledType: 'FETCH_MODEL_FULFILLED',
+      rejectedType: 'FETCH_MODEL_REJECTED',
+      payload: expect.any(Promise)
+    });
+  });
+  
+  it('creates an action to fetch all models', () => {
+    const modelAction = fetchAllModels();
+    expect(modelAction).toEqual({
+      type: 'FETCH_ALL_MODELS',
+      pendingType: 'FETCH_ALL_MODELS_PENDING',
+      fulfilledType: 'FETCH_ALL_MODELS_FULFILLED',
+      rejectedType: 'FETCH_ALL_MODELS_REJECTED',
       payload: expect.any(Promise)
     });
   });
