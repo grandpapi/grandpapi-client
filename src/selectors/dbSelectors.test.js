@@ -4,8 +4,6 @@ describe('db selectors tests', () => {
   const state = {
     databases: {
       loading: false,
-      dbName: 'test name',
-      dbId: 'test id',
       userDbs: [{ test: 'database' }]
     }
   };
