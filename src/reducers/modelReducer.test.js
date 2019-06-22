@@ -1,28 +1,27 @@
 import modelReducer from './modelReducer';
 import {
-  CREATE_MODEL,
   CREATE_MODEL_PENDING,
-  ADD_ENTRY_PENDING,
-  ADD_ENTRY
+  FETCH_MODELS_PENDING,
+  FETCH_MODELS,
+  FETCH_ALL_MODELS
 } from '../actions/modelActions';
 
 jest.mock('../services/modelMegaNapAPI.js', () => ({
   postModel() {
     return Promise.resolve([]);
   },
-  patchModel() {
+  getModels() {
     return Promise.resolve([]);
   },
-  getModels() {
+  getAllModels() {
     return Promise.resolve([]);
   }
 }));
 
 const initialState = {
   loading: false,
-  mdlName: '',
-  mdlSchema: {},
-  mdlId: ''
+  dbMdls: [],
+  allMdls: []
 };
 
 describe('model reducer tests', () => {
@@ -35,41 +34,45 @@ describe('model reducer tests', () => {
     });
   });
   
-  it('can handle a post to model', () => {
-    expect(modelReducer({ ...initialState, loading: true }, {
-      type: CREATE_MODEL,
-      payload: {
-        _id: 'test id',
-        mdlName: 'test mdlName',
-        mdlSchema: {}
-      }
-    })).toEqual({
-      loading: false,
-      mdlId: 'test id',
-      mdlName: 'test mdlName',
-      mdlSchema: {}
-    });
-  });
-  
-  it('can handle an add entry pending', () => {
+  it('can handle a fetch models pending', () => {
     expect(modelReducer(initialState, {
-      type: ADD_ENTRY_PENDING
+      type: FETCH_MODELS_PENDING
     })).toEqual({
       ...initialState,
       loading: true
     });
   });
 
-  it('can handle an add entry action', () => {
+  it('can handle a fetch models action', () => {
     expect(modelReducer({ ...initialState, loading: true }, {
-      type: ADD_ENTRY,
-      payload: {
-        mdlSchema: 'test entry'
-      }
+      type: FETCH_MODELS,
+      payload: ['test model']
     })).toEqual({
       ...initialState,
       loading: false,
-      mdlSchema: 'test entry'
+      dbMdls: ['test model'],
+      allMdls: []
+    });
+  });
+  
+  it('can handle a fetch all modelspending', () => {
+    expect(modelReducer(initialState, {
+      type: FETCH_MODELS_PENDING
+    })).toEqual({
+      ...initialState,
+      loading: true
+    });
+  });
+
+  it('can handle a fetch all models action', () => {
+    expect(modelReducer({ ...initialState, loading: true }, {
+      type: FETCH_ALL_MODELS,
+      payload: ['test model']
+    })).toEqual({
+      ...initialState,
+      loading: false,
+      dbMdls: [],
+      allMdls: ['test model']
     });
   });
 });

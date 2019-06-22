@@ -24,10 +24,16 @@ jest.mock('../services/modelMegaNapAPI.js', () => ({
   postModel() {
     return Promise.resolve([]);
   },
-  patchModel() {
+  getModels() {
     return Promise.resolve([]);
   },
-  getModels() {
+  getAllModels() {
+    return Promise.resolve([]);
+  }
+}));
+
+jest.mock('../services/dataMegaNapAPI.js', () => ({
+  postData() {
     return Promise.resolve([]);
   }
 }));

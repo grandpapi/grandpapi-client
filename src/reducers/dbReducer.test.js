@@ -13,7 +13,7 @@ jest.mock('../services/dbMegaNapAPI.js', () => ({
 describe('db reducer reducer tests', () => {
   const initialState = {
     loading: false,
-    dbName: ''
+    userDbs: []
   };
 
   it('can handle a post to db pending', () => {
@@ -21,7 +21,7 @@ describe('db reducer reducer tests', () => {
       type: CREATE_DB_PENDING
     })).toEqual({
       loading: true,
-      dbName: ''
+      userDbs: []
     });
   });
 

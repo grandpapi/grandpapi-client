@@ -1,5 +1,7 @@
 import monitorInputs from './monitorInputs';
 
+window.alert = jest.fn();
+
 describe('Testing Monitor Inputs function', () => {
   it('will accept a good name', () => {
     const check = monitorInputs('some-thing');
@@ -14,6 +16,7 @@ describe('Testing Monitor Inputs function', () => {
   });
 
   it('will reject a name with more than 14 characters', () => {
+
     const check = monitorInputs('abcdefghijklmnopqrs');
 
     expect(check).toBeFalsy();  

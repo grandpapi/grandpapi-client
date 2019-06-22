@@ -1,32 +1,27 @@
-import { selectMdl, selectMdlId, selectMdlSchema, selectMdlName } from './modelSelectors';
+import { selectMdl, selectDbMdls, selectAllMdls } from './modelSelectors';
 
 describe('session selectors tests', () => {
   const state = {
     models: {
       loading: false,
-      mdlName: 'test name',
-      mdlSchema: { testField: 'test' },
-      mdlId: '123'
+      dbMdls: ['test dbMdls'],
+      allMdls: ['test allMdls']
     }
   };
+
   it('selects model', () => {
     expect(selectMdl(state)).toEqual({
       loading: false,
-      mdlName: 'test name',
-      mdlSchema: { testField: 'test' },
-      mdlId: '123'
+      dbMdls: ['test dbMdls'],
+      allMdls: ['test allMdls']
     });
   });
-
-  it('selects model id', () => {
-    expect(selectMdlId(state)).toEqual('123');
-  });
-
-  it('selects model name', () => {
-    expect(selectMdlName(state)).toEqual('test name');
+  
+  it('selects dbMdls', () => {
+    expect(selectDbMdls(state)).toEqual(['test dbMdls']);
   });
   
-  it('selects model name', () => {
-    expect(selectMdlSchema(state)).toEqual({ testField: 'test' });
+  it('selects allMdls', () => {
+    expect(selectAllMdls(state)).toEqual(['test allMdls']);
   });
 });

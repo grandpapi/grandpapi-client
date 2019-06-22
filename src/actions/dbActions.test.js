@@ -1,6 +1,6 @@
-import { createDb, fetchDbs } from './dbActions';
+import { createDb, fetchDbs, updateDbState, UPDATE_DB_STATE } from './dbActions';
 
-jest.mock('../../services/dbMegaNapAPI.js', () => ({
+jest.mock('../services/dbMegaNapAPI.js', () => ({
   postDb() {
     return Promise.resolve([]);
   },
@@ -29,6 +29,18 @@ describe('data base actions', () => {
       fulfilledType: 'FETCH_DBS_FULFILLED',
       rejectedType: 'FETCH_DBS_REJECTED',
       payload: expect.any(Promise)
+    });
+  });
+
+  it('creates an action to update db state', () => {
+    const dbAction = updateDbState('testDbName', 'testDbId', 'testUsername');
+    expect(dbAction).toEqual({
+      type: UPDATE_DB_STATE,
+      payload: {
+        dbName: 'testDbName',
+        dbId: 'testDbId',
+        username: 'testUsername'
+      }
     });
   });
 }); 
