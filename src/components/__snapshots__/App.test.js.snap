@@ -50,6 +50,10 @@ exports[`App component renders App 1`] = `
     />
     <Route
       component={[Function]}
+      path="/apis/:dbName"
+    />
+    <Route
+      component={[Function]}
       exact={true}
       path="/table3"
     />
@@ -99,6 +103,19 @@ exports[`App component renders App 1`] = `
       }
       exact={true}
       path="/dashboard"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WithSession)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/endpoints"
     />
     <Route
       component={
