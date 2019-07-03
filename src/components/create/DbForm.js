@@ -8,7 +8,7 @@ import { Form, FormLabel, FormInput, FormSubmitButton, FormContainer, DBCheckbox
 export default class DbForm extends PureComponent {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    userDbs: PropTypes.array.isRequired,
+    dbList: PropTypes.array.isRequired,
   }
 
   state = {
@@ -19,7 +19,7 @@ export default class DbForm extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    if(rejectDuplicates(this.props.userDbs, this.state.dbName) && monitorInputs(this.state.dbName)) {
+    if(rejectDuplicates(this.props.dbList, this.state.dbName) && monitorInputs(this.state.dbName)) {
       this.props.onSubmit(this.state);
       this.setState({
         dbName: '',
@@ -42,14 +42,14 @@ export default class DbForm extends PureComponent {
       <FormContainer>
         <Form onSubmit={this.handleSubmit}>
           <FormLabel htmlFor="dbName">
-          Database Name
+            Database Name
           </FormLabel>
           <FormInput name="dbName" onChange={this.handleChange} value={this.state.dbName} />
           <DBCheckboxDiv>
             <FormLabel htmlFor="publicAccess">
-          Public?
+              Public?
             </FormLabel>
-            <DBCheckboxInput name="publicAccess" type="checkbox" onChange={this.handleChange} checked={this.state.publicAccess} />   
+            <DBCheckboxInput name="publicAccess" type="checkbox" onChange={this.handleChange} checked={this.state.publicAccess} />
             <PinkFontSpan>{this.state.publicAccess ? 'Your endpoints are PUBLIC' : 'Your endpoints are PRIVATE'}</PinkFontSpan>
           </DBCheckboxDiv>
           <Link to="/dashboard"><PinkFontSpan>cancel</PinkFontSpan></Link>

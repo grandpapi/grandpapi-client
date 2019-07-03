@@ -13,7 +13,7 @@ jest.mock('../services/dbMegaNapAPI.js', () => ({
 describe('db reducer reducer tests', () => {
   const initialState = {
     loading: false,
-    userDbs: []
+    dbList: []
   };
 
   it('can handle a post to db pending', () => {
@@ -21,7 +21,7 @@ describe('db reducer reducer tests', () => {
       type: CREATE_DB_PENDING
     })).toEqual({
       loading: true,
-      userDbs: []
+      dbList: []
     });
   });
 
@@ -29,7 +29,7 @@ describe('db reducer reducer tests', () => {
     const newInitialState = {
       ...initialState,
       dbId: '',
-      userDbs: []
+      dbList: []
     };
     expect(dbReducer(
       newInitialState,
@@ -39,12 +39,12 @@ describe('db reducer reducer tests', () => {
       loading: true
     });
   });
-  
+
   it('can handle a fetch dbs action', () => {
     const newInitialState = {
       ...initialState,
       dbId: '',
-      userDbs: []
+      dbList: []
     };
     expect(dbReducer(
       newInitialState,
@@ -56,7 +56,7 @@ describe('db reducer reducer tests', () => {
       }
     )).toEqual({
       ...newInitialState,
-      userDbs: [
+      dbList: [
         { dbName: 'test', dbId: '123' }
       ]
     });

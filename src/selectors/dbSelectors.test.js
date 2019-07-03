@@ -1,14 +1,14 @@
-import { selectUserDbs } from './dbSelectors';
+import { selectDbList } from './dbSelectors';
 
 describe('db selectors tests', () => {
   const state = {
     databases: {
       loading: false,
-      userDbs: [{ test: 'database' }]
+      dbList: [{ test: 'database' }]
     }
   };
 
   it('selects user dbs', () => {
-    expect(selectUserDbs(state)).toEqual([{ test: 'database' }]);
+    expect(selectDbList(state)).toEqual([{ test: 'database' }]);
   });
 });

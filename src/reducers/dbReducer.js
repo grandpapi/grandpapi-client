@@ -2,7 +2,7 @@ import { CREATE_DB_PENDING, FETCH_DBS, FETCH_DBS_PENDING } from '../actions/dbAc
 
 const initialState = {
   loading: false,
-  userDbs: []
+  dbList: []
 };
 
 export default function reducer(state = initialState, action) {
@@ -11,7 +11,7 @@ export default function reducer(state = initialState, action) {
     case FETCH_DBS_PENDING:
       return { ...state, loading: true };
     case FETCH_DBS:
-      return { ...state, loading: false, userDbs: action.payload };
+      return { ...state, loading: false, dbList: action.payload };
     default:
       return state;
   }

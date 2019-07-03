@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import DatabaseList from '../../components/dashboard/DatabaseList';
-import { selectUserDbs } from '../../selectors/dbSelectors';
+import { selectDbList } from '../../selectors/dbSelectors';
 import { fetchDbs } from '../../actions/dbActions';
 
 
@@ -23,7 +23,7 @@ class DatabaseDisplay extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-  databases: selectUserDbs(state),
+  databases: selectDbList(state),
 });
 
 const mapDispatchToProps = dispatch => ({

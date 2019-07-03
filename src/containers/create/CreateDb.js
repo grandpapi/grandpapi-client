@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import DbForm from '../../components/create/DbForm';
 import { createDb } from '../../actions/dbActions';
-import { selectUserDbs } from '../../selectors/dbSelectors';
+import { selectDbList } from '../../selectors/dbSelectors';
 
 const mapStateToProps = state => ({
-  userDbs: selectUserDbs(state)
+  dbList: selectDbList(state)
 });
 
 const mapDispatchToProps = dispatch => ({

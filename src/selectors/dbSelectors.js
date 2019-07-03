@@ -1,1 +1,1 @@
-export const selectUserDbs = state => state.databases.userDbs;
+export const selectDbList = state => state.databases.dbList;
