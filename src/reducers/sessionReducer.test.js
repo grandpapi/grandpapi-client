@@ -2,7 +2,6 @@ import sessionReducer from './sessionReducer';
 import { SET_SESSION, CHECK_SESSION, NAVIGATE_DASHBOARD, NAVIGATE_DATABASE } from '../actions/sessionActions';
 import { CREATE_DB, UPDATE_DB_STATE } from '../actions/dbActions';
 import { CREATE_MODEL, UPDATE_MDL_STATE } from '../actions/modelActions';
-import { CREATE_DATA } from '../actions/dataActions';
 
 jest.mock('../services/auth.js', () => ({
   handleAuth() {
@@ -34,12 +33,6 @@ jest.mock('../services/modelMegaNapAPI.js', () => ({
   }
 }));
 
-jest.mock('../services/dataMegaNapAPI.js', () => ({
-  postData() {
-    return Promise.resolve([]);
-  }
-}));
-
 describe('session reducer reducer tests', () => {
 
   const initialState = {
@@ -54,9 +47,6 @@ describe('session reducer reducer tests', () => {
       mdlName: '',
       mdlId: '',
       mdlSchema: '{}'
-    },
-    currentData: {
-      dataId: ''
     }
   };
 
@@ -80,13 +70,10 @@ describe('session reducer reducer tests', () => {
         mdlId: '',
         mdlSchema: '{}'
       },
-      currentData: {
-        dataId: ''
-      },
       nickname: 'test username'
     });
   });
-  
+
   it('can handle a check session action', () => {
     expect(sessionReducer(initialState, {
       type: CHECK_SESSION,
@@ -107,13 +94,10 @@ describe('session reducer reducer tests', () => {
         mdlId: '',
         mdlSchema: '{}'
       },
-      currentData: {
-        dataId: ''
-      },
       nickname: 'test username'
     });
   });
-  
+
   it('can handle a create db action', () => {
     expect(sessionReducer(initialState, {
       type: CREATE_DB,
@@ -134,13 +118,10 @@ describe('session reducer reducer tests', () => {
         mdlName: '',
         mdlId: '',
         mdlSchema: '{}'
-      },
-      currentData: {
-        dataId: ''
       }
     });
   });
-  
+
   it('can handle a create model action', () => {
     expect(sessionReducer(initialState, {
       type: CREATE_MODEL,
@@ -161,40 +142,12 @@ describe('session reducer reducer tests', () => {
         mdlName: 'test mdl',
         mdlId: 'test id',
         mdlSchema: '{test schema}'
-      },
-      currentData: {
-        dataId: ''
       }
     });
   });
-  
-  it('can handle a create data action', () => {
-    expect(sessionReducer(initialState, {
-      type: CREATE_DATA,
-      payload: {
-        _id: 'test id',
-      }
-    })).toEqual({
-      username: '',
-      token: '',
-      currentDatabase: {
-        dbName: '',
-        dbId: '',
-        username: ''
-      },
-      currentModel: {
-        mdlName: '',
-        mdlId: '',
-        mdlSchema: '{}'
-      },
-      currentData: {
-        dataId: 'test id'
-      }
-    });
-  });
-  
+
   it('can handle an update db action', () => {
-    expect(sessionReducer({ 
+    expect(sessionReducer({
       ...initialState,
       currentModel: {
         mdlName: 'test name',
@@ -220,9 +173,6 @@ describe('session reducer reducer tests', () => {
         mdlName: '',
         mdlId: '',
         mdlSchema: '{}'
-      },
-      currentData: {
-        dataId: ''
       }
     });
   });
@@ -247,15 +197,12 @@ describe('session reducer reducer tests', () => {
         mdlName: 'test mdl',
         mdlId: 'test id',
         mdlSchema: '{test schema}'
-      },
-      currentData: {
-        dataId: ''
       }
     });
   });
 
   it('can handle a nav dashboard action', () => {
-    expect(sessionReducer({ 
+    expect(sessionReducer({
       ...initialState,
       currentDatabase: {
         dbName: 'test name',
@@ -281,15 +228,12 @@ describe('session reducer reducer tests', () => {
         mdlName: '',
         mdlId: '',
         mdlSchema: '{}'
-      },
-      currentData: {
-        dataId: ''
       }
     });
   });
-  
+
   it('can handle a nav db action', () => {
-    expect(sessionReducer({ 
+    expect(sessionReducer({
       ...initialState,
       currentDatabase: {
         dbName: 'test name',
@@ -315,9 +259,6 @@ describe('session reducer reducer tests', () => {
         mdlName: '',
         mdlId: '',
         mdlSchema: '{}'
-      },
-      currentData: {
-        dataId: ''
       }
     });
   });

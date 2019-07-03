@@ -1,7 +1,6 @@
 import { SET_SESSION, CHECK_SESSION, NAVIGATE_DASHBOARD, NAVIGATE_DATABASE } from '../actions/sessionActions';
 import { CREATE_DB, UPDATE_DB_STATE } from '../actions/dbActions';
 import { CREATE_MODEL, UPDATE_MDL_STATE } from '../actions/modelActions';
-import { CREATE_DATA } from '../actions/dataActions';
 
 const initialState = {
   username: '',
@@ -16,9 +15,6 @@ const initialState = {
     mdlId: '',
     mdlSchema: '{}'
   },
-  currentData: {
-    dataId: ''
-  }
 };
 
 export default function reducer(state = initialState, action) {
@@ -45,13 +41,6 @@ export default function reducer(state = initialState, action) {
           mdlName: action.payload.mdlName,
           mdlId: action.payload._id,
           mdlSchema: action.payload.mdlSchema
-        }
-      };
-    case CREATE_DATA:
-      return {
-        ...state,
-        currentData: {
-          dataId: action.payload._id
         }
       };
     case UPDATE_DB_STATE:
